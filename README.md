@@ -1,3 +1,6 @@
+> [!Warning]
+> ⚠️ This branch is now obsolete and remains only for research purposes ⚠️
+
 <div align="center">
     <h1>MYnvim 💫</h1>
 </div>
