@@ -1,0 +1,112 @@
+{
+    "name": "Bootstrap5-snippets",
+    "description": "Code snippets for Bootstrap 5 ",
+    "displayName": "Bootstrap 5 & Font Awesome Snippets",
+    "publisher": "HansUXdev",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/HansUXdev/B5-SNIPPETS"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "keywords": [
+        "Bootstrap 5",
+        "Bootstrap",
+        "Font Awesome",
+        "Snippets",
+        "Bootstrap Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "blade",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "ejs",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "html",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "handlebars",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "latte",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "php",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "plaintext",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "razor",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "tpl",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "typescript",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "typescriptreact",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "javascriptreact",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "javascript",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "twig",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "vue",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "vue-html",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "django-html",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "jinja-html",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "erb",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "HTML (Eex)",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "volt",
+                "path": "./bootstrap.json"
+            },
+            {
+                "language": "nunjucks",
+                "path": "./bootstrap.json"
+            }
+        ]
+    }
+}

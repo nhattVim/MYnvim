@@ -1,0 +1,30 @@
+{
+    "name": "laravel-blade-vscode",
+    "displayName": "Laravel Blade",
+    "description": "Snippets, Syntax Highlighting and Formatting for VS Code",
+    "publisher": "amirmarmul",
+    "author": {
+        "name": "Amir Marmul",
+        "email": "amiruddinmarmul@gmail.com"
+    },
+    "homepage": "https://github.com/amirmarmul/laravel-blade-vscode",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/amirmarmul/laravel-blade-vscode"
+    },
+    "keywords": [
+        "laravel",
+        "blade",
+        "snippet",
+        "highlighter",
+        "beautify"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "blade",
+                "path": "./snippets.json"
+            }
+        ]
+    }
+}

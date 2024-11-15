@@ -1,0 +1,31 @@
+{
+    "Bash code block": {
+        "prefix": "bash",
+        "body": ["```bash", "$1", "```"],
+        "description": "Insert a bash code block"
+    },
+
+    "Yaml code block": {
+        "prefix": "yaml",
+        "body": ["```yaml", "$1", "```"],
+        "description": "Insert a yaml code block"
+    },
+
+    "Go code block": {
+        "prefix": "go",
+        "body": ["```go", "$1", "```"],
+        "description": "Insert a go code block"
+    },
+
+    "Sql code block": {
+        "prefix": "sql",
+        "body": ["```sql", "$1", "```"],
+        "description": "Insert a sql code block"
+    },
+
+    "Link in new tab": {
+        "prefix": "linkt",
+        "body": ["[$1]($2){:target=\"_blank\"}"],
+        "description": "Open a link in a new tab (chirpy theme)"
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "Default php": {
+        "prefix": "!",
+        "body": [
+            "<!DOCTYPE html>",
+            "<html>",
+            "",
+            "<body>",
+            "",
+            "    <?php",
+            "        $0",
+            "    ?>",
+            "",
+            "</body>",
+            "",
+            "</html>"
+        ],
+        "description": "Default php"
+    }
+}

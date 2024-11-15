@@ -1,0 +1,43 @@
+{
+    "name": "laravel-blade",
+    "displayName": "Laravel Blade Snippets",
+    "description": "Laravel blade snippets and syntax highlight support",
+    "publisher": "onecentlin",
+    "author": {
+        "name": "Winnie Lin",
+        "email": "onecentlin@gmail.com",
+        "url": "https://devmanna.blogspot.com"
+    },
+    "homepage": "https://github.com/onecentlin/laravel-blade-snippets-vscode",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/onecentlin/laravel-blade-snippets-vscode"
+    },
+    "keywords": [
+        "laravel",
+        "blade",
+        "template",
+        "snippet",
+        "formatter"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "blade",
+                "path": "./snippets.json"
+            },
+            {
+                "language": "blade",
+                "path": "./helpers.json"
+            },
+            {
+                "language": "blade",
+                "path": "./livewire.json"
+            },
+            {
+                "language": "php",
+                "path": "./blade.json"
+            }
+        ]
+    }
+}

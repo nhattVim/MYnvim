@@ -1,0 +1,442 @@
+{
+    "Fix comment (Lua)": {
+        "prefix": "fix",
+        "scope": "lua",
+        "body": ["-- ${1|FIX,BUG,ISSUE|}: ${2:comment}"],
+        "description": "Create a fix comment"
+    },
+
+    "Perf comment (Lua)": {
+        "prefix": "perf",
+        "scope": "lua",
+        "body": ["-- ${1|PERF,PERFORMANCE,OPTIMIZE|}: ${2:comment}"],
+        "description": "Create a perf comment"
+    },
+
+    "Test comment (Lua)": {
+        "prefix": "test",
+        "scope": "lua",
+        "body": ["-- ${1|TEST,TESTING,PASSED,FAILED|}: ${2:comment}"],
+        "description": "Create a test comment"
+    },
+
+    "Warn comment (Lua)": {
+        "prefix": "warn",
+        "scope": "lua",
+        "body": ["-- ${1|WARN,WARNING,XXX|}: ${2:comment}"],
+        "description": "Create a warn comment"
+    },
+
+    "Note comment (Lua)": {
+        "prefix": "note",
+        "scope": "lua",
+        "body": ["-- ${1|NOTE,INFO|}: ${2:comment}"],
+        "description": "Create a note comment"
+    },
+
+    "Todo comment (Lua)": {
+        "prefix": "todo",
+        "scope": "lua",
+        "body": ["-- TODO: ${2:comment}"],
+        "description": "Create a todo comment"
+    },
+
+    "Hack comment (Lua)": {
+        "prefix": "hack",
+        "scope": "lua",
+        "body": ["-- HACK: ${2:comment}"],
+        "description": "Create a hack comment"
+    },
+
+    "Fix comment (JS)": {
+        "prefix": "fix",
+        "scope": "javascript",
+        "body": ["// ${1|FIX,BUG,ISSUE|}: ${2:comment}"],
+        "description": "Create a fix comment"
+    },
+
+    "Perf comment (JS)": {
+        "prefix": "perf",
+        "scope": "javascript",
+        "body": ["// ${1|PERF,PERFORMANCE,OPTIMIZE|}: ${2:comment}"],
+        "description": "Create a perf comment"
+    },
+
+    "Test comment (JS)": {
+        "prefix": "test",
+        "scope": "javascript",
+        "body": ["// ${1|TEST,TESTING,PASSED,FAILED|}: ${2:comment}"],
+        "description": "Create a test comment"
+    },
+
+    "Warn comment (JS)": {
+        "prefix": "warn",
+        "scope": "javascript",
+        "body": ["// ${1|WARN,WARNING,XXX|}: ${2:comment}"],
+        "description": "Create a warn comment"
+    },
+
+    "Note comment (JS)": {
+        "prefix": "note",
+        "scope": "javascript",
+        "body": ["// ${1|NOTE,INFO|}: ${2:comment}"],
+        "description": "Create a note comment"
+    },
+
+    "Todo comment (JS)": {
+        "prefix": "todo",
+        "scope": "javascript",
+        "body": ["// TODO: ${2:comment}"],
+        "description": "Create a todo comment"
+    },
+
+    "Hack comment (JS)": {
+        "prefix": "hack",
+        "scope": "javascript",
+        "body": ["// HACK: ${2:comment}"],
+        "description": "Create a hack comment"
+    },
+
+    "Fix comment (PY)": {
+        "prefix": "fix",
+        "scope": "python",
+        "body": ["# ${1|FIX,BUG,ISSUE|}: ${2:comment}"],
+        "description": "Create a fix comment"
+    },
+
+    "Perf comment (PY)": {
+        "prefix": "perf",
+        "scope": "python",
+        "body": ["# ${1|PERF,PERFORMANCE,OPTIMIZE|}: ${2:comment}"],
+        "description": "Create a perf comment"
+    },
+
+    "Test comment (PY)": {
+        "prefix": "test",
+        "scope": "python",
+        "body": ["# ${1|TEST,TESTING,PASSED,FAILED|}: ${2:comment}"],
+        "description": "Create a test comment"
+    },
+
+    "Warn comment (PY)": {
+        "prefix": "warn",
+        "scope": "python",
+        "body": ["# ${1|WARN,WARNING,XXX|}: ${2:comment}"],
+        "description": "Create a warn comment"
+    },
+
+    "Note comment (PY)": {
+        "prefix": "note",
+        "scope": "python",
+        "body": ["# ${1|NOTE,INFO|}: ${2:comment}"],
+        "description": "Create a note comment"
+    },
+
+    "Todo comment (PY)": {
+        "prefix": "todo",
+        "scope": "python",
+        "body": ["# TODO: ${2:comment}"],
+        "description": "Create a todo comment"
+    },
+
+    "Hack comment (PY)": {
+        "prefix": "hack",
+        "scope": "python",
+        "body": ["# HACK: ${2:comment}"],
+        "description": "Create a hack comment"
+    },
+
+    "Fix comment (Java)": {
+        "prefix": "fix",
+        "scope": "java",
+        "body": ["// ${1|FIX,BUG,ISSUE|}: ${2:comment}"],
+        "description": "Create a fix comment"
+    },
+
+    "Perf comment (Java)": {
+        "prefix": "perf",
+        "scope": "java",
+        "body": ["// ${1|PERF,PERFORMANCE,OPTIMIZE|}: ${2:comment}"],
+        "description": "Create a perf comment"
+    },
+
+    "Test comment (Java)": {
+        "prefix": "test",
+        "scope": "java",
+        "body": ["// ${1|TEST,TESTING,PASSED,FAILED|}: ${2:comment}"],
+        "description": "Create a test comment"
+    },
+
+    "Warn comment (Java)": {
+        "prefix": "warn",
+        "scope": "java",
+        "body": ["// ${1|WARN,WARNING,XXX|}: ${2:comment}"],
+        "description": "Create a warn comment"
+    },
+
+    "Note comment (Java)": {
+        "prefix": "note",
+        "scope": "java",
+        "body": ["// ${1|NOTE,INFO|}: ${2:comment}"],
+        "description": "Create a note comment"
+    },
+
+    "Todo comment (Java)": {
+        "prefix": "todo",
+        "scope": "java",
+        "body": ["// TODO: ${2:comment}"],
+        "description": "Create a todo comment"
+    },
+
+    "Hack comment (Java)": {
+        "prefix": "hack",
+        "scope": "java",
+        "body": ["// HACK: ${2:comment}"],
+        "description": "Create a hack comment"
+    },
+
+    "Fix comment (C++)": {
+        "prefix": "fix",
+        "scope": "cpp",
+        "body": ["// ${1|FIX,BUG,ISSUE|}: ${2:comment}"],
+        "description": "Create a fix comment"
+    },
+
+    "Perf comment (C++)": {
+        "prefix": "perf",
+        "scope": "cpp",
+        "body": ["// ${1|PERF,PERFORMANCE,OPTIMIZE|}: ${2:comment}"],
+        "description": "Create a perf comment"
+    },
+
+    "Test comment (C++)": {
+        "prefix": "test",
+        "scope": "cpp",
+        "body": ["// ${1|TEST,TESTING,PASSED,FAILED|}: ${2:comment}"],
+        "description": "Create a test comment"
+    },
+
+    "Warn comment (C++)": {
+        "prefix": "warn",
+        "scope": "cpp",
+        "body": ["// ${1|WARN,WARNING,XXX|}: ${2:comment}"],
+        "description": "Create a warn comment"
+    },
+
+    "Note comment (C++)": {
+        "prefix": "note",
+        "scope": "cpp",
+        "body": ["// ${1|NOTE,INFO|}: ${2:comment}"],
+        "description": "Create a note comment"
+    },
+
+    "Todo comment (C++)": {
+        "prefix": "todo",
+        "scope": "cpp",
+        "body": ["// TODO: ${2:comment}"],
+        "description": "Create a todo comment"
+    },
+
+    "Hack comment (C++)": {
+        "prefix": "hack",
+        "scope": "cpp",
+        "body": ["// HACK: ${2:comment}"],
+        "description": "Create a hack comment"
+    },
+
+    "Fix comment (HTML)": {
+        "prefix": "fix",
+        "scope": "html",
+        "body": ["<!-- ${1|FIX,BUG,ISSUE|}: ${2:comment} -->"],
+        "description": "Create a fix comment"
+    },
+
+    "Perf comment (HTML)": {
+        "prefix": "perf",
+        "scope": "html",
+        "body": ["<!-- ${1|PERF,PERFORMANCE,OPTIMIZE|}: ${2:comment} -->"],
+        "description": "Create a perf comment"
+    },
+
+    "Test comment (HTML)": {
+        "prefix": "test",
+        "scope": "html",
+        "body": ["<!-- ${1|TEST,TESTING,PASSED,FAILED|}: ${2:comment} -->"],
+        "description": "Create a test comment"
+    },
+
+    "Warn comment (HTML)": {
+        "prefix": "warn",
+        "scope": "html",
+        "body": ["<!-- ${1|WARN,WARNING,XXX|}: ${2:comment} -->"],
+        "description": "Create a warn comment"
+    },
+
+    "Note comment (HTML)": {
+        "prefix": "note",
+        "scope": "html",
+        "body": ["<!-- ${1|NOTE,INFO|}: ${2:comment} -->"],
+        "description": "Create a note comment"
+    },
+
+    "Todo comment (HTML)": {
+        "prefix": "todo",
+        "scope": "html",
+        "body": ["<!-- TODO: ${2:comment} -->"],
+        "description": "Create a todo comment"
+    },
+
+    "Hack comment (HTML)": {
+        "prefix": "hack",
+        "scope": "html",
+        "body": ["<!-- HACK: ${2:comment} -->"],
+        "description": "Create a hack comment"
+    },
+
+    "Fix comment (PHP)": {
+        "prefix": "fix",
+        "scope": "php",
+        "body": ["// ${1|FIX,BUG,ISSUE|}: ${2:comment}"],
+        "description": "Create a fix comment"
+    },
+
+    "Perf comment (PHP)": {
+        "prefix": "perf",
+        "scope": "php",
+        "body": ["// ${1|PERF,PERFORMANCE,OPTIMIZE|}: ${2:comment}"],
+        "description": "Create a perf comment"
+    },
+
+    "Test comment (PHP)": {
+        "prefix": "test",
+        "scope": "php",
+        "body": ["// ${1|TEST,TESTING,PASSED,FAILED|}: ${2:comment}"],
+        "description": "Create a test comment"
+    },
+
+    "Warn comment (PHP)": {
+        "prefix": "warn",
+        "scope": "php",
+        "body": ["// ${1|WARN,WARNING,XXX|}: ${2:comment}"],
+        "description": "Create a warn comment"
+    },
+
+    "Note comment (PHP)": {
+        "prefix": "note",
+        "scope": "php",
+        "body": ["// ${1|NOTE,INFO|}: ${2:comment}"],
+        "description": "Create a note comment"
+    },
+
+    "Todo comment (PHP)": {
+        "prefix": "todo",
+        "scope": "php",
+        "body": ["// TODO: ${2:comment}"],
+        "description": "Create a todo comment"
+    },
+
+    "Hack comment (PHP)": {
+        "prefix": "hack",
+        "scope": "php",
+        "body": ["// HACK: ${2:comment}"],
+        "description": "Create a hack comment"
+    },
+
+    "Fix comment (MD)": {
+        "prefix": "fix",
+        "scope": "markdown",
+        "body": ["<!-- ${1|FIX,BUG,ISSUE|}: ${2:comment} -->"],
+        "description": "Create a fix comment"
+    },
+
+    "Perf comment (MD)": {
+        "prefix": "perf",
+        "scope": "markdown",
+        "body": ["<!-- ${1|PERF,PERFORMANCE,OPTIMIZE|}: ${2:comment} -->"],
+        "description": "Create a perf comment"
+    },
+
+    "Test comment (MD)": {
+        "prefix": "test",
+        "scope": "markdown",
+        "body": ["<!-- ${1|TEST,TESTING,PASSED,FAILED|}: ${2:comment} -->"],
+        "description": "Create a test comment"
+    },
+
+    "Warn comment (MD)": {
+        "prefix": "warn",
+        "scope": "markdown",
+        "body": ["<!-- ${1|WARN,WARNING,XXX|}: ${2:comment} -->"],
+        "description": "Create a warn comment"
+    },
+
+    "Note comment (MD)": {
+        "prefix": "note",
+        "scope": "markdown",
+        "body": ["<!-- ${1|NOTE,INFO|}: ${2:comment} -->"],
+        "description": "Create a note comment"
+    },
+
+    "Todo comment (MD)": {
+        "prefix": "todo",
+        "scope": "markdown",
+        "body": ["<!-- TODO: ${2:comment} -->"],
+        "description": "Create a todo comment"
+    },
+
+    "Hack comment (MD)": {
+        "prefix": "hack",
+        "scope": "markdown",
+        "body": ["<!-- HACK: ${2:comment} -->"],
+        "description": "Create a hack comment"
+    },
+
+    "Fix comment (C#)": {
+        "prefix": "fix",
+        "scope": "csharp",
+        "body": ["// ${1|FIX,BUG,ISSUE|}: ${2:comment}"],
+        "description": "Create a fix comment"
+    },
+
+    "Perf comment (C#)": {
+        "prefix": "perf",
+        "scope": "csharp",
+        "body": ["// ${1|PERF,PERFORMANCE,OPTIMIZE|}: ${2:comment}"],
+        "description": "Create a perf comment"
+    },
+
+    "Test comment (C#)": {
+        "prefix": "test",
+        "scope": "csharp",
+        "body": ["// ${1|TEST,TESTING,PASSED,FAILED|}: ${2:comment}"],
+        "description": "Create a test comment"
+    },
+
+    "Warn comment (C#)": {
+        "prefix": "warn",
+        "scope": "csharp",
+        "body": ["// ${1|WARN,WARNING,XXX|}: ${2:comment}"],
+        "description": "Create a warn comment"
+    },
+
+    "Note comment (C#)": {
+        "prefix": "note",
+        "scope": "csharp",
+        "body": ["// ${1|NOTE,INFO|}: ${2:comment}"],
+        "description": "Create a note comment"
+    },
+
+    "Todo comment (C#)": {
+        "prefix": "todo",
+        "scope": "csharp",
+        "body": ["// TODO: ${2:comment}"],
+        "description": "Create a todo comment"
+    },
+
+    "Hack comment (C#)": {
+        "prefix": "hack",
+        "scope": "csharp",
+        "body": ["// HACK: ${2:comment}"],
+        "description": "Create a hack comment"
+    }
+}

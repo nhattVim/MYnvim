@@ -1,0 +1,27 @@
+{
+    "name": "User custom snippets",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "all",
+                "path": "./todo.json"
+            },
+            {
+                "language": "html",
+                "path": "./html.json"
+            },
+            {
+                "language": "cpp",
+                "path": "./cpp.json"
+            },
+            {
+                "language": "php",
+                "path": "./php.json"
+            },
+            {
+                "language": "markdown",
+                "path": "./markdown.json"
+            }
+        ]
+    }
+}
