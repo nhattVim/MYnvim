@@ -90,6 +90,16 @@ return {
                 end,
             },
 
+            lint_progress = {
+                function()
+                    local linters = require("lint").get_running()
+                    if #linters == 0 then
+                        return "󰦕"
+                    end
+                    return "󱉶 " .. table.concat(linters, ", ")
+                end,
+            },
+
             spell_icon = {
                 function()
                     return icons.Misc.Spell
@@ -178,6 +188,7 @@ return {
                     module.noice,
                     module.diagnostics,
                     module.lsp_clients,
+                    -- module.lint_progress,
                     -- module.spell_icon,
                     -- module.spell,
                     module.time_icon,
