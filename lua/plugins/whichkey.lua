@@ -120,17 +120,6 @@ return {
             },
 
             {
-                "<leader><leader>",
-                group = "Win",
-                { "<leader><leader>h", "<cmd>WinShift left<cr>", desc = "Move left" },
-                { "<leader><leader>j", "<cmd>WinShift down<cr>", desc = "Move down" },
-                { "<leader><leader>k", "<cmd>WinShift up<cr>", desc = "Move up" },
-                { "<leader><leader>l", "<cmd>WinShift right<cr>", desc = "Move right" },
-                { "<leader><leader>m", "<cmd>WinShift<cr>", desc = "Move mode" },
-                { "<leader><leader>p", "<cmd>lua require('nvim-window').pick()<cr>", desc = "Pick" },
-            },
-
-            {
                 "<leader>h",
                 group = "HL",
                 {

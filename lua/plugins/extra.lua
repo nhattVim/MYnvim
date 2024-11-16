@@ -47,17 +47,6 @@ return {
         opts = {},
     },
     {
-        "sindrets/winshift.nvim", -- Rearrange your windows with ease.
-        cmd = "WinShift",
-        opts = {},
-    },
-    {
-        "yorickpeterse/nvim-window", -- Window picker
-        opts = {
-            border = "rounded",
-        },
-    },
-    {
         "phaazon/hop.nvim", -- Neovim motions on speed!
         cmd = {
             "HopWord",

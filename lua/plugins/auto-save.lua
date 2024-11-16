@@ -1,7 +1,6 @@
 return {
     "okuuva/auto-save.nvim",
     cmd = "ASToggle",
-    -- event = { "InsertLeave", "TextChanged" },
     opts = {
         enabled = vim.g.autosave,
         debounce_delay = 500,
