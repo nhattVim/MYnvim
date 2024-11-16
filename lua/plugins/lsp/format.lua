@@ -2,7 +2,7 @@ return {
     "stevearc/conform.nvim",
     cmd = { "ConformInfo", "AutoFmtToggle" },
     dependencies = {
-        "zapling/mason-conform.nvim",
+        "zapling/mason-conform.nvim", -- Installer (Auto)
         opts = {},
     },
     keys = {

@@ -3,12 +3,12 @@ return {
     event = "LspAttach",
     dependencies = {
         -- Soure for cmp
-        "hrsh7th/cmp-nvim-lsp", -- source for lsp
-        "hrsh7th/cmp-buffer", -- source for text in buffer
-        "hrsh7th/cmp-path", -- source for file system paths
-        "hrsh7th/cmp-nvim-lua", -- source for cmp
+        "hrsh7th/cmp-nvim-lsp",     -- source for lsp
+        "hrsh7th/cmp-buffer",       -- source for text in buffer
+        "hrsh7th/cmp-path",         -- source for file system paths
+        "hrsh7th/cmp-nvim-lua",     -- source for cmp
         "saadparwaiz1/cmp_luasnip", -- source for LuaSnip autocompletion
-        "hrsh7th/cmp-calc", -- source for math calculation
+        "hrsh7th/cmp-calc",         -- source for math calculation
 
         {
             "tzachar/cmp-tabnine", -- source from AI
@@ -71,17 +71,17 @@ return {
                 ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
                 ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-                ["<C-e>"] = cmp.mapping.abort(), -- close completion window
+                ["<C-e>"] = cmp.mapping.abort(),        -- close completion window
             }),
             -- sources for autocompletion
             sources = cmp.config.sources({
                 { name = "cmp_tabnine" }, -- tabnine
-                { name = "nvim_lsp" }, -- lsp
-                { name = "nvim_lua" }, -- lua
-                { name = "luasnip" }, -- snippets
-                { name = "buffer" }, -- text within current buffer
-                { name = "path" }, -- file system paths
-                { name = "calc" }, -- calculation
+                { name = "nvim_lsp" },    -- lsp
+                { name = "nvim_lua" },    -- lua
+                { name = "luasnip" },     -- snippets
+                { name = "buffer" },      -- text within current buffer
+                { name = "path" },        -- file system paths
+                { name = "calc" },        -- calculation
             }),
             formatting = {
                 fields = { "kind", "abbr", "menu" },
