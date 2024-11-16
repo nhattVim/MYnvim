@@ -30,6 +30,11 @@ return {
         opts = {},
     },
     {
+        "glacambre/firenvim",
+        build = ":call firenvim#install(0)",
+        event = "VeryLazy",
+    },
+    {
         "windwp/nvim-ts-autotag", -- Auto tagging html tag
         ft = "html",
         opts = {},
