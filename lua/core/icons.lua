@@ -1,7 +1,9 @@
 return {
     Kind = {
-        Array = "",
-        Boolean = "",
+        -- Array = "",
+        Array = "[]",
+        -- Boolean = "",
+        Boolean = "",
         -- Class = "",
         Class = "󰠱",
         Color = "󰏘",
@@ -11,7 +13,8 @@ return {
         EnumMember = "",
         Event = "",
         Field = "󰜢",
-        File = "󰈙",
+        -- File = "󰈙",
+        File = "󰈚",
         Folder = "",
         Function = "󰊕",
         -- Interface = "",

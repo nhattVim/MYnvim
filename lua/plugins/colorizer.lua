@@ -3,7 +3,8 @@ return {
     event = "BufReadPre",
     opts = {
         render = "virtual",
-        virtual_symbol = "",
+        -- virtual_symbol = "",
+        virtual_symbol = "󱓻",
         enable_tailwind = true,
     },
 }
