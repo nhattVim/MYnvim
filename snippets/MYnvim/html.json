@@ -3,15 +3,14 @@
         "prefix": "@author",
         "body": [
             "<!-- ",
-            "Author  = nhattruongNeoVim",
+            "Author  = nhattVim",
             "Email   = nhattruong13112000@gmail.com",
-            "Github  = https://github.com/nhattruongNeoVim",
-            "Youtube = https://youtube.com/@nhattruongNeoVim",
+            "Github  = https://github.com/nhattVim",
             "Date    = $CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}",
             "File    = $TM_FILENAME",
             "-->"
         ],
-        "description": "@author = nhattruongNeoVim"
+        "description": "@author = nhattVim"
     },
 
     "html5": {
@@ -19,7 +18,7 @@
         "body": [
             "<!DOCTYPE html>",
             "<!-- ",
-            "Author  = nhattruongNeoVim",
+            "Author  = nhattVim",
             "Date    = $CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}",
             "File    = $TM_FILENAME",
             "-->",

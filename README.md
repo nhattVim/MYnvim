@@ -2,7 +2,7 @@
     <h1>MYnvim 💫</h1>
 </div>
 
-![](https://github.com/nhattruongNeoVim/assets/blob/master/MYnvim/rice1.png?raw=true)
+![](https://github.com/nhattVim/assets/blob/master/MYnvim/rice1.png?raw=true)
 
 ## Advice
 
@@ -11,7 +11,7 @@
 > You can use this script to set up your WSL (Ubuntu)
 >
 > ```
-> bash <(curl -sSL https://is.gd/nhattruongNeoVim_wsl)
+> bash <(curl -sSL https://is.gd/nhattVim_wsl)
 > ```
 
 ## Dependencies
@@ -61,10 +61,10 @@ mv ~/.local/share/nvim{,.bak}
 
 ```bash
 # Window
-git clone https://github.com/nhattruongNeoVim/MYnvim "$env:LOCALAPPDATA\nvim" --depth 1
+git clone https://github.com/nhattVim/MYnvim "$env:LOCALAPPDATA\nvim" --depth 1
 
 # Linux / Macos (unix)
-git clone https://github.com/nhattruongNeoVim/MYnvim ~/.config/nvim --depth 1
+git clone https://github.com/nhattVim/MYnvim ~/.config/nvim --depth 1
 ```
 
 - You can remove .git file with this command:
@@ -79,7 +79,7 @@ rm -rf ~/.config/nvim/.git
 
 Now just open neovim and enjoy.
 
-![](https://github.com/nhattruongNeoVim/assets/blob/master/MYnvim/rice2.png?raw=true)
+![](https://github.com/nhattVim/assets/blob/master/MYnvim/rice2.png?raw=true)
 
 ## Docker
 
@@ -108,7 +108,7 @@ sudo docker run -it --name MYnvim -v MYnvim-data:/root -v $HOME:/mnt archlinux:l
     pacman -Syu --noconfirm
     pacman -S --noconfirm base-devel curl wget unzip neovim python nodejs npm lazygit fzf ripgrep
     if [ ! -d \"\$HOME/.config/nvim\" ]; then
-        git clone https://github.com/nhattruongNeoVim/MYnvim \$HOME/.config/nvim --depth 1
+        git clone https://github.com/nhattVim/MYnvim \$HOME/.config/nvim --depth 1
     else
         cd \$HOME/.config/nvim && git pull
     fi
