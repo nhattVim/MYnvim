@@ -12,9 +12,11 @@ vim.o.guifont = "MesloLGS NF:h10"
 vim.g.neovide_floating_shadow = true
 
 -- Fix mouse
+vim.keymap.set({ "n", "v" }, "<LeftMouse><LeftMouse>", "")
+
 if vim.fn.has("win32") == 1 then
     -- local dir = "C:\\Games\\Unity\\UnityTutorial"
-    local dir = "C:\\Users\\nhatt\\UserData"
+    local dir = "C:\\Users\\nhatt\\Dev"
     if vim.loop.fs_stat(dir) then
         vim.cmd("cd " .. dir)
     else
