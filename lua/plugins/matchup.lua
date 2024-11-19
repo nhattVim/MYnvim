@@ -13,6 +13,7 @@ return {
             end)
         end
         vim.g.matchup_matchparen_offscreen = { method = "none" }
+        vim.cmd([[hi MatchParen gui=italic guifg=#ff966c]])
         require("match-up").setup({})
     end,
 }
