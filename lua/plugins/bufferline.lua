@@ -12,7 +12,7 @@ return {
             offsets = {
                 {
                     filetype = "NvimTree",
-                    text = "nhật trường",
+                    text = "nhattVim",
                     highlight = "Directory",
                     text_align = "center",
                     separator = true,

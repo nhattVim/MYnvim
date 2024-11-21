@@ -3,11 +3,9 @@ return {
     "booperlv/nvim-gomove",
     keys = {
         -- Move line in normal mode
-        { mode = "n", "<A-k>", "<Plug>GoNSMUp" },
         { mode = "n", "<A-j>", "<Plug>GoNSMDown" },
 
         -- Duplicate line in normal mode
-        { mode = "n", "<S-k>", "<Plug>GoNSDUp" },
         { mode = "n", "<S-j>", "<Plug>GoNSDDown" },
 
         -- Move block in visual mode

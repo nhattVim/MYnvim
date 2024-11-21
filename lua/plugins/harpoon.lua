@@ -1,7 +1,7 @@
 return {
     "ThePrimeagen/harpoon",
+    opts = {},
     config = function()
-        require("harpoon").setup()
         vim.api.nvim_create_autocmd("FileType", {
             pattern = "harpoon",
             callback = function()
