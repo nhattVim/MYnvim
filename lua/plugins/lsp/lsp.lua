@@ -77,7 +77,7 @@ return {
         -------------------------- mason --------------------------
 
         mason_lspconfig.setup({
-            automatic_installation = true,
+            ensure_installed = servers,
         })
 
         ------------------------ lspconfig ------------------------
@@ -90,12 +90,14 @@ return {
 
         -- Config servers
         for _, lsp in ipairs(servers) do
-            local opts = { capabilities = lsb_capabilities }
-            local has_custom_opts, custom_opts = pcall(require, "plugins.lsp.settings." .. lsp)
-            if has_custom_opts then
-                opts = vim.tbl_deep_extend("force", opts, custom_opts)
+            if lsp ~= "jdtls" then --> jdtls will be configured in jdtls.lua
+                local opts = { capabilities = lsb_capabilities }
+                local has_custom_opts, custom_opts = pcall(require, "plugins.lsp.settings." .. lsp)
+                if has_custom_opts then
+                    opts = vim.tbl_deep_extend("force", opts, custom_opts)
+                end
+                lspconfig[lsp].setup(opts)
             end
-            lspconfig[lsp].setup(opts)
         end
     end,
 }
