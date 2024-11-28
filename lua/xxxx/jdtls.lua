@@ -109,7 +109,7 @@ return {
                 bundles = {
                     vim.fn.glob(
                         mason_path
-                        .. "packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar",
+                            .. "packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar",
                         "\n"
                     ),
                 },

@@ -25,7 +25,7 @@ return {
             "cssls",
             "emmet_ls",
             "html",
-            -- "jdtls",
+            "jdtls",
             "lua_ls",
             "pyright",
             "tailwindcss",
@@ -90,14 +90,12 @@ return {
 
         -- Config servers
         for _, lsp in ipairs(servers) do
-            if lsp ~= "jdtls" then
-                local opts = { capabilities = lsb_capabilities }
-                local has_custom_opts, custom_opts = pcall(require, "plugins.lsp.settings." .. lsp)
-                if has_custom_opts then
-                    opts = vim.tbl_deep_extend("force", opts, custom_opts)
-                end
-                lspconfig[lsp].setup(opts)
+            local opts = { capabilities = lsb_capabilities }
+            local has_custom_opts, custom_opts = pcall(require, "plugins.lsp.settings." .. lsp)
+            if has_custom_opts then
+                opts = vim.tbl_deep_extend("force", opts, custom_opts)
             end
+            lspconfig[lsp].setup(opts)
         end
     end,
 }
