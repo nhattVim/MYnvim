@@ -2,10 +2,9 @@ return {
     "mfussenegger/nvim-jdtls",
     ft = { "java" },
     dependencies = {
-        "nvim-neotest/nvim-nio",
+        "nvim-neotest/nvim-nio", --> lib for debug feature
     },
     config = function()
-        local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
         local workspace_path = vim.fn.stdpath("data") .. "/site/java/jdtls-workspace/"
         local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
         local workspace_dir = workspace_path .. project_name
@@ -83,7 +82,7 @@ return {
             init_options = {
                 bundles = {
                     vim.fn.glob(
-                        mason_path
+                        vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
                             .. "packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
                     ),
                     "\n",
