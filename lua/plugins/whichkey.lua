@@ -192,6 +192,7 @@ return {
 
             {
                 "<leader>l",
+                mode = { "n", "v" },
                 group = "LSP",
                 { "<leader>lm", "<cmd>Mason<CR>", desc = "Mason" },
                 { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
