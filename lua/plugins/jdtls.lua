@@ -10,9 +10,9 @@ return {
         local workspace_dir = workspace_path .. project_name
         local install_path = require("mason-registry").get_package("jdtls"):get_install_path()
         local os
-        if vim.fn.has("macunix") then
+        if vim.fn.has("macunix") == 1 then
             os = "mac"
-        elseif vim.fn.has("win32") then
+        elseif vim.fn.has("win32") == 1 then
             os = "win"
         else
             os = "linux"
@@ -88,7 +88,18 @@ return {
                     "\n",
                 },
             },
+
+            on_attach = function()
+                local _, _ = pcall(vim.lsp.codelens.refresh)
+            end,
         }
+
+        vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+            pattern = { "*.java" },
+            callback = function()
+                local _, _ = pcall(vim.lsp.codelens.refresh)
+            end,
+        })
 
         jdtls.start_or_attach(config)
     end,
