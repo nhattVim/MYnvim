@@ -4,6 +4,7 @@ return {
     keys = {
         -- Move line in normal mode
         { mode = "n", "<A-j>", "<Plug>GoNSMDown" },
+        { mode = "n", "<A-k>", "<Plug>GoNSMUp" },
 
         -- Duplicate line in normal mode
         { mode = "n", "<S-j>", "<Plug>GoNSDDown" },
