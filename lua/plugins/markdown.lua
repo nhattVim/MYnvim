@@ -9,8 +9,8 @@ local color0_fg = "#323449"
 return {
     "MeanderingProgrammer/render-markdown.nvim",
     dependencies = {
-        "iamcco/markdown-preview.nvim",
-        build = "npm install",
+        -- "iamcco/markdown-preview.nvim",
+        -- build = "npm install",
     },
     ft = { "markdown", "Avante" },
     opts = {
