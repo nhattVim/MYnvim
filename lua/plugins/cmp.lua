@@ -17,6 +17,7 @@ return {
 
         {
             "monkoose/neocodeium", -- AI completion like GitHub Copilot
+            build = ":NeoCodeium auth",
             opts = {
                 silent = true,
             },
@@ -157,7 +158,7 @@ return {
         require("luasnip.loaders.from_vscode").lazy_load({ paths = lpath .. "/MYnvim" })
         require("luasnip.loaders.from_vscode").lazy_load({ paths = lpath .. "/bootstrap" })
         require("luasnip.loaders.from_vscode").lazy_load({ paths = lpath .. "/javascript" })
-        require("luasnip.loaders.from_vscode").lazy_load({ paths = lpath .. "/laravel" })
+        -- require("luasnip.loaders.from_vscode").lazy_load({ paths = lpath .. "/laravel" })
         -- require("luasnip.loaders.from_vscode").lazy_load({ paths = lpath .. "/laravel-blade1" })
         -- require("luasnip.loaders.from_vscode").lazy_load({ paths = lpath .. "/laravel-blade2" })
         -- require("luasnip.loaders.from_vscode").lazy_load({ paths = lpath .. "/codeigniter" })
