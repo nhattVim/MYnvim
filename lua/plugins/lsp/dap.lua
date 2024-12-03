@@ -2,12 +2,60 @@ return {
     "mfussenegger/nvim-dap",
     dependencies = {
         "rcarriga/nvim-dap-ui",
+        "nvim-neotest/nvim-nio",
     },
     config = function()
         local dap = require("dap")
         local dapui = require("dapui")
 
-        dapui.setup()
+        dapui.setup({
+            icons = { expanded = "▾", collapsed = "▸" },
+            mappings = {
+                expand = { "<CR>", "<2-LeftMouse>" },
+                open = "o",
+                remove = "d",
+                edit = "e",
+                repl = "r",
+                toggle = "t",
+            },
+            layouts = {
+                {
+                    elements = {
+                        -- Elements can be strings or table with id and size keys.
+                        { id = "scopes", size = 0.25 },
+                        "breakpoints",
+                        -- "stacks",
+                        -- "watches",
+                    },
+                    size = 40,
+                    position = "right",
+                },
+                {
+                    elements = {
+                        "repl",
+                        "console",
+                    },
+                    size = 0.25,
+                    position = "bottom",
+                },
+            },
+            floating = {
+                max_height = nil,
+                max_width = nil,
+                border = "single",
+                mappings = {
+                    close = { "q", "<Esc>" },
+                },
+            },
+            windows = { indent = 1 },
+            render = {
+                max_type_length = nil,
+            },
+        })
+
+        vim.fn.sign_define("DapBreakpoint", { text = "󰨰", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
+        vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "", linehl = "", numhl = "" })
+
         dap.listeners.before.attach.dapui_config = function()
             dapui.open()
         end

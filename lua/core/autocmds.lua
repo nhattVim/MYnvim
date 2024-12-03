@@ -1,4 +1,4 @@
---------------------------------------------------------- CMD  ---------------------------------------------------------
+--------------------------------------------------------- Auto CMD  ---------------------------------------------------------
 
 -- create augroup
 vim.api.nvim_create_augroup("nhattVim", { clear = true })
@@ -130,3 +130,20 @@ vim.api.nvim_create_autocmd("TermOpen", {
         vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
     end,
 })
+
+--------------------------------------------------------- User CMD  ---------------------------------------------------------
+
+-- command to compile debug file for cpp
+vim.api.nvim_create_user_command("CompileCppDebug", function()
+    local input = vim.fn.expand("%:p")
+    local output = vim.fn.expand("%:r") .. "_debug"
+    local cmd = string.format("g++ --debug %s -o %s", input, output)
+
+    local result = vim.fn.system(cmd)
+
+    if vim.v.shell_error ~= 0 then
+        vim.notify("Compilation failed:\n" .. result, vim.log.levels.ERROR)
+    else
+        vim.notify("Compilation successful: " .. output, vim.log.levels.INFO)
+    end
+end, { desc = "Compile the current C++ file with debug info" })
