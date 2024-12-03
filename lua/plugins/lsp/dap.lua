@@ -9,7 +9,7 @@ return {
         local dapui = require("dapui")
 
         dapui.setup({
-            icons = { expanded = "▾", collapsed = "▸" },
+            icons = { expanded = "", collapsed = "▸" },
             mappings = {
                 expand = { "<CR>", "<2-LeftMouse>" },
                 open = "o",
@@ -21,11 +21,10 @@ return {
             layouts = {
                 {
                     elements = {
-                        -- Elements can be strings or table with id and size keys.
                         { id = "scopes", size = 0.25 },
-                        "breakpoints",
-                        -- "stacks",
-                        -- "watches",
+                        { id = "breakpoints", size = 0.25 },
+                        { id = "stacks", size = 0.25 },
+                        { id = "watches", size = 0.25 },
                     },
                     size = 40,
                     position = "right",
@@ -35,21 +34,17 @@ return {
                         "repl",
                         "console",
                     },
-                    size = 0.25,
+                    size = 10,
                     position = "bottom",
                 },
             },
             floating = {
                 max_height = nil,
                 max_width = nil,
-                border = "single",
+                border = "rounded",
                 mappings = {
-                    close = { "q", "<Esc>" },
+                    ["close"] = { "q", "<Esc>" },
                 },
-            },
-            windows = { indent = 1 },
-            render = {
-                max_type_length = nil,
             },
         })
 
