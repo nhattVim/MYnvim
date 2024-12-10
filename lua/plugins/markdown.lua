@@ -10,7 +10,6 @@ return {
     "MeanderingProgrammer/render-markdown.nvim",
     dependencies = {
         "iamcco/markdown-preview.nvim",
-        -- build = "npm install",
         build = function()
             require("lazy").load({ plugins = { "markdown-preview.nvim" } })
             vim.fn["mkdp#util#install"]()
