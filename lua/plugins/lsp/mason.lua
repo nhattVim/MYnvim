@@ -1,5 +1,6 @@
 return {
     "williamboman/mason.nvim",
+    event = "VeryLazy",
     dependencies = {
         "jay-babu/mason-nvim-dap.nvim",
         opts = {
@@ -9,7 +10,6 @@ return {
             },
         },
     },
-    event = "VeryLazy",
     opts = {
         ui = {
             border = "rounded",

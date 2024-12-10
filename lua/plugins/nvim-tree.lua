@@ -15,6 +15,18 @@ return {
                     color = "#7aa2f7",
                     name = "Exe",
                 },
+                ["readme"] = {
+                    icon = "",
+                    color = "#ededed",
+                    cterm_color = "255",
+                    name = "Readme",
+                },
+                ["readme.md"] = {
+                    icon = "",
+                    color = "#ededed",
+                    cterm_color = "255",
+                    name = "Readme",
+                },
             },
         },
     },
