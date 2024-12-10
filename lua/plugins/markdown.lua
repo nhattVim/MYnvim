@@ -9,8 +9,12 @@ local color0_fg = "#323449"
 return {
     "MeanderingProgrammer/render-markdown.nvim",
     dependencies = {
-        -- "iamcco/markdown-preview.nvim",
+        "iamcco/markdown-preview.nvim",
         -- build = "npm install",
+        build = function()
+            require("lazy").load({ plugins = { "markdown-preview.nvim" } })
+            vim.fn["mkdp#util#install"]()
+        end,
     },
     ft = { "markdown", "Avante" },
     opts = {
