@@ -1,11 +1,13 @@
 return {
-    "nvchad/menu",
+    "nvzone/menu",
+    dependencies = "nvzone/volt",
     keys = {
         {
             mode = { "n", "v" },
             "<RightMouse>",
             function()
-                vim.cmd.exec('"normal! \\<RightMouse>"')
+                require("menu.utils").delete_old_menus()
+                vim.cmd.exec('"normal! <RightMouse>"')
 
                 local api = require("nvim-tree.api")
                 local node = api.tree.get_node_under_cursor
@@ -15,18 +17,18 @@ return {
 
                         {
                             name = "Color Picker",
+                            cmd = "CccPick",
+                        },
+
+                        {
+                            name = "Huefy",
                             cmd = function()
                                 require("minty.huefy").open({ border = true })
                             end,
                         },
 
                         {
-                            name = "Color Picker",
-                            cmd = "CccPick",
-                        },
-
-                        {
-                            name = "Color Shades",
+                            name = "Shades",
                             cmd = function()
                                 require("minty.shades").open({ border = true })
                             end,
@@ -149,9 +151,7 @@ return {
 
                         {
                             name = "Edit Config",
-                            cmd = function()
-                                vim.cmd("tabnew | cd " .. vim.fn.stdpath("config") .. " | e init.lua")
-                            end,
+                            cmd = "e $MYVIMRC | :cd %:p:h",
                         },
 
                         {
@@ -318,7 +318,8 @@ return {
                     },
                 }
 
-                local options = vim.bo.ft == "NvimTree" and main_menu.tree or main_menu.main
+                local buf = vim.api.nvim_win_get_buf(vim.fn.getmousepos().winid)
+                local options = vim.bo[buf].ft == "NvimTree" and main_menu.tree or main_menu.main
 
                 require("menu").open(options, { border = true, mouse = true })
             end,

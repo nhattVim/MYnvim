@@ -1,5 +1,6 @@
 return {
-    "nvchad/showkeys",
+    "nvzone/showkeys",
+    dependencies = "nvzone/volt",
     cmd = "ShowkeysToggle",
     opts = {
         timeout = 1,

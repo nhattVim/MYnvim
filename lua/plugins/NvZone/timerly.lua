@@ -1,5 +1,6 @@
 return {
-    "nvchad/timerly",
+    "nvzone/timerly",
+    dependencies = "nvzone/volt",
     cmd = "TimerlyToggle",
     opts = {
         on_finish = function()
