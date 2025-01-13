@@ -64,6 +64,8 @@ return {
             dapui.close()
         end
 
+        --------------------- Configure Adapters ---------------------
+
         dap.adapters.bashdb = {
             type = "executable",
             command = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/bash-debug-adapter",
@@ -75,6 +77,8 @@ return {
             command = "gdb",
             args = { "-i", "dap" },
         }
+
+        --------------------- Configure languages ---------------------
 
         dap.configurations.sh = {
             {

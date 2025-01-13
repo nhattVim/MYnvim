@@ -7,6 +7,8 @@ return {
             ensure_installed = {
                 "javadbg",
                 "codelldb",
+                "bash",
+                "cppdbg",
             },
         },
     },
