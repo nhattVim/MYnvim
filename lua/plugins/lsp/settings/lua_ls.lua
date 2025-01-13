@@ -27,7 +27,7 @@ return {
                 await = true,
                 paramName = "Disable", -- "All" | "Literal" | "Disable"
                 paramType = true,
-                semicolon = "All",   -- "All" | "SameLine" | "Disable"
+                semicolon = "All", -- "All" | "SameLine" | "Disable"
                 setType = false,
             },
             telemetry = {

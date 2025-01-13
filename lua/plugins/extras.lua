@@ -42,11 +42,6 @@ return {
         },
     },
     {
-        "LunarVim/bigfile.nvim",
-        event = "BufReadPre",
-        opts = {},
-    },
-    {
         "karb94/neoscroll.nvim", -- Smooth scroll
         event = "WinScrolled",
         opts = {},

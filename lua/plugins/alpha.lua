@@ -3,89 +3,63 @@ return {
     event = "VimEnter",
     config = function()
         local alpha = require("alpha")
+        local dashboard = require("alpha.themes.dashboard")
 
-        local function button(sc, txt, keybind)
-            local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
-
-            local opts = {
-                position = "center",
-                text = txt,
-                shortcut = sc,
-                cursor = 5,
-                width = 36,
-                align_shortcut = "right",
-                hl = "AlphaButtons",
-            }
-
-            if keybind then
-                opts.keymap = { "n", sc_, keybind, { noremap = true, silent = true } }
+        local function load_random_header()
+            math.randomseed(os.time())
+            local header_folder = vim.fn.stdpath("config") .. "/lua/plugins/ascii"
+            local files = vim.fn.globpath(header_folder, "*.lua", true, true)
+            if #files == 0 then
+                return nil
             end
-
-            return {
-                type = "button",
-                val = txt,
-                on_press = function()
-                    local key = vim.api.nvim_replace_termcodes(sc_, true, false, true) or ""
-                    vim.api.nvim_feedkeys(key, "normal", false)
-                end,
-                opts = opts,
-            }
+            local random_file = files[math.random(#files)]
+            local module_name = "plugins.ascii." .. random_file:match("([^/]+)%.lua$")
+            return require(module_name).header
         end
 
-        -- dynamic header padding
-        local fn = vim.fn
-        local marginTopPercent = 0.15
-        local headerPadding = fn.max({ 2, fn.floor(fn.winheight(0) * marginTopPercent) })
+        local function change_header()
+            local new_header = load_random_header()
+            if new_header then
+                dashboard.config.layout[2] = new_header
+                vim.cmd("AlphaRedraw")
+            else
+                print("No images inside img folder.")
+            end
+        end
 
-        local options = {
-            header = {
-                type = "text",
-                val = {
-                    [[                                                         ]],
-                    [[                                                         ]],
-                    [[                                                         ]],
-                    [[                                                         ]],
-                    [[                                                         ]],
-                    [[███╗   ███╗██╗   ██╗    ███╗   ██╗██╗   ██╗██╗███╗   ███╗]],
-                    [[████╗ ████║╚██╗ ██╔╝    ████╗  ██║██║   ██║██║████╗ ████║]],
-                    [[██╔████╔██║ ╚████╔╝     ██╔██╗ ██║██║   ██║██║██╔████╔██║]],
-                    [[██║╚██╔╝██║  ╚██╔╝      ██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║]],
-                    [[██║ ╚═╝ ██║   ██║       ██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║]],
-                    [[╚═╝     ╚═╝   ╚═╝       ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝]],
-                },
-                opts = {
-                    position = "center",
-                    hl = "AlphaHeader",
-                },
-            },
+        local header = load_random_header()
+        if header then
+            dashboard.config.layout[2] = header
+        else
+            print("No images inside img folder.")
+        end
 
-            buttons = {
-                type = "group",
-                val = {
-                    button("SPC f f", "  Find File  ", ":Telescope find_files<CR>"),
-                    button("SPC f o", "  Recent File  ", ":Telescope oldfiles<CR>"),
-                    button("SPC f w", "  Find Word  ", ":Telescope live_grep theme=ivy<CR>"),
-                    button("SPC f b", "  Bookmarks  ", ":Telescope marks theme=ivy<CR>"),
-                    button("SPC f t", "  Themes  ", ":Telescope colorscheme enable_preview=false<CR>"),
-                    button("SPC f s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
-                },
-                opts = {
-                    spacing = 1,
-                },
-            },
-
-            headerPaddingTop = { type = "padding", val = headerPadding },
-            headerPaddingBottom = { type = "padding", val = 2 },
+        dashboard.section.buttons.val = {
+            dashboard.button("SPC f f", "  Find File  ", ":Telescope find_files<CR>"),
+            dashboard.button("SPC f o", "  Recent File  ", ":Telescope oldfiles<CR>"),
+            dashboard.button("SPC f w", "  Find Word  ", ":Telescope live_grep theme=ivy<CR>"),
+            dashboard.button("SPC f b", "  Bookmarks  ", ":Telescope marks theme=ivy<CR>"),
+            dashboard.button("SPC f t", "  Themes  ", ":Telescope colorscheme enable_preview=false<CR>"),
+            dashboard.button("SPC f s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
+            dashboard.button("SPC c i", "  Change header image", function()
+                change_header()
+            end),
         }
 
-        alpha.setup({
-            layout = {
-                options.headerPaddingTop,
-                options.header,
-                options.headerPaddingBottom,
-                options.buttons,
-            },
-            opts = {},
+        vim.api.nvim_create_autocmd("User", {
+            desc = "Add Alpha dashboard footer",
+            once = true,
+            callback = function()
+                local stats = require("lazy").stats()
+                local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
+                dashboard.section.header.opts.hl = "DashboardFooter"
+                dashboard.section.footer.val =
+                    { " ", " Loaded " .. stats.count .. " plugins  in " .. ms .. " ms " }
+                pcall(vim.cmd.AlphaRedraw)
+            end,
         })
+
+        dashboard.opts.opts.noautocmd = true
+        alpha.setup(dashboard.opts)
     end,
 }
