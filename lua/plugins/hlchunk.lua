@@ -1,3 +1,23 @@
+local Colors = {
+    -- NOTE: Lighter
+    { fg = "#FF8A94" },
+    { fg = "#FFE19E" },
+    { fg = "#8AD5FF" },
+    { fg = "#FFC28B" },
+    { fg = "#B9F2A6" },
+    { fg = "#EFA6FF" },
+    { fg = "#82F0FF" },
+
+    -- NOTE: Darker
+    -- { fg = "#E06C75" },
+    -- { fg = "#E5C07B" },
+    -- { fg = "#61AFEF" },
+    -- { fg = "#D19A66" },
+    -- { fg = "#98C379" },
+    -- { fg = "#C678DD" },
+    -- { fg = "#56B6C2" },
+}
+
 return {
     "shellRaining/hlchunk.nvim",
     event = { "BufReadPre", "BufNewFile" },
@@ -26,6 +46,7 @@ return {
                 TelescopeResults = true,
                 ["leetcode.nvim"] = true,
             },
+            style = Colors,
             chars = {
                 -- "▎",
                 "│",
@@ -33,24 +54,23 @@ return {
                 -- "┆",
                 -- "┊",
             },
-            style = {
-                -- darker
-                -- "#E06C75",
-                -- "#E5C07B",
-                -- "#61AFEF",
-                -- "#D19A66",
-                -- "#98C379",
-                -- "#C678DD",
-                -- "#56B6C2",
-
-                -- lighter
-                "#FF8A94",
-                "#FFE19E",
-                "#8AD5FF",
-                "#FFC28B",
-                "#B9F2A6",
-                "#EFA6FF",
-                "#82F0FF",
+        },
+        blank = {
+            enable = true,
+            ahead_lines = 100,
+            style = Colors,
+            chars = {
+                " ․․․",
+                " ․․․",
+                " ․․․",
+                " ․․․",
+                " ․․․",
+                -- " ․․",
+                -- " ⁚⁚",
+                -- " ⁖⁖",
+                -- " ⁘⁘",
+                -- " ⁙⁙",
+                -- " ⁙⁙",
             },
         },
     },

@@ -128,6 +128,7 @@ return {
                     { "<leader>hdh", "<cmd>TSBufDisable highlight<CR>", desc = "Highlight" },
                     { "<leader>hdi", "<cmd>DisableHLIndent<CR>", desc = "Indent" },
                     { "<leader>hdc", "<cmd>DisableHLChunk<CR>", desc = "Chunk" },
+                    { "<leader>hdb", "<cmd>DisableHLBlank<CR>", desc = "Blank" },
                 },
                 {
                     "<leader>he",
@@ -135,6 +136,7 @@ return {
                     { "<leader>heh", "<cmd>TSBufEnable highlight<CR>", desc = "Highlight" },
                     { "<leader>hei", "<cmd>EnableHLIndent<CR>", desc = "Indent" },
                     { "<leader>hec", "<cmd>EnableHLChunk<CR>", desc = "Chunk" },
+                    { "<leader>heb", "<cmd>EnableHLBlank<CR>", desc = "Blank" },
                 },
             },
 
