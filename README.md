@@ -45,23 +45,24 @@
 
 ## Install
 
-- Make sure you have backup nvim and nvim-data
+- Make sure you have removed old nvim and nvim-data folders
 
 ```bash
-# Windows
-Move-Item "$env:LOCALAPPDATA\nvim" "$env:LOCALAPPDATA\nvim.bak"
-Move-Item "$env:LOCALAPPDATA\nvim-data" "$env:LOCALAPPDATA\nvim-data.bak"
+# Windows PowerShell
+rm -Force -Recurse ~\AppData\Local\nvim
+rm -Force -Recurse ~\AppData\Local\nvim-data
 
 # Linux / Macos (unix)
-mv ~/.config/nvim{,.bak}
-mv ~/.local/share/nvim{,.bak}
+rm -rf ~/.config/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.local/share/nvim
 ```
 
 - Then run this command:
 
 ```bash
 # Window
-git clone https://github.com/nhattVim/MYnvim "$env:LOCALAPPDATA\nvim" --depth 1
+git clone https://github.com/nhattVim/MYnvim ~/.config/nvim --depth 1
 
 # Linux / Macos (unix)
 git clone https://github.com/nhattVim/MYnvim ~/.config/nvim --depth 1
@@ -71,7 +72,7 @@ git clone https://github.com/nhattVim/MYnvim ~/.config/nvim --depth 1
 
 ```bash
 # Window
-Remove-Item -Path "$env:LOCALAPPDATA\nvim\.git" -Recurse -Force
+rm -Force -Recurse ~\AppData\Local\nvim\.git
 
 # Linux / Macos (unix)
 rm -rf ~/.config/nvim/.git
