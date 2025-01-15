@@ -7,7 +7,7 @@ return {
 
         local function load_random_header()
             math.randomseed(os.time())
-            local header_folder = vim.fn.stdpath("config") .. "/lua/plugins/ascii"
+            local header_folder = vim.fn.stdpath("config") .. "/lua/plugins/ascii/"
             local files = vim.fn.globpath(header_folder, "*.lua", true, true)
             if #files == 0 then
                 return nil
@@ -16,6 +16,8 @@ return {
             local random_file = files[math.random(#files)]
             local separator = package.config:sub(1, 1)
             local module_name = "plugins.ascii." .. random_file:match("([^" .. separator .. "]+)%.lua$")
+
+            package.loaded[module_name] = nil
 
             local ok, module = pcall(require, module_name)
             if ok and module.header then
@@ -49,7 +51,7 @@ return {
             dashboard.button("SPC f b", "  Bookmarks  ", ":Telescope marks theme=ivy<CR>"),
             dashboard.button("SPC f t", "  Themes  ", ":Telescope colorscheme enable_preview=false<CR>"),
             dashboard.button("SPC f s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
-            dashboard.button("SPC c i", "  Change header image", function()
+            dashboard.button("SPC c", "  Change header image", function()
                 change_header()
             end),
         }
