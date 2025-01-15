@@ -6,9 +6,7 @@ return {
         opts = {
             ensure_installed = {
                 "javadbg",
-                "codelldb",
                 "bash",
-                "cppdbg",
             },
         },
     },
