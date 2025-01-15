@@ -49,8 +49,8 @@
 
 ```bash
 # Windows PowerShell
-rm -Force -Recurse ~\AppData\Local\nvim
-rm -Force -Recurse ~\AppData\Local\nvim-data
+rm -Force -Recurse "$env:LOCALAPPDATA\nvim"
+rm -Force -Recurse "$env:LOCALAPPDATA\nvim-data"
 
 # Linux / Macos (unix)
 rm -rf ~/.config/nvim
@@ -62,7 +62,7 @@ rm -rf ~/.local/share/nvim
 
 ```bash
 # Window
-git clone https://github.com/nhattVim/MYnvim ~/.config/nvim --depth 1
+git clone https://github.com/nhattVim/MYnvim "$env:LOCALAPPDATA\nvim" --depth 1
 
 # Linux / Macos (unix)
 git clone https://github.com/nhattVim/MYnvim ~/.config/nvim --depth 1
@@ -72,7 +72,7 @@ git clone https://github.com/nhattVim/MYnvim ~/.config/nvim --depth 1
 
 ```bash
 # Window
-rm -Force -Recurse ~\AppData\Local\nvim\.git
+rm -Force -Recurse "$env:LOCALAPPDATA\nvim\.git"
 
 # Linux / Macos (unix)
 rm -rf ~/.config/nvim/.git
