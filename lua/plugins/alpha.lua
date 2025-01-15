@@ -12,9 +12,17 @@ return {
             if #files == 0 then
                 return nil
             end
+
             local random_file = files[math.random(#files)]
-            local module_name = "plugins.ascii." .. random_file:match("([^/]+)%.lua$")
-            return require(module_name).header
+            local separator = package.config:sub(1, 1)
+            local module_name = "plugins.ascii." .. random_file:match("([^" .. separator .. "]+)%.lua$")
+
+            local ok, module = pcall(require, module_name)
+            if ok and module.header then
+                return module.header
+            else
+                return nil
+            end
         end
 
         local function change_header()
@@ -47,19 +55,19 @@ return {
         }
 
         vim.api.nvim_create_autocmd("User", {
-            desc = "Add Alpha dashboard footer",
             once = true,
+            pattern = "LazyVimStarted",
             callback = function()
                 local stats = require("lazy").stats()
-                local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
-                dashboard.section.header.opts.hl = "DashboardFooter"
-                dashboard.section.footer.val =
-                    { " ", " Loaded " .. stats.count .. " plugins  in " .. ms .. " ms " }
+                local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+                dashboard.section.footer.val = {
+                    " ",
+                    " Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins  in " .. ms .. " ms ",
+                }
                 pcall(vim.cmd.AlphaRedraw)
             end,
         })
 
-        dashboard.opts.opts.noautocmd = true
         alpha.setup(dashboard.opts)
     end,
 }
