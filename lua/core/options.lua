@@ -12,7 +12,7 @@ local my_opts = {
     -- Global options
     globals = {
         mapleader   = " ",
-        transparent = false,
+        transparent = true,
         autoformat  = false,
         autosave    = false,
     },
