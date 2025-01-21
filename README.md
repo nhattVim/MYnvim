@@ -6,11 +6,31 @@
 
 ## Preview
 
+<!-- <div align="center"> -->
+<!--     <img width="50%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre1.png?raw=true'><img width="50%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre2.png?raw=true'> -->
+<!-- </div> -->
+<!-- <div align="center"> -->
+<!--     <img width="33%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre3.png?raw=true'><img width="33%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre4.png?raw=true'><img width="33%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre5.png?raw=true'> -->
+<!-- </div> -->
+
 <div align="center">
-    <img width="50%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre1.png?raw=true'><img width="50%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre2.png?raw=true'>
+    <table>
+        <tr>Theme Select</tr>
+        <tr>
+            <td><img width="50%" src="https://github.com/nhattVim/assets/blob/master/MYnvim/pre1.png?raw=true"/></td>
+            <td><img width="50%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre2.png?raw=true'"/></td>
+        </tr>
+    </table>
 </div>
+
 <div align="center">
-    <img width="33%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre3.png?raw=true'><img width="33%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre4.png?raw=true'><img width="33%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre5.png?raw=true'>
+    <table>
+        <tr>
+            <td><img width="50%" src="https://github.com/nhattVim/assets/blob/master/MYnvim/pre3.png?raw=true"/></td>
+            <td><img width="50%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre4.png?raw=true'"/></td>
+            <td><img width="50%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre5.png?raw=true'"/></td>
+        </tr>
+    </table>
 </div>
 
 ## Advice
