@@ -141,8 +141,6 @@ sudo docker start -ai MYnvim
 
 ## Core plugin
 
-<div align="center">
-
 | Name                                                                                            | Description                                                                                      | Optional?  |
 | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ---------- |
 | [alpha-nvim](https://github.com/goolord/alpha-nvim)                                             | a lua powered greeter like vim-startify / dashboard-nvim                                         |            |
@@ -209,11 +207,7 @@ sudo docker start -ai MYnvim
 | [whichkey.nvim](https://github.com/folke/which-key.nvim)                                        | popup mappings keysheet                                                                          | _Optional_ |
 | ...                                                                                             |                                                                                                  |            |
 
-</div>
-
 ## Game on neovim (extras)
-
-<div align="center">
 
 | Name                                                              | Description                                              |
 | ----------------------------------------------------------------- | -------------------------------------------------------- |
@@ -223,8 +217,6 @@ sudo docker start -ai MYnvim
 | [killersheep.nvim](https://github.com/seandewar/killersheep.nvim) | neovim port of killersheep (with blood!)                 |
 | [speedtyper.nvim](https://github.com/NStefan002/speedtyper.nvim)  | practise typing in Neovim                                |
 | ...                                                               |                                                          |
-
-</div>
 
 > **Congratulations!** at this point you have successfully configured your Neovim.
 >
