@@ -2,16 +2,11 @@
     <h1>MYnvim 💫</h1>
 </div>
 
-![](https://github.com/nhattVim/assets/blob/master/MYnvim/rice1.png?raw=true)
+<div align="center">
+    <table><tr><td><img src="https://github.com/nhattVim/assets/blob/master/MYnvim/rice1.png?raw=true"/></td></tr></table>
+</div>
 
 ## Preview
-
-<!-- <div align="center"> -->
-<!--     <img width="50%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre1.png?raw=true'><img width="50%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre2.png?raw=true'> -->
-<!-- </div> -->
-<!-- <div align="center"> -->
-<!--     <img width="33%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre3.png?raw=true'><img width="33%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre4.png?raw=true'><img width="33%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre5.png?raw=true'> -->
-<!-- </div> -->
 
 <div align="center">
     <table>
@@ -105,7 +100,9 @@ rm -rf ~/.config/nvim/.git
 
 Now just open neovim and enjoy.
 
-![](https://github.com/nhattVim/assets/blob/master/MYnvim/rice2.png?raw=true)
+<div align="center">
+    <table><tr><td><img src="https://github.com/nhattVim/assets/blob/master/MYnvim/rice2.png?raw=true"/></td></tr></table>
+</div>
 
 ## Docker
 
