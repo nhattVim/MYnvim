@@ -15,16 +15,10 @@
 
 <div align="center">
     <table>
-        <tr>Theme Select</tr>
         <tr>
             <td><img width="50%" src="https://github.com/nhattVim/assets/blob/master/MYnvim/pre1.png?raw=true"/></td>
             <td><img width="50%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre2.png?raw=true'"/></td>
         </tr>
-    </table>
-</div>
-
-<div align="center">
-    <table>
         <tr>
             <td><img width="50%" src="https://github.com/nhattVim/assets/blob/master/MYnvim/pre3.png?raw=true"/></td>
             <td><img width="50%" src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre4.png?raw=true'"/></td>
