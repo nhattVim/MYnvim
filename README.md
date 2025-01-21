@@ -20,9 +20,6 @@
             <td><img src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre2.png?raw=true'"/></td>
         </tr>
     </table>
-</div>
-
-<div align="center">
     <table>
         <tr>
             <td><img src="https://github.com/nhattVim/assets/blob/master/MYnvim/pre3.png?raw=true"/></td>
