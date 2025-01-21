@@ -2,9 +2,7 @@
     <h1>MYnvim 💫</h1>
 </div>
 
-<div align="center">
-    <table><tr><td><img src="https://github.com/nhattVim/assets/blob/master/MYnvim/rice1.png?raw=true"/></td></tr></table>
-</div>
+![](https://github.com/nhattVim/assets/blob/master/MYnvim/rice1.png?raw=true)
 
 ## Preview
 
@@ -12,14 +10,14 @@
     <table>
         <tr>
             <td><img src="https://github.com/nhattVim/assets/blob/master/MYnvim/pre1.png?raw=true"/></td>
-            <td><img src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre2.png?raw=true'"/></td>
+            <td><img src="https://github.com/nhattVim/assets/blob/master/MYnvim/pre2.png?raw=true"/></td>
         </tr>
     </table>
     <table>
         <tr>
             <td><img src="https://github.com/nhattVim/assets/blob/master/MYnvim/pre3.png?raw=true"/></td>
-            <td><img src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre4.png?raw=true'"/></td>
-            <td><img src='https://github.com/nhattVim/assets/blob/master/MYnvim/pre5.png?raw=true'"/></td>
+            <td><img src="https://github.com/nhattVim/assets/blob/master/MYnvim/pre4.png?raw=true"/></td>
+            <td><img src="https://github.com/nhattVim/assets/blob/master/MYnvim/pre5.png?raw=true"/></td>
         </tr>
     </table>
 </div>
@@ -100,9 +98,7 @@ rm -rf ~/.config/nvim/.git
 
 Now just open neovim and enjoy.
 
-<div align="center">
-    <table><tr><td><img src="https://github.com/nhattVim/assets/blob/master/MYnvim/rice2.png?raw=true"/></td></tr></table>
-</div>
+![](https://github.com/nhattVim/assets/blob/master/MYnvim/rice2.png?raw=true)
 
 ## Docker
 
@@ -144,6 +140,8 @@ sudo docker start -ai MYnvim
 ```
 
 ## Core plugin
+
+<div align="center">
 
 | Name                                                                                            | Description                                                                                      | Optional?  |
 | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ---------- |
@@ -211,7 +209,11 @@ sudo docker start -ai MYnvim
 | [whichkey.nvim](https://github.com/folke/which-key.nvim)                                        | popup mappings keysheet                                                                          | _Optional_ |
 | ...                                                                                             |                                                                                                  |            |
 
+</div>
+
 ## Game on neovim (extras)
+
+<div align="center">
 
 | Name                                                              | Description                                              |
 | ----------------------------------------------------------------- | -------------------------------------------------------- |
@@ -221,6 +223,8 @@ sudo docker start -ai MYnvim
 | [killersheep.nvim](https://github.com/seandewar/killersheep.nvim) | neovim port of killersheep (with blood!)                 |
 | [speedtyper.nvim](https://github.com/NStefan002/speedtyper.nvim)  | practise typing in Neovim                                |
 | ...                                                               |                                                          |
+
+</div>
 
 > **Congratulations!** at this point you have successfully configured your Neovim.
 >
