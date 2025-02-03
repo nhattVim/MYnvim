@@ -6,5 +6,6 @@ return {
         -- virtual_symbol = "",
         virtual_symbol = "󱓻",
         enable_tailwind = true,
+        exclude_filetypes = { "NvimTree" },
     },
 }
