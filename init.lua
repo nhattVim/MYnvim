@@ -17,6 +17,8 @@
 vim.loader.enable()
 ---------------------------------------------------------------------------
 
+_G.my_opts = _G.my_opts or {}
+
 if vim.g.neovide then
     -- Config for Neovide
     require("others.neovide")

@@ -21,11 +21,32 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- load plugins
+local importdata = {
+    { import = "plugins" },
+    { import = "plugins.lsp" },
+}
+
+-- load theme
+local theme = my_opts.themes or {}
+for key, _ in pairs(theme) do
+    table.insert(importdata, { import = "plugins.themes." .. key })
+end
+
+-- load language config
+local lang = my_opts.langs or {}
+for key, value in pairs(lang) do
+    if value then
+        table.insert(importdata, { import = "plugins.langs." .. key })
+    end
+end
+
 require("lazy").setup({
     spec = {
-        { import = "plugins" },
-        { import = "plugins.lsp" },
-        { import = "plugins.nvzone" },
+        -- { import = "plugins" },
+        -- { import = "plugins.lsp" },
+        -- { import = "plugins.nvzone" },
+        importdata,
     },
     ui = {
         title = " MYnvim ",
@@ -69,3 +90,11 @@ require("lazy").setup({
     },
     lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
 })
+
+if my_opts.themes then
+    local theme2 = ""
+    for _, value in pairs(my_opts.themes or {}) do
+        theme2 = value
+    end
+    pcall(vim.cmd.colorscheme, theme2)
+end

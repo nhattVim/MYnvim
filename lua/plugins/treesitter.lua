@@ -1,9 +1,20 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPost", "BufNewFile" },
+    event = { "BufRead", "VeryLazy" },
     build = ":TSUpdate",
-    config = function()
-        require("nvim-treesitter.configs").setup({
+    lazy = true,
+    cmd = {
+        "TSInstall",
+        "TSInstallInfo",
+        "TSInstallSync",
+        "TSUpdate",
+        "TSUpdateSync",
+        "TSUninstall",
+        "TSUninstallInfo",
+        "TSInstallFromGrammar",
+    },
+    opts = function()
+        return {
             highlight = {
                 enable = true,
                 disable = { "css" },
@@ -12,23 +23,31 @@ return {
                 enable = true,
             },
             ensure_installed = {
-                -- "json",
-                -- "javascript",
-                -- "typescript",
-                -- "tsx",
-                -- "yaml",
-                "java",
-                "html",
-                "bash",
                 "lua",
-                "cpp",
-                "c",
-                -- "vim",
-                -- "dockerfile",
-                -- "gitignore",
-                -- "query",
+                "luadoc",
+                "printf",
+                "vim",
+                "vimdoc",
             },
-            auto_install = true, -- make sure there languages will install
-        })
+            incremental_selection = {
+                enable = true,
+            },
+            autopairs = {
+                enable = true,
+            },
+        }
+    end,
+    config = function(_, opts)
+        if type(opts.ensure_installed) == "table" then
+            local added = {}
+            opts.ensure_installed = vim.tbl_filter(function(lang)
+                if added[lang] then
+                    return false
+                end
+                added[lang] = true
+                return true
+            end, opts.ensure_installed)
+        end
+        require("nvim-treesitter.configs").setup(opts)
     end,
 }
