@@ -2,7 +2,7 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-        "williamboman/mason-lspconfig.nvim", -- Installer (Auto)
+        "mason-org/mason-lspconfig.nvim", -- Installer (Auto)
         "nvimdev/lspsaga.nvim", -- improve neovim lsp experience
         "hrsh7th/cmp-nvim-lsp", -- supports LSP's capabilities
     },
@@ -97,7 +97,7 @@ return {
                 if has_custom_opts then
                     opts = vim.tbl_deep_extend("force", opts, custom_opts)
                 end
-                lspconfig[lsp].setup(opts)
+                vim.lsp.config(lsp, opts)
             end
         end
     end,

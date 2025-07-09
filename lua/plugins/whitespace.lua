@@ -1,11 +1,25 @@
 return {
     "mcauley-penney/visual-whitespace.nvim",
-    event = "ModeChanged",
+    event = "ModeChanged *:[vV\22]",
     opts = {
-        highlight = { link = "Visual" },
-        space_char = "·",
-        tab_char = "→",
-        cr_char = "",
-        nl_char = "",
+        match_types = {
+            space = true,
+            tab = true,
+            nbsp = false,
+            lead = false,
+            trail = false,
+        },
+        list_chars = {
+            space = "·",
+            tab = "→",
+            nbsp = "␣",
+            lead = "‹",
+            trail = "›",
+        },
+        fileformat_chars = {
+            unix = "",
+            mac = "",
+            dos = "",
+        },
     },
 }

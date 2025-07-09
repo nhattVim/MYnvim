@@ -87,3 +87,20 @@ end
 for key, val in pairs(my_opts.nvim) do
     vim.opt[key] = val
 end
+
+local is_wsl = vim.fn.has("wsl") == 1
+
+if is_wsl then
+    vim.g.clipboard = {
+        name = "win32yank-wsl",
+        copy = {
+            ["+"] = "win32yank.exe -i --crlf",
+            ["*"] = "win32yank.exe -i --crlf",
+        },
+        paste = {
+            ["+"] = "win32yank.exe -o --lf",
+            ["*"] = "win32yank.exe -o --lf",
+        },
+        cache_enabled = 0,
+    }
+end
