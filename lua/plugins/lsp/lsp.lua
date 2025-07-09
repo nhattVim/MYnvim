@@ -31,7 +31,7 @@ return {
             "tailwindcss",
             -- "tsserver",
             "jsonls",
-            "omnisharp",
+            -- "omnisharp",
             -- "csharp_ls",
             "rust_analyzer",
             -- "powershell_es",

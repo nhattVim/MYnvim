@@ -1,4 +1,5 @@
--- https://luals.github.io/wiki/settings/
+local vim = vim or { fn = { expand = function() return "" end, stdpath = function() return "" end } }
+
 return {
     settings = {
         Lua = {
@@ -27,11 +28,11 @@ return {
             },
             hint = {
                 enable = false,
-                arrayIndex = "Disable", -- "Enable" | "Auto" | "Disable"
+                arrayIndex = "Disable",
                 await = true,
-                paramName = "Disable", -- "All" | "Literal" | "Disable"
+                paramName = "Disable",
                 paramType = true,
-                semicolon = "All", -- "All" | "SameLine" | "Disable"
+                semicolon = "All",
                 setType = false,
             },
             telemetry = {
