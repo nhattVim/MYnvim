@@ -10,7 +10,7 @@ return {
                 style = "night",
                 light_style = "day",
                 transparent = vim.g.transparent,
-                terminal_colors = false,
+                terminal_colors = true,
                 styles = {
                     comments = { italic = true },
                     keywords = { italic = true },

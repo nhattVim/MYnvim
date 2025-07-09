@@ -88,6 +88,17 @@ for key, val in pairs(my_opts.nvim) do
     vim.opt[key] = val
 end
 
+---------------------------------------- WSL ----------------------------------------
+
+
+-- Install win32yank on wsl by this command:
+-- curl -LO https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip && \
+-- unzip win32yank-x64.zip && \
+-- chmod +x win32yank.exe && \
+-- sudo mv win32yank.exe /usr/local/bin/ && \
+-- rm win32yank-x64.zip
+
+
 local is_wsl = vim.fn.has("wsl") == 1
 
 if is_wsl then

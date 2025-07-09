@@ -56,7 +56,7 @@ return {
             },
         },
         blank = {
-            enable = true,
+            enable = false,
             ahead_lines = 100,
             style = Colors,
             chars = {
