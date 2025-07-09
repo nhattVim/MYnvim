@@ -92,7 +92,7 @@ end
 
 
 -- Install win32yank on wsl by this command:
--- curl -LO https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip && \
+-- curl -LO https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip && \
 -- unzip win32yank-x64.zip && \
 -- chmod +x win32yank.exe && \
 -- sudo mv win32yank.exe /usr/local/bin/ && \
