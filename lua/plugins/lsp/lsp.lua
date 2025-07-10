@@ -13,12 +13,6 @@ return {
         local lspconfig = require("lspconfig")
         local mason_lspconfig = require("mason-lspconfig")
         local lsb_capabilities = require("cmp_nvim_lsp").default_capabilities()
-        local signs = {
-            Error = " ",
-            Warn = " ",
-            Hint = "󰠠 ",
-            Info = " ",
-        }
         local servers = {
             "bashls",
             "clangd",
@@ -84,10 +78,16 @@ return {
         ------------------------ lspconfig ------------------------
 
         -- Change the Diagnostic symbols in the sign column (gutter)
-        for type, icon in pairs(signs) do
-            local hl = "DiagnosticSign" .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-        end
+        vim.diagnostic.config({
+            signs = {
+                text = {
+                    [vim.diagnostic.severity.ERROR] = "",
+                    [vim.diagnostic.severity.WARN] = "",
+                    [vim.diagnostic.severity.HINT] = "󰠠",
+                    [vim.diagnostic.severity.INFO] = "",
+                },
+            },
+        })
 
         -- Config servers
         for _, lsp in ipairs(servers) do
