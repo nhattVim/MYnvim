@@ -9,6 +9,7 @@ return {
             math.randomseed(os.time())
             local header_folder = vim.fn.stdpath("config") .. "/lua/others/ascii/"
             local files = vim.fn.globpath(header_folder, "*.lua", true, true)
+
             if #files == 0 then
                 return nil
             end
@@ -51,10 +52,12 @@ return {
             dashboard.button("SPC f b", "  Bookmarks  ", ":Telescope marks theme=ivy<CR>"),
             dashboard.button("SPC f t", "  Themes  ", ":Telescope colorscheme enable_preview=false<CR>"),
             dashboard.button("SPC f s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
-            dashboard.button("SPC c i", "  Change header image", function()
-                change_header()
-            end),
+            dashboard.button("SPC c i", "  Change header image", ":ChDbHeader<CR>"),
         }
+
+        vim.api.nvim_create_user_command("ChDbHeader", function()
+            vim.schedule(change_header)
+        end, {})
 
         vim.api.nvim_create_autocmd("User", {
             once = true,
