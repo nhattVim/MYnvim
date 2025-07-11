@@ -32,24 +32,40 @@ jobs:
           echo "_Last updated: $(date -u '+%Y-%m-%d %H:%M UTC')_" >> README.md
           echo "" >> README.md
 
-          # Tạo temp file chứa danh sách plugin từng nhóm
-          for group in core lsp ui tools; do
-            group_dir="lua/plugins/$group"
-            [ -d "$group_dir" ] || continue
+          declare -A printed_plugins grouped_plugins
 
+          # Quét tất cả plugin files (bỏ unused)
+          find lua/plugins -type f -name '*.lua' | grep -v '/unused/' | while read plugin; do
+            # Tìm tất cả "user/repo"
+            grep -oE '"[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+"' "$plugin" | sed 's/"//g' | while read name; do
+              # Bỏ nếu không phải GitHub repo (vd: /bin/bash hoặc $VIMRUNTIME)
+              [[ "$name" == /* || "$name" == \$* ]] && continue
+
+              # Bỏ nếu đã in
+              if [[ -n "$name" && -z "${printed_plugins[$name]}" ]]; then
+                printed_plugins["$name"]=1
+
+                # Xác định group
+                if [[ "$plugin" =~ lua/plugins/([^/]+)/ ]]; then
+                  group="${BASH_REMATCH[1]}"
+                else
+                  group="Ungrouped"
+                fi
+
+                grouped_plugins["$group"]+="$name"$'\n'
+              fi
+            done
+          done
+
+          # Ghi từng nhóm vào README
+          for group in "${!grouped_plugins[@]}"; do
             echo "## $(tr '[:lower:]' '[:upper:]' <<< ${group:0:1})${group:1} Plugins" >> README.md
             echo "" >> README.md
             echo "| Name | Description | Optional? |" >> README.md
             echo "| ---- | ----------- | --------- |" >> README.md
 
-            # Thu thập tên plugin theo dạng "user/repo"
-            grep -hoE '"[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+"' "$group_dir"/*.lua | \
-              sed 's/"//g' | \
-              sort -u > .cache/${group}_plugins.txt
-
             while read name; do
-              # Bỏ qua nếu không phải GitHub plugin
-              [[ "$name" == /* || "$name" == \$* || "$name" == *"nvim_runtime"* ]] && continue
+              [ -z "$name" ] && continue
 
               cache_file=".cache/$(echo "$name" | sed 's|/|_|g').json"
               if [ -f "$cache_file" ]; then
@@ -59,18 +75,16 @@ jobs:
                 desc=$(jq -r '.description' "$cache_file")
               fi
 
-              # Tìm xem plugin có đánh dấu optional trong bất kỳ file nào không
-              optional=false
-              for plugin_file in "$group_dir"/*.lua; do
-                grep -q "$name" "$plugin_file" && \
-                  grep -A5 "$name" "$plugin_file" | grep -Eq 'optional\s*=\s*true' && \
-                  optional=true && break
+              [ "$desc" = "null" ] && desc=""
+
+              # Check optional flag
+              optional=""
+              grep -rl "$name" lua/plugins | grep -v '/unused/' | while read file; do
+                grep -A5 "$name" "$file" | grep -qE 'optional\s*=\s*true' && optional="_Optional_" && break
               done
 
-              [ "$optional" = true ] && opt="_Optional_" || opt=""
-
-              echo "| [$name](https://github.com/$name) | $desc | $opt |" >> README.md
-            done < .cache/${group}_plugins.txt
+              echo "| [$name](https://github.com/$name) | $desc | $optional |" >> README.md
+            done <<< "${grouped_plugins[$group]}"
 
             echo "" >> README.md
           done
