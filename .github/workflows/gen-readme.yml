@@ -6,7 +6,7 @@ on:
       - "lua/plugins/**"
       - ".github/workflows/gen-readme.yml"
   workflow_dispatch:
-  
+
 permissions:
   contents: write
 
@@ -40,7 +40,7 @@ jobs:
           declare -A printed_plugins
           declare -A grouped_plugins_temp
 
-          # Tìm tất cả file plugin (bỏ unused)
+          # Find all plugins (ignore unused folder)
           mapfile -t plugin_files < <(find lua/plugins -type f -name '*.lua' | grep -v '/unused/')
 
           for plugin in "${plugin_files[@]}"; do
@@ -58,7 +58,7 @@ jobs:
                 if [[ "$plugin" =~ lua/plugins/([^/]+)/ ]]; then
                   group="${BASH_REMATCH[1]}"
                 else
-                  group="Ungrouped"
+                  group="Others"
                 fi
 
                 grouped_plugins_temp["$group"]+="$name"$'\n'
@@ -66,8 +66,13 @@ jobs:
             done
           done
 
-          # Ghi từng nhóm vào README
-          for group in "${!grouped_plugins_temp[@]}"; do
+          # Sort groups
+          mapfile -t sorted_groups < <(printf "%s\n" "${!grouped_plugins_temp[@]}" | grep -v '^Others$' | sort)
+          sorted_groups+=("Others")
+
+          for group in "${sorted_groups[@]}"; do
+            [ -z "${grouped_plugins_temp[$group]}" ] && continue
+
             echo "## $(tr '[:lower:]' '[:upper:]' <<< ${group:0:1})${group:1} Plugins" >> README.md
             echo "" >> README.md
             echo "| Name | Description | Optional? |" >> README.md
@@ -102,8 +107,13 @@ jobs:
             echo "" >> README.md
           done
 
-      - name: Upload generated README
-        uses: actions/upload-artifact@v4
-        with:
-          name: generated-readme
-          path: README.md
+          # Append footer if exists
+          [ -f .github/workflows/README.footer.md ] && cat .github/workflows/README.footer.md >> README.md
+
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md .cache || true
+          git commit -m "✅ Auto generate README $(date)" || echo "Nothing to commit"
+          git push
