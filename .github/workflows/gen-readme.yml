@@ -35,17 +35,19 @@ jobs:
           declare -A printed_plugins
           declare -A grouped_plugins_temp
 
-          # Quét tất cả plugin files (bỏ unused)
-          mapfile -t plugins < <(find lua/plugins -type f -name '*.lua' | grep -v '/unused/')
+          # Tìm tất cả file plugin (bỏ unused)
+          mapfile -t plugin_files < <(find lua/plugins -type f -name '*.lua' | grep -v '/unused/')
 
-          for plugin in "${plugins[@]}"; do
-            # Tìm tất cả "user/repo"
-            mapfile -t repos < <(grep -oE '"[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+"' "$plugin" | sed 's/"//g')
+          for plugin in "${plugin_files[@]}"; do
+            mapfile -t repos < <(
+              grep -oE '"[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+"' "$plugin" \
+                | sed 's/"//g' \
+                | grep -vE '^\.' \
+                | grep -vE '^\$'
+            )
 
             for name in "${repos[@]}"; do
-              [[ "$name" == /* || "$name" == \$* ]] && continue
-
-              if [[ -z "${printed_plugins[$name]}" ]]; then
+              if [[ -n "$name" && -z "${printed_plugins[$name]}" ]]; then
                 printed_plugins["$name"]=1
 
                 if [[ "$plugin" =~ lua/plugins/([^/]+)/ ]]; then
@@ -77,9 +79,9 @@ jobs:
                 desc=$(jq -r '.description' "$cache_file")
               fi
 
-              [ "$desc" = "null" ] && desc=""
+              [[ "$desc" == "null" ]] && desc=""
 
-              # Check optional flag
+              # Check optional
               optional=""
               files=$(grep -rl "$name" lua/plugins | grep -v '/unused/' || true)
               for file in $files; do
