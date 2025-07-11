@@ -15,8 +15,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Lua and dependencies
-        uses: leafo/gh-actions-lua@v9
+      - name: Setup Lua
+        uses: leafo/setup-lua@v1
+        with:
+          lua-version: "5.4"
 
       - name: Install jq for JSON parsing
         run: |
