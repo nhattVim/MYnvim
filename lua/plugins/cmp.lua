@@ -11,7 +11,7 @@ return {
         "hrsh7th/cmp-calc", -- source for math calculation
 
         {
-            "tzachar/cmp-tabnine", -- source from AI
+            "tzachar/cmp-tabnine", -- source from AI (Optional)
             build = vim.fn.has("win32") == 1 and "powershell ./install.ps1" or "./install.sh",
         },
 

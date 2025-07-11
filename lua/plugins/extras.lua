@@ -1,7 +1,7 @@
 return {
     { "nvim-lua/plenary.nvim" }, -- Library used by other plugins ( Very Important! )
     {
-        "stevearc/dressing.nvim", -- Improve the default vim.ui interfaces
+        "stevearc/dressing.nvim", -- Improve the default vim.ui interfaces (Optional)
         event = "VeryLazy",
     },
     {
