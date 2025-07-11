@@ -6,6 +6,9 @@ on:
       - "lua/plugins/**"
       - ".github/workflows/gen-readme.yml"
   workflow_dispatch:
+  
+permissions:
+  contents: write
 
 jobs:
   generate-readme:
@@ -75,7 +78,7 @@ jobs:
               if [ -f "$cache_file" ]; then
                 desc=$(jq -r '.description' "$cache_file")
               else
-                curl -s "https://api.github.com/repos/$name" -o "$cache_file"
+                curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$name" -o "$cache_file"
                 desc=$(jq -r '.description' "$cache_file")
               fi
 
