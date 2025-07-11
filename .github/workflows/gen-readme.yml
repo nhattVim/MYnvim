@@ -26,7 +26,7 @@ jobs:
       - name: Run README generator
         run: |
           mkdir -p .cache
-          cp README.header.md README.md
+          cp .github/workflows/README.header.md README.md
           echo "" >> README.md
           echo "_Last updated: $(date -u '+%Y-%m-%d %H:%M UTC')_" >> README.md
           echo "" >> README.md
