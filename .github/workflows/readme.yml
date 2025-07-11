@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - "lua/plugins/**"
-      - ".github/workflows/gen-readme.yml"
+      - ".github/workflows/readme.yml"
   workflow_dispatch:
 
 permissions:
