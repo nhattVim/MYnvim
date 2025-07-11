@@ -1,3 +1,5 @@
+<p align="right"><em>Last updated: 2025-07-11 08:08 UTC</em></p>
+
 <div align="center">
     <h1>MYnvim 💫</h1>
 </div>

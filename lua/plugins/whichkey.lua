@@ -295,7 +295,7 @@ return {
                 { "<leader>dq", "<cmd>lua require('dap').close()<cr>", desc = "Quit" },
                 { "<leader>dg", "<cmd>lua require('dap').session()<cr>", desc = "Get Session" },
                 { "<leader>ds", "<cmd>lua require('dap').step_out()<cr>", desc = "Step Out" },
-                { "<leader>dc", "<cmd>lua require('dap').continue()<cr>", desc = "Start/Continue" },
+                { "<leader>dc", "<cmd>lua require('dap').continue()<cr>", desc = "Start + Continue" },
                 { "<leader>di", "<cmd>lua require('dap').step_into()<cr>", desc = "Step Into" },
                 { "<leader>dt", "<cmd>lua require('dap').step_back()<cr>", desc = "Step Back" },
                 { "<leader>do", "<cmd>lua require('dap').step_over()<cr>", desc = "Step Over" },

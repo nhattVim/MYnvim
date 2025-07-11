@@ -34,7 +34,7 @@ jobs:
           mkdir -p .cache
           cp .github/workflows/README.header.md README.md
           echo "" >> README.md
-          echo "_Last updated: $(date -u '+%Y-%m-%d %H:%M UTC')_" >> README.md
+          echo "_Last updated: $(date -u -d '+7 hour' '+%Y-%m-%d %H:%M UTC+7')_" >> README.md
           echo "" >> README.md
 
           declare -A printed_plugins
@@ -117,5 +117,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md .cache || true
-          git commit -m "✅ Auto generate README $(date -u '+%Y-%m-%d %H:%M UTC')" || echo "Nothing to commit"
+          git commit -m "✅ Auto generate README on $(date -u -d '+7 hour' '+%Y-%m-%d %H:%M UTC+7')" || echo "Nothing to commit"
           git push
