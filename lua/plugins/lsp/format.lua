@@ -31,7 +31,7 @@ return {
                 html = { "prettier" },
                 json = { "prettier" },
                 yaml = { "prettier" },
-                markdown = { "prettierd" },
+                markdown = { "prettier" },
                 graphql = { "prettier" },
                 lua = { "stylua" },
                 python = { "isort", "black" },
@@ -47,7 +47,7 @@ return {
                         -- "-style={IndentWidth: 4, SpacesInParentheses: true, SpaceBeforeParens: Always}",
                     },
                 },
-                prettier = {
+                prettierd = {
                     prepend_args = { "--tab-width", "4" },
                 },
                 stylua = {
