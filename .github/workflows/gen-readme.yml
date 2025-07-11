@@ -79,8 +79,12 @@ jobs:
 
               # Check optional flag
               optional=""
-              grep -rl "$name" lua/plugins | grep -v '/unused/' | while read file; do
-                grep -A5 "$name" "$file" | grep -qE 'optional\s*=\s*true' && optional="_Optional_" && break
+              files=$(grep -rl "$name" lua/plugins | grep -v '/unused/' || true)
+              for file in $files; do
+                if grep -A5 "$name" "$file" | grep -qE 'optional\s*=\s*true'; then
+                  optional="_Optional_"
+                  break
+                fi
               done
 
               echo "| [$name](https://github.com/$name) | $desc | $optional |" >> README.md
