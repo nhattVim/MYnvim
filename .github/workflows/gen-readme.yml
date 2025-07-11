@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
+
       - name: Setup Lua
         uses: ljmf00/setup-lua@v1.0.0
 
@@ -24,6 +24,7 @@ jobs:
           sudo apt-get install -y jq
 
       - name: Run README generator
+        shell: bash
         run: |
           mkdir -p .cache
           cp .github/workflows/README.header.md README.md
@@ -31,8 +32,7 @@ jobs:
           echo "_Last updated: $(date -u '+%Y-%m-%d %H:%M UTC')_" >> README.md
           echo "" >> README.md
 
-          declare -A printed_plugins
-
+          # Tạo temp file chứa danh sách plugin từng nhóm
           for group in core lsp ui tools; do
             group_dir="lua/plugins/$group"
             [ -d "$group_dir" ] || continue
@@ -42,37 +42,41 @@ jobs:
             echo "| Name | Description | Optional? |" >> README.md
             echo "| ---- | ----------- | --------- |" >> README.md
 
-            find "$group_dir" -type f -name '*.lua' | while read plugin; do
-              # Bỏ qua nếu trong thư mục unused
-              [[ "$plugin" == *"/unused/"* ]] && continue
+            # Thu thập tên plugin theo dạng "user/repo"
+            grep -hoE '"[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+"' "$group_dir"/*.lua | \
+              sed 's/"//g' | \
+              sort -u > .cache/${group}_plugins.txt
 
-              # Tìm tất cả plugin dạng "user/repo"
-              grep -oE '"[^"]+/[^"]+"' "$plugin" | sed 's/"//g' | sort -u | while read name; do
-                if [[ -n "$name" && -z "${printed_plugins[$name]}" ]]; then
-                  printed_plugins[$name]=1
+            while read name; do
+              # Bỏ qua nếu không phải GitHub plugin
+              [[ "$name" == /* || "$name" == \$* || "$name" == *"nvim_runtime"* ]] && continue
 
-                  cache_file=".cache/$(echo "$name" | sed 's|/|_|g').json"
-                  if [ -f "$cache_file" ]; then
-                    desc=$(jq -r '.description' "$cache_file")
-                  else
-                    curl -s "https://api.github.com/repos/$name" -o "$cache_file"
-                    desc=$(jq -r '.description' "$cache_file")
-                  fi
+              cache_file=".cache/$(echo "$name" | sed 's|/|_|g').json"
+              if [ -f "$cache_file" ]; then
+                desc=$(jq -r '.description' "$cache_file")
+              else
+                curl -s "https://api.github.com/repos/$name" -o "$cache_file"
+                desc=$(jq -r '.description' "$cache_file")
+              fi
 
-                  # Check optional flag
-                  optional=$(grep -A5 "$name" "$plugin" | grep -Eq 'optional\s*=\s*true' && echo '_Optional_' || echo '')
-
-                  echo "| [$name](https://github.com/$name) | $desc | $optional |" >> README.md
-                fi
+              # Tìm xem plugin có đánh dấu optional trong bất kỳ file nào không
+              optional=false
+              for plugin_file in "$group_dir"/*.lua; do
+                grep -q "$name" "$plugin_file" && \
+                  grep -A5 "$name" "$plugin_file" | grep -Eq 'optional\s*=\s*true' && \
+                  optional=true && break
               done
-            done
+
+              [ "$optional" = true ] && opt="_Optional_" || opt=""
+
+              echo "| [$name](https://github.com/$name) | $desc | $opt |" >> README.md
+            done < .cache/${group}_plugins.txt
 
             echo "" >> README.md
           done
-          
+
       - name: Upload generated README
         uses: actions/upload-artifact@v4
         with:
           name: generated-readme
           path: README.md
-
