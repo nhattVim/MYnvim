@@ -69,9 +69,10 @@ jobs:
 
             echo "" >> README.md
           done
-
-      - name: Commit updated README
-        uses: stefanzweifel/git-auto-commit-action@v5
+          
+      - name: Upload generated README
+        uses: actions/upload-artifact@v4
         with:
-          commit_message: "chore: auto-generate README for plugins"
-          file_pattern: README.md
+          name: generated-readme
+          path: README.md
+
