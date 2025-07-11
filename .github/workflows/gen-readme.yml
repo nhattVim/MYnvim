@@ -28,6 +28,8 @@ jobs:
 
       - name: Run README generator
         shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p .cache
           cp .github/workflows/README.header.md README.md
