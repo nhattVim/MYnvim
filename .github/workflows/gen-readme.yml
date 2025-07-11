@@ -1,0 +1,77 @@
+name: Generate README for Plugins
+
+on:
+  push:
+    paths:
+      - "lua/plugins/**"
+      - ".github/workflows/gen-readme.yml"
+  workflow_dispatch:
+
+jobs:
+  generate-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Lua and dependencies
+        uses: leafo/gh-actions-lua@v9
+
+      - name: Install jq for JSON parsing
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+      - name: Run README generator
+        run: |
+          mkdir -p .cache
+          cp README.header.md README.md
+          echo "" >> README.md
+          echo "_Last updated: $(date -u '+%Y-%m-%d %H:%M UTC')_" >> README.md
+          echo "" >> README.md
+
+          declare -A printed_plugins
+
+          for group in core lsp ui tools; do
+            group_dir="lua/plugins/$group"
+            [ -d "$group_dir" ] || continue
+
+            echo "## $(tr '[:lower:]' '[:upper:]' <<< ${group:0:1})${group:1} Plugins" >> README.md
+            echo "" >> README.md
+            echo "| Name | Description | Optional? |" >> README.md
+            echo "| ---- | ----------- | --------- |" >> README.md
+
+            find "$group_dir" -type f -name '*.lua' | while read plugin; do
+              # Bỏ qua nếu trong thư mục unused
+              [[ "$plugin" == *"/unused/"* ]] && continue
+
+              # Tìm tất cả plugin dạng "user/repo"
+              grep -oE '"[^"]+/[^"]+"' "$plugin" | sed 's/"//g' | sort -u | while read name; do
+                if [[ -n "$name" && -z "${printed_plugins[$name]}" ]]; then
+                  printed_plugins[$name]=1
+
+                  cache_file=".cache/$(echo "$name" | sed 's|/|_|g').json"
+                  if [ -f "$cache_file" ]; then
+                    desc=$(jq -r '.description' "$cache_file")
+                  else
+                    curl -s "https://api.github.com/repos/$name" -o "$cache_file"
+                    desc=$(jq -r '.description' "$cache_file")
+                  fi
+
+                  # Check optional flag
+                  optional=$(grep -A5 "$name" "$plugin" | grep -Eq 'optional\s*=\s*true' && echo '_Optional_' || echo '')
+
+                  echo "| [$name](https://github.com/$name) | $desc | $optional |" >> README.md
+                fi
+              done
+            done
+
+            echo "" >> README.md
+          done
+
+      - name: Commit updated README
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: auto-generate README for plugins"
+          file_pattern: README.md
