@@ -251,8 +251,12 @@ return {
                 { "<leader>uc", "<cmd>CccPick<cr>", desc = "CccPick" },
                 { "<leader>uu", "<cmd>ShowkeysToggle<cr>", desc = "ShowKeys" },
                 { "<leader>us", "<cmd>ScrollViewToggle<cr>", desc = "Scrollbar" },
-                -- { "<leader>us", "<cmd>CodeSnapPreviewOn<cr>", desc = "Snap code" },
-                -- { "<leader>ua", "<cmd>ASToggle<cr>", desc = "AutoSave" },
+                {
+                    "<leader>ut",
+                    group = "Typr",
+                    { "<leader>uts", "<cmd>Typr<CR>", desc = "Start" },
+                    { "<leader>uta", "<cmd>TyprStats<CR>", desc = "Achievements" },
+                },
                 {
                     "<leader>ul",
                     function()

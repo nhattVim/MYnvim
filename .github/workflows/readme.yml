@@ -46,11 +46,17 @@ jobs:
           mapfile -t plugin_files < <(find lua/plugins -type f -name '*.lua' | grep -v '/unused/')
 
           for plugin in "${plugin_files[@]}"; do
+          
+            # mapfile -t repos < <(
+            #   grep -oE '"[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+"' "$plugin" \
+            #     | sed 's/"//g' \
+            #     | grep -vE '^\.' \
+            #     | grep -vE '^\$'
+            # )
+
             mapfile -t repos < <(
-              grep -oE '"[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+"' "$plugin" \
-                | sed 's/"//g' \
-                | grep -vE '^\.' \
-                | grep -vE '^\$'
+              grep -oE '^[[:space:]]*[^-[:space:]][^"]*"([a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+)"' "$plugin" \
+                | sed 's/.*"\(.*\)".*/\1/'
             )
 
             for name in "${repos[@]}"; do
