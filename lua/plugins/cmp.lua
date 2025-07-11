@@ -8,7 +8,7 @@ return {
         "hrsh7th/cmp-path", -- source for file system paths
         "hrsh7th/cmp-nvim-lua", -- source for cmp
         "saadparwaiz1/cmp_luasnip", -- source for LuaSnip autocompletion
-        "hrsh7th/cmp-calc", -- source for math calculation
+        "hrsh7th/cmp-calc", -- source for math calculation (Optional)
 
         {
             "tzachar/cmp-tabnine", -- source from AI (Optional)
@@ -16,7 +16,7 @@ return {
         },
 
         {
-            "monkoose/neocodeium", -- AI completion like GitHub Copilot
+            "monkoose/neocodeium", -- AI completion like GitHub Copilot (Optional)
             build = ":NeoCodeium auth",
             opts = {
                 silent = true,
@@ -28,7 +28,7 @@ return {
             version = "v2.*",
             build = vim.fn.has("win32") == 1 and "" or "make install_jsregexp",
             dependencies = {
-                "rafamadriz/friendly-snippets",
+                "rafamadriz/friendly-snippets", -- Optional
             },
         },
     },

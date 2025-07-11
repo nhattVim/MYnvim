@@ -1,5 +1,5 @@
 return {
-    "brenoprata10/nvim-highlight-colors", -- Colorizer
+    "brenoprata10/nvim-highlight-colors", -- Colorizer (Optional)
     event = "BufReadPre",
     opts = {
         render = "virtual",

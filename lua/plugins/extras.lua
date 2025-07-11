@@ -5,7 +5,7 @@ return {
         event = "VeryLazy",
     },
     {
-        "mg979/vim-visual-multi", -- Multiple cursors plugin for vim/neovim
+        "mg979/vim-visual-multi", -- Multiple cursors plugin for vim/neovim (Optional)
         event = "VeryLazy",
     },
     {

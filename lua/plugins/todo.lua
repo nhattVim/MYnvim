@@ -1,5 +1,5 @@
 return {
-    "folke/todo-comments.nvim",
+    "folke/todo-comments.nvim", -- Highlight todo comments (Optional)
     event = "VeryLazy",
     opts = {
         -- PERF: fully optimised

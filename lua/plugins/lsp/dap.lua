@@ -2,7 +2,7 @@ return {
     "mfussenegger/nvim-dap",
     dependencies = {
         "rcarriga/nvim-dap-ui",
-        "nvim-neotest/nvim-nio",
+        "nvim-neotest/nvim-nio", -- A library for asynchronous IO (Optional)
     },
     config = function()
         local dap = require("dap")

@@ -1,5 +1,5 @@
 return {
-    "mcauley-penney/visual-whitespace.nvim",
+    "mcauley-penney/visual-whitespace.nvim", -- Highlight whitespace (Optional)
     event = "ModeChanged *:[vV\22]",
     opts = {
         match_types = {

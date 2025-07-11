@@ -32,9 +32,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p .cache
-          cp .github/workflows/README.header.md README.md
+
+          echo "<p align='right'><em>Last updated: $(date -u -d '+7 hour' '+%Y-%m-%d %H:%M UTC+7')</em></p>" > README.md
           echo "" >> README.md
-          echo "_Last updated: $(date -u -d '+7 hour' '+%Y-%m-%d %H:%M UTC+7')_" >> README.md
+
+          cat .github/workflows/README.header.md >> README.md
           echo "" >> README.md
 
           declare -A printed_plugins
@@ -110,7 +112,7 @@ jobs:
           rm -rf .cache
 
           # Append footer if exists
-          [ -f .github/workflows/README.footer.md ] && cat .github/workflows/README.footer.md >> README.md
+          cat .github/workflows/README.footer.md >> README.md
 
       - name: Commit & Push
         run: |
