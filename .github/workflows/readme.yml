@@ -107,6 +107,8 @@ jobs:
             echo "" >> README.md
           done
 
+          rm -rf .cache
+
           # Append footer if exists
           [ -f .github/workflows/README.footer.md ] && cat .github/workflows/README.footer.md >> README.md
 
@@ -115,5 +117,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md .cache || true
-          git commit -m "✅ Auto generate README $(date)" || echo "Nothing to commit"
+          git commit -m "✅ Auto generate README $(date -u '+%Y-%m-%d %H:%M UTC')" || echo "Nothing to commit"
           git push
