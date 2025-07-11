@@ -41,6 +41,7 @@ jobs:
 
           declare -A printed_plugins
           declare -A grouped_plugins_temp
+          declare -A plugin_to_group
 
           # Find all plugins (ignore unused folder)
           mapfile -t plugin_files < <(find lua/plugins -type f -name '*.lua' | grep -v '/unused/')
@@ -53,34 +54,47 @@ jobs:
                 | grep -vE '^\$'
             )
 
+            if [[ "$plugin" =~ lua/plugins/([^/]+)/ ]]; then
+              group="${BASH_REMATCH[1]}"
+            else
+              group="Others"
+            fi
+
             for name in "${repos[@]}"; do
-              if [[ -n "$name" && -z "${printed_plugins[$name]}" ]]; then
-                printed_plugins["$name"]=1
-
-                if [[ "$plugin" =~ lua/plugins/([^/]+)/ ]]; then
-                  group="${BASH_REMATCH[1]}"
-                else
-                  group="Others"
-                fi
-
-                grouped_plugins_temp["$group"]+="$name"$'\n'
-              fi
+              plugin_to_group["$name"]="$group"
+              grouped_plugins_temp["$group"]+="$name"$'\n'
             done
           done
 
+          # Deduplicate plugin list
+          declare -A final_plugins
+          for group in "${!grouped_plugins_temp[@]}"; do
+            while read -r name; do
+              [ -z "$name" ] && continue
+              if [[ -z "${final_plugins[$name]}" ]]; then
+                final_plugins["$name"]=1
+              fi
+            done <<< "${grouped_plugins_temp[$group]}"
+          done
+
           # Sort groups
-          mapfile -t sorted_groups < <(printf "%s\n" "${!grouped_plugins_temp[@]}" | grep -v '^Others$' | sort)
+          mapfile -t sorted_groups < <(printf "%s\n" "${plugin_to_group[@]}" | grep -v '^Others$' | sort -u)
           sorted_groups+=("Others")
 
           for group in "${sorted_groups[@]}"; do
-            [ -z "${grouped_plugins_temp[$group]}" ] && continue
+            plugins_in_group=()
+            for name in "${!plugin_to_group[@]}"; do
+              [[ "${plugin_to_group[$name]}" == "$group" ]] && plugins_in_group+=("$name")
+            done
+
+            [ ${#plugins_in_group[@]} -eq 0 ] && continue
 
             echo "## $(tr '[:lower:]' '[:upper:]' <<< ${group:0:1})${group:1} Plugins" >> README.md
             echo "" >> README.md
             echo "| Name | Description | Optional? |" >> README.md
             echo "| ---- | ----------- | --------- |" >> README.md
 
-            while read -r name; do
+            for name in "${plugins_in_group[@]}"; do
               [ -z "$name" ] && continue
 
               cache_file=".cache/$(echo "$name" | sed 's|/|_|g').json"
@@ -104,7 +118,7 @@ jobs:
               done
 
               echo "| [$name](https://github.com/$name) | $desc | $optional |" >> README.md
-            done <<< "${grouped_plugins_temp[$group]}"
+            done
 
             echo "" >> README.md
           done
