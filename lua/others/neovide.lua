@@ -1,4 +1,3 @@
----@diagnostic disable: undefined-field
 -- Import neovim configuration
 require("core.autocmds")
 require("core.options")
@@ -14,12 +13,29 @@ vim.g.neovide_floating_shadow = true
 -- Fix mouse
 vim.keymap.set({ "n", "v" }, "<LeftMouse><LeftMouse>", "")
 
-if vim.fn.has("win32") == 1 then
-    -- local dir = "C:\\Games\\Unity\\UnityTutorial"
-    local dir = "C:\\Users\\nhatt\\Dev"
-    if vim.loop.fs_stat(dir) then
+-- Open last directory
+local last = vim.fn.stdpath("data") .. "/last_dir.txt"
+local f = io.open(last, "r")
+if f then
+    local dir = f:read("*l")
+    f:close()
+    if dir and dir ~= "" and vim.fn.isdirectory(dir) == 1 then
         vim.cmd("cd " .. dir)
     else
         vim.cmd("cd ~")
     end
+else
+    vim.cmd("cd ~")
 end
+
+-- Save last directory
+vim.api.nvim_create_autocmd("VimLeavePre", {
+    callback = function()
+        vim.fn.mkdir(vim.fn.stdpath("data"), "p")
+        local success, fw = pcall(io.open, last, "w")
+        if success and fw then
+            fw:write(vim.fn.getcwd())
+            fw:close()
+        end
+    end,
+})
