@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2025-07-12 08:31 UTC+7</em></p>
+<p align='right'><em>Last updated: 2025-07-12 14:15 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -167,6 +167,7 @@ sudo docker start -ai MYnvim
 | [nvzone/volt](https://github.com/nvzone/volt) | Plugin for creating reactive UI  in neovim |  |
 | [nvzone/timerly](https://github.com/nvzone/timerly) | Beautiful countdown timer plugin for Neovim |  |
 | [nvzone/menu](https://github.com/nvzone/menu) | Menu plugin for neovim ( supports nested menus ) made using volt |  |
+| [nvzone/floaterm](https://github.com/nvzone/floaterm) | Beautiful floating terminal manager for Neovim |  |
 | [nvzone/typr](https://github.com/nvzone/typr) | Most Beautiful Typing practice plugin for Neovim with dashboard |  |
 
 ## Ui Plugins
