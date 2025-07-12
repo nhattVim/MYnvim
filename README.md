@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2025-07-12 15:21 UTC+7</em></p>
+<p align='right'><em>Last updated: 2025-07-12 20:41 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -179,6 +179,7 @@ sudo docker start -ai MYnvim
 | [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim) | a lua powered greeter like vim-startify / dashboard-nvim |  |
 | [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim) | 🏙  A clean, dark Neovim theme written in Lua, with support for lsp, treesitter and lots of plugins. Includes additional themes for Kitty, Alacritty, iTerm and Fish. |  |
 | [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim) | A snazzy bufferline for Neovim |  |
+| [Darazaki/indent-o-matic](https://github.com/Darazaki/indent-o-matic) | Dumb automatic fast indentation detection for Neovim written in Lua | _Optional_ |
 | [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) | A blazing fast and easy to configure neovim statusline plugin written in pure lua. |  |
 | [Owen-Dechow/nvim_json_graph_view](https://github.com/Owen-Dechow/nvim_json_graph_view) | JSON explorer using Neovim's terminal interface. | _Optional_ |
 | [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors) | Highlight colors for neovim | _Optional_ |
