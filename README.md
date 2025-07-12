@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2025-07-12 08:15 UTC+7</em></p>
+<p align='right'><em>Last updated: 2025-07-12 08:31 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -174,12 +174,12 @@ sudo docker start -ai MYnvim
 | Name | Description | Optional? |
 | ---- | ----------- | --------- |
 | [dstein64/nvim-scrollview](https://github.com/dstein64/nvim-scrollview) | A Neovim plugin that displays interactive vertical scrollbars and signs. | _Optional_ |
-| [jinh0/eyeliner.nvim](https://github.com/jinh0/eyeliner.nvim) | 👀 Move faster with unique f/F indicators. |  |
+| [jinh0/eyeliner.nvim](https://github.com/jinh0/eyeliner.nvim) | 👀 Move faster with unique f/F indicators. | _Optional_ |
 | [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim) | a lua powered greeter like vim-startify / dashboard-nvim |  |
 | [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim) | 🏙  A clean, dark Neovim theme written in Lua, with support for lsp, treesitter and lots of plugins. Includes additional themes for Kitty, Alacritty, iTerm and Fish. |  |
 | [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim) | A snazzy bufferline for Neovim |  |
 | [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) | A blazing fast and easy to configure neovim statusline plugin written in pure lua. |  |
-| [Owen-Dechow/nvim_json_graph_view](https://github.com/Owen-Dechow/nvim_json_graph_view) | JSON explorer using Neovim's terminal interface. |  |
+| [Owen-Dechow/nvim_json_graph_view](https://github.com/Owen-Dechow/nvim_json_graph_view) | JSON explorer using Neovim's terminal interface. | _Optional_ |
 | [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors) | Highlight colors for neovim | _Optional_ |
 | [HiPhish/rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim) | Rainbow delimiters for Neovim with Tree-sitter |  |
 | [shellRaining/hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim) | This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed |  |
