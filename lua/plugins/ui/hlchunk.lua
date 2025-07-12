@@ -23,6 +23,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "HiPhish/rainbow-delimiters.nvim", -- Rainbow pairs
+        "Darazaki/indent-o-matic", -- Guess indent automatically (Optional)
     },
     opts = {
         chunk = {
