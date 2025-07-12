@@ -21,12 +21,27 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local function import_plugin()
+    local plugin_base = "plugins"
+    local full_path = vim.fn.stdpath("config") .. "/lua/" .. plugin_base
+    local imports = {}
+
+    table.insert(imports, { import = plugin_base })
+
+    for _, folder in ipairs(vim.fn.globpath(full_path, "*", true, true)) do
+        if vim.fn.isdirectory(folder) == 1 then
+            if vim.fn.globpath(folder, "*.lua", false, true)[1] then
+                local name = vim.fn.fnamemodify(folder, ":t")
+                table.insert(imports, { import = plugin_base .. "." .. name })
+            end
+        end
+    end
+
+    return imports
+end
+
 require("lazy").setup({
-    spec = {
-        { import = "plugins" },
-        { import = "plugins.lsp" },
-        { import = "plugins.nvzone" },
-    },
+    spec = import_plugin(),
     ui = {
         title = " MYnvim ",
         title_pos = "left",
