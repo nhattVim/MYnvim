@@ -1,6 +1,5 @@
 return {
-    -- NOTE: Move faster with unique f/F indicators
-    "jinh0/eyeliner.nvim",
+    "jinh0/eyeliner.nvim", -- NOTE: Move fasterwith unique f/F indicators (Optional)
     keys = {
         { "f" },
         { "F" },
