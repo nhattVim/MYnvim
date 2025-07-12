@@ -36,41 +36,34 @@ return {
                     hl.AlphaHeader = {
                         fg = c.c2,
                     }
+
                     hl.AlphaButtons = {
                         fg = c.c1,
                     }
+
                     hl.FloatBorder = {
                         fg = c.c4,
                     }
+
                     hl.FloatTitle = {
                         fg = c.c4,
                     }
+
                     hl.TelescopeBorder = {
                         fg = c.c4,
                     }
 
-                    local transparent = vim.g.transparent and "NONE" or c.bg_dark
+                    -- Fix transparency on buffferline & lualine
+                    if vim.g.transparent then
+                        -- Tabs
+                        hl.TabLineFill = { bg = "NONE" }
 
-                    -- Base UI
-                    hl.Normal = { bg = transparent }
-                    hl.NormalNC = { bg = transparent }
+                        -- Lualine
+                        hl.StatusLine = { bg = "NONE" }
 
-                    -- Tabs
-                    hl.TabLineFill = { bg = transparent }
-                    hl.TabLine = { bg = transparent }
-                    hl.TabLineSel = { bg = transparent }
-
-                    -- Bufferline
-                    hl.BufferLineFill = { bg = transparent }
-                    hl.BufferLineBackground = { bg = transparent }
-                    hl.BufferLineSeparator = { fg = c.c1, bg = transparent }
-                    hl.BufferLineTab = { fg = c.comment, bg = transparent }
-                    hl.BufferLineTabSelected = { fg = c.fg, bg = transparent }
-                    hl.BufferLineIndicatorSelected = { fg = c.fg, bg = transparent }
-
-                    -- Lualine
-                    hl.StatusLine = { bg = "NONE", fg = c.fg }
-                    hl.StatusLineNC = { bg = "NONE", fg = c.comment }
+                        -- Bufferline
+                        hl.BufferLineSeparator = { fg = c.c1 }
+                    end
                 end,
             })
 
