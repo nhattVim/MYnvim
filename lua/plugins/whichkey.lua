@@ -165,7 +165,7 @@ return {
 
             {
                 "<leader>f",
-                name = "Find",
+                group = "Find",
                 { "<leader>fb", "<cmd>Telescope marks<cr>", desc = "Find bookmarks" },
                 { "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Find oldfiles" },
                 { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find files" },
