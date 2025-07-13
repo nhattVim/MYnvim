@@ -2,13 +2,23 @@
 require("core.autocmds")
 require("core.options")
 require("core.keymaps")
+
 -- Neovide must not transparent
 vim.g.transparent = false
+
+-- Lazy load
 require("core.lazy")
 
 -- Config for Neovide
-vim.o.guifont = "MesloLGS NF:h10"
+vim.o.guifont = "MesloLGS NF:h12"
 vim.g.neovide_floating_shadow = true
+vim.opt.linespace = 4
+
+-- Set title color
+vim.g.neovide_title_background_color =
+    string.format("%x", vim.api.nvim_get_hl(0, { id = vim.api.nvim_get_hl_id_by_name("Normal") }).bg)
+vim.g.neovide_title_text_color =
+    string.format("%x", vim.api.nvim_get_hl(0, { id = vim.api.nvim_get_hl_id_by_name("Normal") }).bg)
 
 -- Fix mouse
 vim.keymap.set({ "n", "v" }, "<LeftMouse><LeftMouse>", "")
