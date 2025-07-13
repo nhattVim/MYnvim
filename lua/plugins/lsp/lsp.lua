@@ -13,9 +13,9 @@ return {
         local mason_lspconfig = require("mason-lspconfig")
         local lsb_capabilities = require("cmp_nvim_lsp").default_capabilities()
         local installed_servers = mason_lspconfig.get_installed_servers()
-        local servers = {}
         local seen = {}
-        local default_servers = {
+        local servers = {}
+        local def_servers = {
             "lua_ls",
             "html",
             "cssls",
@@ -26,7 +26,7 @@ return {
             "clangd",
         }
 
-        for _, s in ipairs(default_servers) do
+        for _, s in ipairs(def_servers) do
             servers[#servers + 1] = s
             seen[s] = true
         end
