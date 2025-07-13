@@ -10,30 +10,33 @@ return {
         ------------------------- variable ------------------------
 
         local saga = require("lspsaga")
-        local lspconfig = require("lspconfig")
         local mason_lspconfig = require("mason-lspconfig")
         local lsb_capabilities = require("cmp_nvim_lsp").default_capabilities()
-        local servers = {
-            "bashls",
-            "clangd",
-            "cssls",
-            "emmet_ls",
-            "html",
-            "jdtls",
+        local installed_servers = mason_lspconfig.get_installed_servers()
+        local servers = {}
+        local seen = {}
+        local default_servers = {
             "lua_ls",
-            "pyright",
+            "html",
+            "cssls",
             "tailwindcss",
+            "emmet_ls",
             "eslint",
-            -- "ast_grep",
             "ts_ls",
-            "jsonls",
-            -- "omnisharp",
-            -- "csharp_ls",
-            "rust_analyzer",
-            -- "powershell_es",
-            -- "intelephense",
-            -- "dockerls",
+            "clangd",
         }
+
+        for _, s in ipairs(default_servers) do
+            servers[#servers + 1] = s
+            seen[s] = true
+        end
+
+        for _, s in ipairs(installed_servers) do
+            if not seen[s] then
+                servers[#servers + 1] = s
+                seen[s] = true
+            end
+        end
 
         ------------------------- lspsaga -------------------------
 
