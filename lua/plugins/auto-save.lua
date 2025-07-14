@@ -10,6 +10,4 @@ return {
             cancel_deferred_save = { "InsertEnter" },
         },
     },
-    
-    
 }
