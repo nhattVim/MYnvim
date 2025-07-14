@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2025-07-14 17:05 UTC+7</em></p>
+<p align='right'><em>Last updated: 2025-07-14 19:01 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -140,7 +140,6 @@ sudo docker run -it --name MYnvim -v MYnvim-data:/root -v $HOME:/mnt archlinux:l
 # Then run this command every time you want to run MYnvim
 sudo docker start -ai MYnvim
 ```
-
 
 ## Lsp Plugins
 
