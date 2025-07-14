@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2025-07-13 14:06 UTC+7</em></p>
+<p align='right'><em>Last updated: 2025-07-14 17:05 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -157,7 +157,6 @@ sudo docker start -ai MYnvim
 | [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | Quickstart configs for Nvim LSP |  |
 | [rcarriga/nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui) | A UI for nvim-dap |  |
 | [jay-babu/mason-nvim-dap.nvim](https://github.com/jay-babu/mason-nvim-dap.nvim) |  |  |
-
 ## Nvzone Plugins
 
 | Name | Description | Optional? |
@@ -169,7 +168,6 @@ sudo docker start -ai MYnvim
 | [nvzone/menu](https://github.com/nvzone/menu) | Menu plugin for neovim ( supports nested menus ) made using volt |  |
 | [nvzone/floaterm](https://github.com/nvzone/floaterm) | Beautiful floating terminal manager for Neovim |  |
 | [nvzone/typr](https://github.com/nvzone/typr) | Most Beautiful Typing practice plugin for Neovim with dashboard |  |
-
 ## Ui Plugins
 
 | Name | Description | Optional? |
@@ -185,7 +183,6 @@ sudo docker start -ai MYnvim
 | [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors) | Highlight colors for neovim | _Optional_ |
 | [HiPhish/rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim) | Rainbow delimiters for Neovim with Tree-sitter |  |
 | [shellRaining/hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim) | This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed |  |
-
 ## Others Plugins
 
 | Name | Description | Optional? |
