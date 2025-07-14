@@ -13,37 +13,37 @@ permissions:
 jobs:
   generate-readme:
     runs-on: ubuntu-latest
+    env:
+      README_FILE: README.md
+      HEADER_FILE: .github/readme/README.header.md
+      PLUGIN_FILE: .github/readme/README.plugins.md
+      FOOTER_FILE: .github/readme/README.footer.md
+      PLUGIN_FILE_TMP: .README.plugins.md
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Lua
         uses: ljmf00/setup-lua@v1.0.0
 
-      - name: Install jq for JSON parsing
+      - name: Install jq
         run: |
           sudo apt-get update
           sudo apt-get install -y jq
 
-      - name: Run README generator
-        shell: bash
+      - name: Generate plugin list
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
           mkdir -p .cache
+          
+          > "$PLUGIN_FILE_TMP"
 
-          echo "<p align='right'><em>Last updated: $(date -u -d '+7 hour' '+%Y-%m-%d %H:%M UTC+7')</em></p>" > README.md
-          echo "" >> README.md
-
-          cat .github/readme/README.header.md >> README.md
-          echo "" >> README.md
-
-          declare -A printed_plugins
-          declare -A grouped_plugins_temp
           declare -A plugin_to_group
+          declare -A grouped_plugins_temp
 
-          # Find all plugins (ignore unused folder)
           mapfile -t plugin_files < <(find lua/plugins -type f -name '*.lua' | grep -v '/unused/')
 
           for plugin in "${plugin_files[@]}"; do
@@ -66,18 +66,14 @@ jobs:
             done
           done
 
-          # Deduplicate plugin list
           declare -A final_plugins
           for group in "${!grouped_plugins_temp[@]}"; do
             while read -r name; do
               [ -z "$name" ] && continue
-              if [[ -z "${final_plugins[$name]}" ]]; then
-                final_plugins["$name"]=1
-              fi
+              final_plugins["$name"]=1
             done <<< "${grouped_plugins_temp[$group]}"
           done
 
-          # Sort groups
           mapfile -t sorted_groups < <(printf "%s\n" "${plugin_to_group[@]}" | grep -v '^Others$' | sort -u)
           sorted_groups+=("Others")
 
@@ -86,13 +82,12 @@ jobs:
             for name in "${!plugin_to_group[@]}"; do
               [[ "${plugin_to_group[$name]}" == "$group" ]] && plugins_in_group+=("$name")
             done
-
             [ ${#plugins_in_group[@]} -eq 0 ] && continue
 
-            echo "## $(tr '[:lower:]' '[:upper:]' <<< ${group:0:1})${group:1} Plugins" >> README.md
-            echo "" >> README.md
-            echo "| Name | Description | Optional? |" >> README.md
-            echo "| ---- | ----------- | --------- |" >> README.md
+            echo "## $(tr '[:lower:]' '[:upper:]' <<< ${group:0:1})${group:1} Plugins" >> "$PLUGIN_FILE_TMP"
+            echo "" >> "$PLUGIN_FILE_TMP"
+            echo "| Name | Description | Optional? |" >> "$PLUGIN_FILE_TMP"
+            echo "| ---- | ----------- | --------- |" >> "$PLUGIN_FILE_TMP"
 
             for name in "${plugins_in_group[@]}"; do
               [ -z "$name" ] && continue
@@ -106,8 +101,6 @@ jobs:
               fi
 
               [[ "$desc" == "null" ]] && desc=""
-
-              # Check optional
               optional=""
               files=$(grep -rl "$name" lua/plugins | grep -v '/unused/' || true)
               for file in $files; do
@@ -117,21 +110,45 @@ jobs:
                 fi
               done
 
-              echo "| [$name](https://github.com/$name) | $desc | $optional |" >> README.md
+              echo "| [$name](https://github.com/$name) | $desc | $optional |" >> "$PLUGIN_FILE_TMP"
             done
-
-            echo "" >> README.md
           done
 
           rm -rf .cache
 
-          # Append footer if exists
-          cat .github/readme/README.footer.md >> README.md
+      - name: Compare plugin list content
+        id: compare
+        run: |
+          if cmp -s "$PLUGIN_FILE_TMP" "$PLUGIN_FILE"; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
 
-      - name: Commit & Push
+      - name: Finalize full README if changed
+        if: steps.compare.outputs.changed == 'true'
+        run: |
+          mv "$PLUGIN_FILE_TMP" "$PLUGIN_FILE"
+
+          {
+            echo "<p align='right'><em>Last updated: $(date -u -d '+7 hour' '+%Y-%m-%d %H:%M UTC+7')</em></p>"
+            echo ""
+            cat "$HEADER_FILE"
+            echo ""
+            cat "$PLUGIN_FILE"
+            echo ""
+            cat "$FOOTER_FILE"
+          } > "$README_FILE"
+
+      - name: Commit & Push if changed
+        if: steps.compare.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md || true
-          git commit -m "✅ Auto generate README on $(date -u -d '+7 hour' '+%Y-%m-%d %H:%M UTC+7')" || echo "Nothing to commit"
-          git push
+          git add "$README_FILE" "$PLUGIN_FILE"
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "✅ Update plugin README on $(date -u -d '+7 hour' '+%Y-%m-%d %H:%M UTC+7')"
+            git push
+          fi
