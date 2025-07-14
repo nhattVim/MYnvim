@@ -122,6 +122,8 @@ jobs:
 
               echo "| [$name](https://github.com/$name) | $desc | $optional |" >> "$PLUGIN_FILE_TMP"
             done
+
+            echo "" >> "$PLUGIN_FILE_TMP"
           done
 
           rm -rf .cache
