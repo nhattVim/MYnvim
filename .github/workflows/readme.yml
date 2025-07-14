@@ -11,6 +11,10 @@ on:
         description: "Force update README even if nothing changed"
         required: false
         default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 permissions:
   contents: write
@@ -18,6 +22,7 @@ permissions:
 jobs:
   generate-readme:
     runs-on: ubuntu-latest
+
     env:
       README_FILE: README.md
       HEADER_FILE: .github/readme/README.header.md
@@ -137,7 +142,7 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Finalize full README if changed
+      - name: Finalize full README if changed or forced
         if: steps.compare.outputs.changed == 'true'
         run: |
           mv "$PLUGIN_FILE_TMP" "$PLUGIN_FILE"
@@ -152,11 +157,13 @@ jobs:
             cat "$FOOTER_FILE"
           } > "$README_FILE"
 
-      - name: Commit & Push if changed
+      - name: Commit & Push if changed or forced
         if: steps.compare.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "$README_FILE" "$PLUGIN_FILE"
-          git commit -m "🤖 Auto generate README on $(date -u -d '+7 hour' '+%Y-%m-%d %H:%M UTC+7')"
+          git commit \
+            -m "chore(readme): 🤖 Auto-generate README" \
+            -m "Updated at: $(date -u -d '+7 hour' '+%Y-%m-%d %H:%M UTC+7')"
           git push
