@@ -138,4 +138,3 @@ sudo docker run -it --name MYnvim -v MYnvim-data:/root -v $HOME:/mnt archlinux:l
 # Then run this command every time you want to run MYnvim
 sudo docker start -ai MYnvim
 ```
-
