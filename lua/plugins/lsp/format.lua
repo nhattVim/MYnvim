@@ -47,8 +47,30 @@ return {
                         -- "-style={IndentWidth: 4, SpacesInParentheses: true, SpaceBeforeParens: Always}",
                     },
                 },
-                prettierd = {
-                    prepend_args = { "--tab-width", "4" },
+                prettier = {
+                    prepend_args = function(ctx)
+                        local config_files = {
+                            ".prettierrc",
+                            ".prettierrc.json",
+                            ".prettierrc.js",
+                            ".prettierrc.cjs",
+                            ".prettierrc.yaml",
+                            ".prettierrc.yml",
+                            "prettier.config.js",
+                            "prettier.config.cjs",
+                        }
+
+                        local found = vim.fs.find(config_files, {
+                            upward = true,
+                            path = vim.fs.dirname(ctx.bufname),
+                        })
+
+                        if #found > 0 then
+                            return {}
+                        else
+                            return { "--tab-width", "4" }
+                        end
+                    end,
                 },
                 stylua = {
                     prepend_args = { "--indent-type", "Spaces", "--indent-width", "4" },
