@@ -77,7 +77,7 @@ return {
         -------------------------- mason --------------------------
 
         mason_lspconfig.setup({
-            ensure_installed = servers,
+            ensure_installed = def_servers,
         })
 
         ------------------------ lspconfig ------------------------

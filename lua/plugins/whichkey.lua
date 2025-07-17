@@ -87,6 +87,10 @@ return {
         })
 
         wk.add({
+            -- Hidden keymaps
+            { "<leader>X", "<cmd>BufferLineCloseOthers<cr>", desc = "Close Others", hidden = true },
+
+            -- Keymaps
             { "<leader>q", "<cmd>qall<CR>", desc = "Exit" },
             { "<leader>a", "<cmd>Alpha<cr>", desc = "Alpha" },
             { "<leader>n", "<cmd>nohlsearch<CR>", desc = "Nohl" },

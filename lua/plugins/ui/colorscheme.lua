@@ -53,6 +53,12 @@ return {
                         fg = c.c4,
                     }
 
+                    hl.ArrowBookmarkSign = {
+                        fg = c.c3,
+                        bg = "NONE",
+                        italic = true,
+                    }
+
                     -- Fix transparency on buffferline & lualine
                     if vim.g.transparent then
                         -- Tabs
