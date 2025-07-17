@@ -31,6 +31,7 @@
 | Name | Description | Optional? |
 | ---- | ----------- | --------- |
 | [dstein64/nvim-scrollview](https://github.com/dstein64/nvim-scrollview) | A Neovim plugin that displays interactive vertical scrollbars and signs. | _Optional_ |
+| [nhattVim/alpha-ascii.nvim](https://github.com/nhattVim/alpha-ascii.nvim) | A simple plugin for alpha-nvim that provides custom  ASCII headers for the dashboard screen. |  |
 | [jinh0/eyeliner.nvim](https://github.com/jinh0/eyeliner.nvim) | 👀 Move faster with unique f/F indicators. | _Optional_ |
 | [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim) | a lua powered greeter like vim-startify / dashboard-nvim |  |
 | [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim) | 🏙  A clean, dark Neovim theme written in Lua, with support for lsp, treesitter and lots of plugins. Includes additional themes for Kitty, Alacritty, iTerm and Fish. |  |
