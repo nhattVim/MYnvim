@@ -3,7 +3,10 @@ return {
     event = "VimEnter",
     dependencies = {
         "nhattVim/alpha-ascii.nvim",
-        opts = { header = "random" },
+        opts = {
+            header = "random",
+            exclude = { "calm_eyes", "color_eyes" },
+        },
     },
     config = function()
         local alpha = require("alpha")
@@ -16,7 +19,7 @@ return {
             dashboard.button("SPC f b", "  Bookmarks  ", ":Telescope marks theme=ivy<CR>"),
             dashboard.button("SPC f t", "  Themes  ", ":Telescope colorscheme enable_preview=false<CR>"),
             dashboard.button("SPC f s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
-            dashboard.button("SPC c i", "  Change header image", ":ChDbHeader<CR>"),
+            dashboard.button("SPC c i", "  Change header image", ":AlphaAsciiNext<CR>"),
         }
 
         vim.api.nvim_create_autocmd("User", {
