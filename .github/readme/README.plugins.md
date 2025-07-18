@@ -40,6 +40,7 @@
 | [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim) | A snazzy bufferline for Neovim |  |
 | [Darazaki/indent-o-matic](https://github.com/Darazaki/indent-o-matic) | Dumb automatic fast indentation detection for Neovim written in Lua | _Optional_ |
 | [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) | A blazing fast and easy to configure neovim statusline plugin written in pure lua. |  |
+| [Owen-Dechow/graph_view_yaml_parser](https://github.com/Owen-Dechow/graph_view_yaml_parser) | a tiny yaml (subset) parser for pure lua | _Optional_ |
 | [Owen-Dechow/nvim_json_graph_view](https://github.com/Owen-Dechow/nvim_json_graph_view) | JSON explorer using Neovim's terminal interface. | _Optional_ |
 | [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors) | Highlight colors for neovim | _Optional_ |
 | [HiPhish/rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim) | Rainbow delimiters for Neovim with Tree-sitter |  |
