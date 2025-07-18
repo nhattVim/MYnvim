@@ -1,6 +1,7 @@
 return {
     "Owen-Dechow/nvim_json_graph_view", -- JSON Graph (Optional)
-    ft = "json",
+    dependencies = "Owen-Dechow/graph_view_yaml_parser", -- YAML Graph (Optional)
+    ft = { "json", "yaml" },
     cmd = "JsonGraphView",
     opts = {
         editor_type = "floating",
