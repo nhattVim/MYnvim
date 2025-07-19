@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2025-07-18 14:44 UTC+7</em></p>
+<p align='right'><em>Last updated: 2025-07-19 07:59 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -174,7 +174,7 @@ sudo docker start -ai MYnvim
 | Name | Description | Optional? |
 | ---- | ----------- | --------- |
 | [dstein64/nvim-scrollview](https://github.com/dstein64/nvim-scrollview) | A Neovim plugin that displays interactive vertical scrollbars and signs. | _Optional_ |
-| [nhattVim/alpha-ascii.nvim](https://github.com/nhattVim/alpha-ascii.nvim) | A simple plugin for alpha-nvim that provides custom  ASCII headers for the dashboard screen. |  |
+| [nhattVim/alpha-ascii.nvim](https://github.com/nhattVim/alpha-ascii.nvim) | A simple plugin for alpha-nvim that provides custom ASCII headers for the dashboard screen. |  |
 | [jinh0/eyeliner.nvim](https://github.com/jinh0/eyeliner.nvim) | 👀 Move faster with unique f/F indicators. | _Optional_ |
 | [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim) | a lua powered greeter like vim-startify / dashboard-nvim |  |
 | [folke/noice.nvim](https://github.com/folke/noice.nvim) | 💥 Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu. |  |
