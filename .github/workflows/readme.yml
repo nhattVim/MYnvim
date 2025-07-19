@@ -5,6 +5,8 @@ on:
     paths:
       - "lua/plugins/**"
       - ".github/workflows/readme.yml"
+      - ".github/readme/README.header.md"
+      - ".github/readme/README.footer.md"
   workflow_dispatch:
     inputs:
       force_update:
