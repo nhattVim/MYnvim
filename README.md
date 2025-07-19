@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2025-07-19 08:03 UTC+7</em></p>
+<p align='right'><em>Last updated: 2025-07-19 08:05 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -273,5 +273,3 @@ sudo docker start -ai MYnvim
 > **Congratulations!** at this point you have successfully configured your Neovim.
 >
 > # (￣ y▽ ￣)╭ Ohohoho.....
-
-test workflow
