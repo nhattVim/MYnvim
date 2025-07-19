@@ -28,7 +28,9 @@ jobs:
       HEADER_FILE: .github/readme/README.header.md
       PLUGIN_FILE: .github/readme/README.plugins.md
       FOOTER_FILE: .github/readme/README.footer.md
+      README_FULL: .github/readme/README.full.md
       PLUGIN_FILE_TMP: .README.plugins.md
+      README_FULL_TEMP: .README.full.md      
 
     steps:
       - name: Checkout repository
@@ -131,7 +133,15 @@ jobs:
       - name: Compare plugin list content
         id: compare
         run: |
-          if cmp -s "$PLUGIN_FILE_TMP" "$PLUGIN_FILE"; then
+          {
+            cat "$HEADER_FILE"
+            echo ""
+            cat "$PLUGIN_FILE_TMP"
+            echo ""
+            cat "$FOOTER_FILE"
+          } > "$README_FULL_TEMP"
+
+          if cmp -s "$README_FULL_TEMP" "$README_FULL"; then
             if [ "${{ github.event.inputs.force_update }}" = "true" ]; then
               echo "Forced update"
               echo "changed=true" >> $GITHUB_OUTPUT
@@ -148,15 +158,12 @@ jobs:
         if: steps.compare.outputs.changed == 'true'
         run: |
           mv "$PLUGIN_FILE_TMP" "$PLUGIN_FILE"
+          mv "$README_FULL_TEMP" "$README_FULL"
 
           {
             echo "<p align='right'><em>Last updated: $(date -u -d '+7 hour' '+%Y-%m-%d %H:%M UTC+7')</em></p>"
             echo ""
-            cat "$HEADER_FILE"
-            echo ""
-            cat "$PLUGIN_FILE"
-            echo ""
-            cat "$FOOTER_FILE"
+            cat "$README_FULL"
           } > "$README_FILE"
 
       - name: Commit & Push if changed or forced
@@ -164,7 +171,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "$README_FILE" "$PLUGIN_FILE"
+          git add "$README_FILE" "$PLUGIN_FILE" "$README_FULL"
           git commit \
             -m "chore(readme): 🤖 Auto-generate README" \
             -m "Updated at: $(date -u -d '+7 hour' '+%Y-%m-%d %H:%M UTC+7')"
