@@ -103,14 +103,17 @@ jobs:
             echo "| Name | Description | Optional? |" >> "$PLUGIN_FILE_TMP"
             echo "| ---- | ----------- | --------- |" >> "$PLUGIN_FILE_TMP"
 
-            for name in "${plugins_in_group[@]}"; do
+            IFS=$'\n' sorted_plugins=($(sort <<<"${plugins_in_group[*]}"))
+            unset IFS
+
+            for name in "${sorted_plugins[@]}"; do
               [ -z "$name" ] && continue
 
               cache_file=".cache/$(echo "$name" | sed 's|/|_|g').json"
               if [ -f "$cache_file" ]; then
                 desc=$(jq -r '.description' "$cache_file")
               else
-                curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$name" -o "$cache_file"
+                curl -s --retry 3 -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$name" -o "$cache_file"
                 desc=$(jq -r '.description' "$cache_file")
               fi
 
