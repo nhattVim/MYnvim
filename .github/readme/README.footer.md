@@ -5,5 +5,3 @@
 > **Congratulations!** at this point you have successfully configured your Neovim.
 >
 > # (￣ y▽ ￣)╭ Ohohoho.....
-
-test workflow
