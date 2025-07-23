@@ -59,7 +59,7 @@ local my_opts = {
         guifont        = "MesloLGS NF:h10",            --> font in neovim-qt
         -- Fold
         foldenable     = true,                         --> auto folds until close them using zc/zC or update using zx
-        foldmethod     = "expr",                       --> use `expr` function for folding with treesitter
+        foldmethod     = "expr",                       --> use `expr` function for folding with treesitter or "syntax", "manual", etc.
         foldexpr       = "nvim_treesitter#foldexpr()", --> treesitter folding
         foldlevel      = 90,                           --> using ufo provider need a large value, feel free to decrease the value
         foldcolumn     = '0',                          --> number of fold columns
