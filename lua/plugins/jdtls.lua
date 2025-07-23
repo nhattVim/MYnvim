@@ -8,7 +8,7 @@ return {
         local workspace_path = vim.fn.stdpath("data") .. "/site/java/jdtls-workspace/"
         local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
         local workspace_dir = workspace_path .. project_name
-        local install_path = require("mason-registry").get_package("jdtls"):get_install_path()
+        local install_path = vim.fn.expand("$MASON/packages/jdtls")
         local os
         if vim.fn.has("macunix") == 1 then
             os = "mac"
