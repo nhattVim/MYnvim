@@ -78,6 +78,9 @@ return {
 
         mason_lspconfig.setup({
             ensure_installed = def_servers,
+            automatic_enable = {
+                exclude = { "jdtls" },
+            },
         })
 
         ------------------------ lspconfig ------------------------
