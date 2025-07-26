@@ -35,31 +35,31 @@
 ## Dependencies
 
 - Prerequisites:
+    - Make sure you have installed the latest version of [Neovim v0.10.0+](https://github.com/neovim/neovim/releases/tag/v0.10.3).
+    - Have [git](https://cli.github.com/), [make](https://www.gnu.org/software/make/), [python](https://www.python.org/), [nodejs](https://nodejs.org/), and [cargo](https://www.rust-lang.org/tools/install) installed on your system
+    - Install [lazygit](https://github.com/jesseduffield/lazygit#installation) to launch lazygit in neovim with `<leader>gg` _(optional)_
+    - Install [translate-shell](https://github.com/soimort/translate-shell) to translate text with `<leader>ut` _(optional)_
+    - For [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) _(optional)_
+        - live grep: [ripgrep](https://github.com/BurntSushi/ripgrep)
+        - find files: [fzf](https://github.com/junegunn/fzf)
+    - A terminal that support true color and undercurl:
+        - [kitty](https://github.com/kovidgoyal/kitty) *(Linux & Macos)*
+        - [wezterm](https://github.com/wez/wezterm) *(Linux, Macos & Windows)*
+        - [alacritty](https://github.com/alacritty/alacritty) *(Linux, Macos & Windows)*
+        - [iterm2](https://iterm2.com/) *(Macos)*
+        - [PowerShell 7+](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.2) _(Windows)_
 
-  - Make sure you have installed the latest version of [Neovim v0.10.0+](https://github.com/neovim/neovim/releases/tag/v0.10.3).
-  - Have [git](https://cli.github.com/), [make](https://www.gnu.org/software/make/), [python](https://www.python.org/), [nodejs](https://nodejs.org/), and [cargo](https://www.rust-lang.org/tools/install) installed on your system
-  - Install [lazygit](https://github.com/jesseduffield/lazygit#installation) to launch lazygit in neovim with `<leader>gg` _(optional)_
-  - For [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) _(optional)_
-    - live grep: [ripgrep](https://github.com/BurntSushi/ripgrep)
-    - find files: [fzf](https://github.com/junegunn/fzf)
-  - A terminal that support true color and undercurl:
-    - [kitty](https://github.com/kovidgoyal/kitty) *(Linux & Macos)*
-    - [wezterm](https://github.com/wez/wezterm) *(Linux, Macos & Windows)*
-    - [alacritty](https://github.com/alacritty/alacritty) *(Linux, Macos & Windows)*
-    - [iterm2](https://iterm2.com/) *(Macos)*
-    - [PowerShell 7+](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.2) _(Windows)_
-
-  ```bash
-  # Then run this command:
-  pip install pynvim
-  npm install neovim -g
-  ```
+    ```bash
+    # Then run this command:
+    pip install pynvim
+    npm install neovim -g
+    ```
 
 - Necessary font:
-  - [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
-  - [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
-  - [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
-  - [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
+    - [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+    - [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
+    - [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
+    - [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
 
 ## Install
 

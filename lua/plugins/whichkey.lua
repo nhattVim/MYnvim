@@ -247,6 +247,7 @@ return {
             {
                 "<leader>u",
                 group = "Utils",
+                mode = { "n" },
                 { "<leader>un", "<cmd>lua _NODE_TOGGLE()<cr>", desc = "Node" },
                 { "<leader>uh", "<cmd>lua _HTOP_TOGGLE()<cr>", desc = "Htop" },
                 { "<leader>ub", "<cmd>lua _BTOP_TOGGLE()<cr>", desc = "Btop" },
@@ -255,12 +256,7 @@ return {
                 { "<leader>uc", "<cmd>CccPick<cr>", desc = "CccPick" },
                 { "<leader>uu", "<cmd>ShowkeysToggle<cr>", desc = "ShowKeys" },
                 { "<leader>us", "<cmd>ScrollViewToggle<cr>", desc = "Scrollbar" },
-                {
-                    "<leader>ut",
-                    group = "Typr",
-                    { "<leader>uts", "<cmd>Typr<CR>", desc = "Start" },
-                    { "<leader>uta", "<cmd>TyprStats<CR>", desc = "Achievements" },
-                },
+                { "<leader>ut", "<cmd>Translate vi<CR><Esc>", desc = "Translate to vi" },
                 {
                     "<leader>ul",
                     function()
@@ -325,6 +321,12 @@ return {
                 { "<leader>p6", "<cmd>Nvimesweeper<cr>", desc = "Nvimesweeper" },
                 { "<leader>p7", "<cmd>KillKillKill<cr>", desc = "Killersheep" },
                 { "<leader>p8", "<cmd>HackAuto<cr>", desc = "Hacker" },
+                {
+                    "<leader>p9",
+                    group = "Typr",
+                    { "<leader>p9s", "<cmd>Typr<CR>", desc = "Start" },
+                    { "<leader>p9a", "<cmd>TyprStats<CR>", desc = "Achievements" },
+                },
             },
 
             {

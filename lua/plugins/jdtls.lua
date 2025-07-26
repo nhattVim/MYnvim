@@ -22,6 +22,7 @@ return {
         if not status then
             return
         end
+
         local extendedClientCapabilities = jdtls.extendedClientCapabilities
 
         local config = {
