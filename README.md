@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2025-07-23 15:31 UTC+7</em></p>
+<p align='right'><em>Last updated: 2025-07-26 18:31 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -37,31 +37,31 @@
 ## Dependencies
 
 - Prerequisites:
+    - Make sure you have installed the latest version of [Neovim v0.10.0+](https://github.com/neovim/neovim/releases/tag/v0.10.3).
+    - Have [git](https://cli.github.com/), [make](https://www.gnu.org/software/make/), [python](https://www.python.org/), [nodejs](https://nodejs.org/), and [cargo](https://www.rust-lang.org/tools/install) installed on your system
+    - Install [lazygit](https://github.com/jesseduffield/lazygit#installation) to launch lazygit in neovim with `<leader>gg` _(optional)_
+    - Install [translate-shell](https://github.com/soimort/translate-shell) to translate text with `<leader>ut` _(optional)_
+    - For [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) _(optional)_
+        - live grep: [ripgrep](https://github.com/BurntSushi/ripgrep)
+        - find files: [fzf](https://github.com/junegunn/fzf)
+    - A terminal that support true color and undercurl:
+        - [kitty](https://github.com/kovidgoyal/kitty) *(Linux & Macos)*
+        - [wezterm](https://github.com/wez/wezterm) *(Linux, Macos & Windows)*
+        - [alacritty](https://github.com/alacritty/alacritty) *(Linux, Macos & Windows)*
+        - [iterm2](https://iterm2.com/) *(Macos)*
+        - [PowerShell 7+](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.2) _(Windows)_
 
-  - Make sure you have installed the latest version of [Neovim v0.10.0+](https://github.com/neovim/neovim/releases/tag/v0.10.3).
-  - Have [git](https://cli.github.com/), [make](https://www.gnu.org/software/make/), [python](https://www.python.org/), [nodejs](https://nodejs.org/), and [cargo](https://www.rust-lang.org/tools/install) installed on your system
-  - Install [lazygit](https://github.com/jesseduffield/lazygit#installation) to launch lazygit in neovim with `<leader>gg` _(optional)_
-  - For [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) _(optional)_
-    - live grep: [ripgrep](https://github.com/BurntSushi/ripgrep)
-    - find files: [fzf](https://github.com/junegunn/fzf)
-  - A terminal that support true color and undercurl:
-    - [kitty](https://github.com/kovidgoyal/kitty) *(Linux & Macos)*
-    - [wezterm](https://github.com/wez/wezterm) *(Linux, Macos & Windows)*
-    - [alacritty](https://github.com/alacritty/alacritty) *(Linux, Macos & Windows)*
-    - [iterm2](https://iterm2.com/) *(Macos)*
-    - [PowerShell 7+](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.2) _(Windows)_
-
-  ```bash
-  # Then run this command:
-  pip install pynvim
-  npm install neovim -g
-  ```
+    ```bash
+    # Then run this command:
+    pip install pynvim
+    npm install neovim -g
+    ```
 
 - Necessary font:
-  - [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
-  - [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
-  - [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
-  - [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
+    - [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+    - [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
+    - [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
+    - [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
 
 ## Install
 
@@ -257,12 +257,14 @@ sudo docker start -ai MYnvim
 | [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) | luasnip completion source for nvim-cmp |  |
 | [seandewar/killersheep.nvim](https://github.com/seandewar/killersheep.nvim) | Neovim port of killersheep (with blood!) |  |
 | [seandewar/nvimesweeper](https://github.com/seandewar/nvimesweeper) | Play Minesweeper in your favourite text editor (Neovim 0.7+) |  |
+| [sindrets/diffview.nvim](https://github.com/sindrets/diffview.nvim) | Single tabpage interface for easily cycling through diffs for all modified files for any git rev. |  |
 | [sindrets/winshift.nvim](https://github.com/sindrets/winshift.nvim) | Rearrange your windows with ease. |  |
 | [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim) | Neovim plugin to improve the default vim.ui interfaces | _Optional_ |
 | [szw/vim-maximizer](https://github.com/szw/vim-maximizer) | Maximizes and restores the current window in Vim. |  |
 | [tpope/vim-dadbod](https://github.com/tpope/vim-dadbod) | dadbod.vim: Modern database interface for Vim |  |
 | [tzachar/cmp-tabnine](https://github.com/tzachar/cmp-tabnine) | TabNine plugin for hrsh7th/nvim-cmp | _Optional_ |
 | [uga-rosa/ccc.nvim](https://github.com/uga-rosa/ccc.nvim) | Color picker and highlighter plugin for Neovim. |  |
+| [uga-rosa/translate.nvim](https://github.com/uga-rosa/translate.nvim) | Use any external translate command/API in nvim. |  |
 | [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) | autopairs for neovim written in lua |  |
 | [windwp/nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) | Use treesitter to auto close and auto rename html tag |  |
 | [yuratomo/w3m.vim](https://github.com/yuratomo/w3m.vim) | w3m plugin for vim |  |

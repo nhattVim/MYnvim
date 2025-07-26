@@ -114,12 +114,14 @@
 | [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) | luasnip completion source for nvim-cmp |  |
 | [seandewar/killersheep.nvim](https://github.com/seandewar/killersheep.nvim) | Neovim port of killersheep (with blood!) |  |
 | [seandewar/nvimesweeper](https://github.com/seandewar/nvimesweeper) | Play Minesweeper in your favourite text editor (Neovim 0.7+) |  |
+| [sindrets/diffview.nvim](https://github.com/sindrets/diffview.nvim) | Single tabpage interface for easily cycling through diffs for all modified files for any git rev. |  |
 | [sindrets/winshift.nvim](https://github.com/sindrets/winshift.nvim) | Rearrange your windows with ease. |  |
 | [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim) | Neovim plugin to improve the default vim.ui interfaces | _Optional_ |
 | [szw/vim-maximizer](https://github.com/szw/vim-maximizer) | Maximizes and restores the current window in Vim. |  |
 | [tpope/vim-dadbod](https://github.com/tpope/vim-dadbod) | dadbod.vim: Modern database interface for Vim |  |
 | [tzachar/cmp-tabnine](https://github.com/tzachar/cmp-tabnine) | TabNine plugin for hrsh7th/nvim-cmp | _Optional_ |
 | [uga-rosa/ccc.nvim](https://github.com/uga-rosa/ccc.nvim) | Color picker and highlighter plugin for Neovim. |  |
+| [uga-rosa/translate.nvim](https://github.com/uga-rosa/translate.nvim) | Use any external translate command/API in nvim. |  |
 | [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) | autopairs for neovim written in lua |  |
 | [windwp/nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) | Use treesitter to auto close and auto rename html tag |  |
 | [yuratomo/w3m.vim](https://github.com/yuratomo/w3m.vim) | w3m plugin for vim |  |
