@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2025-07-26 18:31 UTC+7</em></p>
+<p align='right'><em>Last updated: 2025-07-27 17:03 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -37,7 +37,7 @@
 ## Dependencies
 
 - Prerequisites:
-    - Make sure you have installed the latest version of [Neovim v0.10.0+](https://github.com/neovim/neovim/releases/tag/v0.10.3).
+    - Make sure you have installed the latest version of [Neovim v0.11.0+](https://github.com/neovim/neovim/releases/tag/v0.11.3).
     - Have [git](https://cli.github.com/), [make](https://www.gnu.org/software/make/), [python](https://www.python.org/), [nodejs](https://nodejs.org/), and [cargo](https://www.rust-lang.org/tools/install) installed on your system
     - Install [lazygit](https://github.com/jesseduffield/lazygit#installation) to launch lazygit in neovim with `<leader>gg` _(optional)_
     - Install [translate-shell](https://github.com/soimort/translate-shell) to translate text with `<leader>ut` _(optional)_
