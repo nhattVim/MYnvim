@@ -90,14 +90,13 @@ end
 
 ---------------------------------------- WSL ----------------------------------------
 
-
 -- Install win32yank on wsl by this command:
--- curl -LO https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip && \
--- unzip win32yank-x64.zip && \
--- chmod +x win32yank.exe && \
--- sudo mv win32yank.exe /usr/local/bin/ && \
--- rm win32yank-x64.zip
-
+-- mkdir -p temp && \
+-- curl -Lo temp/win32yank-x64.zip https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip && \
+-- unzip temp/win32yank-x64.zip -d temp && \
+-- chmod +x temp/win32yank.exe && \
+-- sudo mv temp/win32yank.exe /usr/local/bin/ && \
+-- rm -rf temp
 
 local is_wsl = vim.fn.has("wsl") == 1
 

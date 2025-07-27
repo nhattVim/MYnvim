@@ -135,39 +135,3 @@ vim.api.nvim_create_user_command("CompileCppDebug", function()
         vim.notify("Compilation successful: " .. output, vim.log.levels.INFO)
     end
 end, {})
-
--- command to copy from WSL to Window clipboard
-vim.api.nvim_create_user_command("WslCopy", function(opts)
-    if vim.fn.has("wsl") == 1 then
-        local content
-
-        if opts.range > 0 then
-            local lines = vim.fn.getline(opts.line1, opts.line2)
-            if type(lines) == "table" then
-                content = table.concat(lines, "\n")
-            else
-                content = ""
-            end
-        else
-            content = vim.fn.getreg('"')
-        end
-
-        if content == "" then
-            vim.notify("Nothing to copy", vim.log.levels.WARN)
-            return
-        end
-
-        local escaped_content = vim.fn.shellescape(content)
-        local result = vim.fn.system("echo " .. escaped_content .. " | iconv -f utf-8 -t utf-16le | clip.exe")
-
-        if vim.v.shell_error ~= 0 then
-            vim.notify("Failed to copy to clipboard: " .. result, vim.log.levels.ERROR)
-        else
-            vim.notify("Copied to clipboard", vim.log.levels.INFO)
-        end
-    else
-        vim.notify("Not on WSL", vim.log.levels.ERROR)
-    end
-end, {
-    range = true,
-})

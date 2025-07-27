@@ -247,7 +247,7 @@ return {
             {
                 "<leader>u",
                 group = "Utils",
-                mode = { "n" },
+                mode = { "n", "v" },
                 { "<leader>un", "<cmd>lua _NODE_TOGGLE()<cr>", desc = "Node" },
                 { "<leader>uh", "<cmd>lua _HTOP_TOGGLE()<cr>", desc = "Htop" },
                 { "<leader>ub", "<cmd>lua _BTOP_TOGGLE()<cr>", desc = "Btop" },

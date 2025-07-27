@@ -71,11 +71,11 @@ return {
                 ["<CR>"] = cmp.mapping.confirm({ select = false }),
                 ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-                ["<C-e>"] = cmp.mapping.abort(), -- close completion window
+                ["<C-e>"] = cmp.mapping.abort(),
+                ["<C-Space>"] = cmp.mapping.complete(),
             }),
             -- sources for autocompletion
-            sources = cmp.config.sources({
+            sources = {
                 { name = "cmp_tabnine" }, -- tabnine
                 { name = "nvim_lsp" }, -- lsp
                 { name = "nvim_lua" }, -- lua
@@ -83,7 +83,8 @@ return {
                 { name = "buffer" }, -- text within current buffer
                 { name = "path" }, -- file system paths
                 { name = "calc" }, -- calculation
-            }),
+                { name = "codeium" }, -- calculation
+            },
             formatting = {
                 fields = { "kind", "abbr", "menu" },
                 format = function(entry, item)
