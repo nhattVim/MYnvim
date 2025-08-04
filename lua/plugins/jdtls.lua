@@ -23,6 +23,10 @@ return {
             return
         end
 
+        if vim.fn.isdirectory(install_path) == 0 then
+            return
+        end
+
         local extendedClientCapabilities = jdtls.extendedClientCapabilities
 
         local config = {

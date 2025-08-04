@@ -24,6 +24,7 @@ return {
             "eslint",
             "ts_ls",
             "clangd",
+            "jdtls",
         }
 
         for _, s in ipairs(def_servers) do
