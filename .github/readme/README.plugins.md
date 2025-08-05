@@ -33,7 +33,7 @@
 | [Darazaki/indent-o-matic](https://github.com/Darazaki/indent-o-matic) | Dumb automatic fast indentation detection for Neovim written in Lua | _Optional_ |
 | [HiPhish/rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim) | Rainbow delimiters for Neovim with Tree-sitter |  |
 | [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim) | UI Component Library for Neovim. |  |
-| [Owen-Dechow/graph_view_yaml_parser](https://github.com/Owen-Dechow/graph_view_yaml_parser) | a tiny yaml (subset) parser for pure lua | _Optional_ |
+| [Owen-Dechow/graph_view_yaml_parser](https://github.com/Owen-Dechow/graph_view_yaml_parser) | YAML parser plugin for Neovim for use with https://github.com/Owen-Dechow/videre.nvim | _Optional_ |
 | [Owen-Dechow/nvim_json_graph_view](https://github.com/Owen-Dechow/nvim_json_graph_view) |  | _Optional_ |
 | [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim) | A snazzy bufferline for Neovim |  |
 | [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors) | Highlight colors for neovim | _Optional_ |
@@ -51,6 +51,7 @@
 | Name | Description | Optional? |
 | ---- | ----------- | --------- |
 | [CRAG666/code_runner.nvim](https://github.com/CRAG666/code_runner.nvim) | Neovim plugin.The best code runner you could have, it is like the one in vscode but with super powers, it manages projects like in intellij but without being slow |  |
+| [Exafunction/windsurf.nvim](https://github.com/Exafunction/windsurf.nvim) | A native neovim extension for Codeium | _Optional_ |
 | [Febri-i/fscreen.nvim](https://github.com/Febri-i/fscreen.nvim) | Plugin for easily create game on neovim |  |
 | [Febri-i/snake.nvim](https://github.com/Febri-i/snake.nvim) | Snake game on neovim, practice your hjkl or whatnot! |  |
 | [JoosepAlviste/nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) | Neovim treesitter plugin for setting the commentstring based on the cursor location in a file. |  |
@@ -119,7 +120,6 @@
 | [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim) | Neovim plugin to improve the default vim.ui interfaces | _Optional_ |
 | [szw/vim-maximizer](https://github.com/szw/vim-maximizer) | Maximizes and restores the current window in Vim. |  |
 | [tpope/vim-dadbod](https://github.com/tpope/vim-dadbod) | dadbod.vim: Modern database interface for Vim |  |
-| [tzachar/cmp-tabnine](https://github.com/tzachar/cmp-tabnine) | TabNine plugin for hrsh7th/nvim-cmp | _Optional_ |
 | [uga-rosa/ccc.nvim](https://github.com/uga-rosa/ccc.nvim) | Color picker and highlighter plugin for Neovim. |  |
 | [uga-rosa/translate.nvim](https://github.com/uga-rosa/translate.nvim) | Use any external translate command/API in nvim. |  |
 | [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) | autopairs for neovim written in lua |  |
