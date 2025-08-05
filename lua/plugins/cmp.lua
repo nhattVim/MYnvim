@@ -4,16 +4,12 @@ return {
     dependencies = {
         -- Source for cmp
         "hrsh7th/cmp-nvim-lsp", -- source for lsp
+        "hrsh7th/cmp-nvim-lua", -- source for cmp
         "hrsh7th/cmp-buffer", -- source for text in buffer
         "hrsh7th/cmp-path", -- source for file system paths
-        "hrsh7th/cmp-nvim-lua", -- source for cmp
-        "saadparwaiz1/cmp_luasnip", -- source for LuaSnip autocompletion
         "hrsh7th/cmp-calc", -- source for math calculation (Optional)
-
-        {
-            "tzachar/cmp-tabnine", -- source from AI (Optional)
-            build = vim.fn.has("win32") == 1 and "powershell ./install.ps1" or "./install.sh",
-        },
+        "saadparwaiz1/cmp_luasnip", -- source for LuaSnip autocompletion
+        "Exafunction/windsurf.nvim", -- source from AI (Optional)
 
         {
             "monkoose/neocodeium", -- AI completion like GitHub Copilot (Optional)
@@ -38,6 +34,9 @@ return {
         local luasnip = require("luasnip")
         local neocodeium = require("neocodeium")
         local lpath = vim.fn.stdpath("config") .. "/snippets"
+
+        -- Set up windsurf.nvim
+        require("codeium").setup()
 
         -- Set up completion
         cmp.setup({
@@ -74,16 +73,14 @@ return {
                 ["<C-e>"] = cmp.mapping.abort(),
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
-            -- sources for autocompletion
             sources = {
-                { name = "cmp_tabnine" }, -- tabnine
                 { name = "nvim_lsp" }, -- lsp
                 { name = "nvim_lua" }, -- lua
                 { name = "luasnip" }, -- snippets
+                { name = "codeium" }, -- AI completion from Windsurf
                 { name = "buffer" }, -- text within current buffer
                 { name = "path" }, -- file system paths
                 { name = "calc" }, -- calculation
-                { name = "codeium" }, -- calculation
             },
             formatting = {
                 fields = { "kind", "abbr", "menu" },
@@ -93,14 +90,14 @@ return {
 
                     item.menu = ({
                         luasnip = "[Snippet]",
-                        cmp_tabnine = "[TB]",
                         buffer = "[Buffer]",
                         nvim_lsp = "[LSP]",
                         path = "[Path]",
                         calc = "[Calc]",
+                        codeium = "[AI]",
                     })[entry.source.name]
 
-                    if entry.source.name == "cmp_tabnine" then
+                    if entry.source.name == "codeium" then
                         item.kind = string.format("%s", icons["Misc"]["Robot"])
                     end
 
