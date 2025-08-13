@@ -19,7 +19,7 @@ return {
             dashboard.button("SPC f b", "  Bookmarks  ", ":Telescope marks theme=ivy<CR>"),
             dashboard.button("SPC f t", "  Themes  ", ":Telescope colorscheme enable_preview=false<CR>"),
             dashboard.button("SPC f s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
-            dashboard.button("SPC c i", "  Change header image", ":AlphaAsciiNext<CR>"),
+            dashboard.button("i", "  Change header image", ":AlphaAsciiNext<CR>"),
         }
 
         vim.api.nvim_create_autocmd("User", {
