@@ -33,8 +33,10 @@
 | [Darazaki/indent-o-matic](https://github.com/Darazaki/indent-o-matic) | Dumb automatic fast indentation detection for Neovim written in Lua | _Optional_ |
 | [HiPhish/rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim) | Rainbow delimiters for Neovim with Tree-sitter |  |
 | [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim) | UI Component Library for Neovim. |  |
+| [Owen-Dechow/graph_view_toml_parser](https://github.com/Owen-Dechow/graph_view_toml_parser) | TOML parser plugin for Neovim for use with https://github.com/Owen-Dechow/videre.nvim | _Optional_ |
 | [Owen-Dechow/graph_view_yaml_parser](https://github.com/Owen-Dechow/graph_view_yaml_parser) | YAML parser plugin for Neovim for use with https://github.com/Owen-Dechow/videre.nvim | _Optional_ |
-| [Owen-Dechow/nvim_json_graph_view](https://github.com/Owen-Dechow/nvim_json_graph_view) |  | _Optional_ |
+| [Owen-Dechow/videre.nvim](https://github.com/Owen-Dechow/videre.nvim) | JSON explorer using Neovim's terminal interface. | _Optional_ |
+| [a-usr/xml2lua.nvim](https://github.com/a-usr/xml2lua.nvim) | A packaging of the xml2lua library for use in a neovim configuration or plugin | _Optional_ |
 | [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim) | A snazzy bufferline for Neovim |  |
 | [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors) | Highlight colors for neovim | _Optional_ |
 | [dstein64/nvim-scrollview](https://github.com/dstein64/nvim-scrollview) | A Neovim plugin that displays interactive vertical scrollbars and signs. | _Optional_ |
