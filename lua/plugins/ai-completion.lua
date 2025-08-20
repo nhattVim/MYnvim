@@ -1,5 +1,5 @@
 return {
-    "monkoose/neocodeium", -- AI ghost text completion like GitHub Copilot (Optional)
+    "monkoose/neocodeium", -- AI completion like GitHub Copilot (Optional)
     event = "VeryLazy",
     build = ":NeoCodeium auth",
     config = function()

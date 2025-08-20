@@ -1,5 +1,5 @@
 return {
-    "ggml-org/llama.vim", -- AI ghost text completion like GitHub Copilot (Optional)
+    "ggml-org/llama.vim", -- AI completion like GitHub Copilot (Optional)
     event = "VeryLazy",
     init = function()
         -- Highlight groups
