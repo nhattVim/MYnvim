@@ -12,14 +12,6 @@ return {
         "Exafunction/windsurf.nvim", -- source from AI (Optional)
 
         {
-            "monkoose/neocodeium", -- AI completion like GitHub Copilot (Optional)
-            build = ":NeoCodeium auth",
-            opts = {
-                silent = true,
-            },
-        },
-
-        {
             "L3MON4D3/LuaSnip", -- snippet engine
             version = "v2.*",
             build = vim.fn.has("win32") == 1 and "" or "make install_jsregexp",
@@ -32,7 +24,6 @@ return {
         local cmp = require("cmp")
         local icons = require("core.icons")
         local luasnip = require("luasnip")
-        local neocodeium = require("neocodeium")
         local lpath = vim.fn.stdpath("config") .. "/snippets"
 
         -- Set up windsurf.nvim
@@ -120,26 +111,6 @@ return {
                 luasnip.change_choice(1)
             end
         end, { silent = true })
-
-        -- Keymap for neocodeium
-        vim.keymap.set("i", "<A-f>", function()
-            neocodeium.accept()
-        end)
-        vim.keymap.set("i", "<A-w>", function()
-            neocodeium.accept_word()
-        end)
-        vim.keymap.set("i", "<A-a>", function()
-            neocodeium.accept_line()
-        end)
-        vim.keymap.set("i", "<A-e>", function()
-            neocodeium.cycle_or_complete()
-        end)
-        vim.keymap.set("i", "<A-r>", function()
-            neocodeium.cycle_or_complete(-1)
-        end)
-        vim.keymap.set("i", "<A-c>", function()
-            neocodeium.clear()
-        end)
 
         -- load friendly snippets
         require("luasnip.loaders.from_vscode").lazy_load()
