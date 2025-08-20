@@ -1,0 +1,89 @@
+local icons = require("core.icons")
+
+return {
+    -- "saghen/blink.cmp",
+    -- version = "1.*",
+    -- event = "LspAttach",
+    -- dependencies = {
+    --     "rafamadriz/friendly-snippets",
+    --     "folke/lazydev.nvim",
+    --     {
+    --         "L3MON4D3/LuaSnip",
+    --         version = "v2.*",
+    --         build = vim.fn.has("win32") == 1 and "" or "make install_jsregexp",
+    --     },
+    -- },
+    -- opts = {
+    --     cmdline = { enabled = false },
+    --     sources = {
+    --         default = { "lsp", "path", "snippets", "buffer" },
+    --         providers = {
+    --             snippets = {
+    --                 name = "snippets",
+    --                 module = "blink.cmp.sources.snippets",
+    --                 opts = {
+    --                     search_paths = {
+    --                         vim.fn.stdpath("config") .. "/snippets/MYnvim",
+    --                         vim.fn.stdpath("config") .. "/snippets/bootstrap",
+    --                         vim.fn.stdpath("config") .. "/snippets/javascript",
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     appearance = {
+    --         use_nvim_cmp_as_default = false,
+    --     },
+    --     signature = { enabled = true },
+    --     snippets = { preset = "luasnip" },
+    --     keymap = {
+    --         preset = "none",
+    --         ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+    --         ["<CR>"] = { "accept", "fallback" },
+    --         ["<C-e>"] = { "hide" },
+    --         ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+    --         ["<C-f>"] = { "scroll_documentation_down", "fallback" },
+    --         ["<Tab>"] = {
+    --             function(cmp)
+    --                 if cmp.snippet_active() then
+    --                     return cmp.accept()
+    --                 else
+    --                     return cmp.select_next()
+    --                 end
+    --             end,
+    --             "snippet_forward",
+    --             "fallback",
+    --         },
+    --         ["<S-Tab>"] = {
+    --             function(cmp)
+    --                 if cmp.snippet_active() then
+    --                     return cmp.accept()
+    --                 else
+    --                     return cmp.select_prev()
+    --                 end
+    --             end,
+    --             "snippet_backward",
+    --             "fallback",
+    --         },
+    --     },
+    --     completion = {
+    --         menu = {
+    --             border = "rounded",
+    --             scrollbar = false,
+    --             draw = {
+    --                 components = {
+    --                     kind_icon = {
+    --                         text = function(ctx)
+    --                             local icon = icons.Kind[ctx.kind] or ""
+    --                             return icon .. " " .. ctx.icon_gap
+    --                         end,
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --         ghost_text = {
+    --             enabled = true,
+    --         },
+    --     },
+    -- },
+}
