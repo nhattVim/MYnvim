@@ -107,6 +107,7 @@ return {
                     opts = vim.tbl_deep_extend("force", opts, custom_opts)
                 end
                 vim.lsp.config(lsp, opts)
+                vim.lsp.enable(lsp)
             end
         end
     end,
