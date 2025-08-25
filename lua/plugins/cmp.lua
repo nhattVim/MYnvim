@@ -27,7 +27,9 @@ return {
         local lpath = vim.fn.stdpath("config") .. "/snippets"
 
         -- Set up windsurf.nvim
-        require("codeium").setup()
+        require("codeium").setup({
+            virtual_text = { enabled = false },
+        })
 
         -- Set up completion
         cmp.setup({
