@@ -23,6 +23,7 @@ return {
                 mappings = {
                     i = {
                         ["<C-q>"] = actions.close,
+                        ["<C-f>"] = actions.send_to_qflist,
                         ["<C-j>"] = actions.cycle_history_next,
                         ["<C-k>"] = actions.cycle_history_prev,
                         ["<C-x>"] = actions.file_split,
@@ -30,10 +31,10 @@ return {
                         ["<tab>"] = actions.move_selection_next,
                         ["<S-tab>"] = actions.move_selection_previous,
                         ["<C-p>"] = action_layout.toggle_preview,
-                        ["<C-u>"] = false,
                     },
                     n = {
                         ["<C-q>"] = actions.close,
+                        ["<C-f>"] = actions.send_to_qflist,
                         ["<C-j>"] = actions.cycle_history_next,
                         ["<C-k>"] = actions.cycle_history_prev,
                         ["<C-x>"] = actions.file_split,

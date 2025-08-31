@@ -58,6 +58,24 @@ vim.api.nvim_create_autocmd("TermOpen", {
     end,
 })
 
+-- auto sync diagnostics to qflist
+vim.api.nvim_create_autocmd("DiagnosticChanged", {
+    group = "nhattVim",
+    callback = function()
+        vim.diagnostic.setqflist({ open = false })
+    end,
+})
+
+-- settings for quickfix
+vim.api.nvim_create_autocmd("FileType", {
+    group = "nhattVim",
+    pattern = "qf",
+    callback = function()
+        vim.opt_local.number = false
+        vim.opt_local.relativenumber = false
+    end,
+})
+
 -- fix conceallevel for json files
 vim.api.nvim_create_autocmd({ "FileType" }, {
     group = "nhattVim",
