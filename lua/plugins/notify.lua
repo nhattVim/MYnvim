@@ -2,7 +2,7 @@ return {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
     opts = {
-        background_colour = "NotifyBackground",
+        background_colour = "#000000",
         fps = 90,
         icons = {
             DEBUG = "",

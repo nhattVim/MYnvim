@@ -100,10 +100,13 @@ return {
             {
                 "<leader>x",
                 function()
-                    if vim.bo.buftype == "" or vim.bo.filetype == "alpha" then
-                        vim.cmd("Bdelete!")
+                    local bufnr = vim.api.nvim_get_current_buf()
+                    local ft = vim.bo[bufnr].filetype
+                    local bt = vim.bo[bufnr].buftype
+                    if bt == "" or ft == "alpha" then
+                        pcall(vim.api.nvim_buf_delete, bufnr, { force = true })
                     else
-                        vim.cmd("close!")
+                        vim.cmd("close")
                     end
                 end,
                 desc = "Close",
