@@ -89,8 +89,10 @@ return {
                 },
             },
 
-            ---@diagnostic disable-next-line: unused-local
-            on_attach = function(client, bufnr)
+            on_attach = function(_, bufnr)
+                -- keymaps for jdtls
+                require("core.keymaps").jdtls(bufnr)
+
                 -- refresh codelens when server ready
                 pcall(vim.lsp.codelens.refresh)
 

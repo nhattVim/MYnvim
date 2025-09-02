@@ -104,7 +104,7 @@ return {
                     local ft = vim.bo[bufnr].filetype
                     local bt = vim.bo[bufnr].buftype
                     if bt == "" or ft == "alpha" then
-                        pcall(vim.api.nvim_buf_delete, bufnr, { force = true })
+                        vim.cmd("Bdelete!")
                     else
                         vim.cmd("close")
                     end
@@ -289,10 +289,19 @@ return {
                 group = "Buffer",
                 { "<leader>bp", "<cmd>BufferLineTogglePin<cr>", desc = "Buffer Pin" },
                 { "<leader>bx", "<cmd>BufferLineCloseOthers<cr>", desc = "Close Other Buffer" },
-                { "<leader>bb", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Toggle Mark UI" },
-                { "<leader>ba", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "Mark file" },
-                { "<leader>bj", "<cmd>lua require('harpoon.ui').nav_next()<cr>", desc = "Next Mark File" },
-                { "<leader>bk", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", desc = "Prev Mark File" },
+                { "<leader>bh", "<cmd>BufferLineCloseLeft<cr>", desc = "Close Left Buffer" },
+                { "<leader>bl", "<cmd>BufferLineCloseRight<cr>", desc = "Close Right Buffer" },
+                { "<leader>bk", "<cmd>BufferLineMoveNext<cr>", desc = "Move to Right" },
+                { "<leader>bj", "<cmd>BufferLineMovePrev<cr>", desc = "Move to Left" },
+                {
+                    "<leader>bb",
+                    function()
+                        require("telescope.builtin").buffers(
+                            require("telescope.themes").get_dropdown({ previewer = false })
+                        )
+                    end,
+                    desc = "All buffer",
+                },
             },
 
             {

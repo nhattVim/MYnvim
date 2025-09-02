@@ -99,8 +99,8 @@ end
 -- rm -rf temp
 
 local is_wsl = vim.fn.has("wsl") == 1
-
-if is_wsl then
+local has_win32yank = vim.fn.executable("win32yank.exe") == 1
+if is_wsl and has_win32yank then
     vim.g.clipboard = {
         name = "win32yank-wsl",
         copy = {

@@ -98,10 +98,15 @@ return {
             },
         })
 
+        -- Add keymaps
+        local lsp_on_attach = function(_, bufnr)
+            require("core.keymaps").lsp(bufnr)
+        end
+
         -- Config servers
         for _, lsp in ipairs(servers) do
             if lsp ~= "jdtls" then --> jdtls will be configured in jdtls.lua
-                local opts = { capabilities = lsb_capabilities }
+                local opts = { capabilities = lsb_capabilities, on_attach = lsp_on_attach }
                 local has_custom_opts, custom_opts = pcall(require, "plugins.lsp.settings." .. lsp)
                 if has_custom_opts then
                     opts = vim.tbl_deep_extend("force", opts, custom_opts)
