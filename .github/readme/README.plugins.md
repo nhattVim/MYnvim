@@ -64,7 +64,6 @@
 | [MoaidHathot/dotnet.nvim](https://github.com/MoaidHathot/dotnet.nvim) | .NET Neovim plugin for improving the .NET dev experience in Neovim,  written completely in Lua |  |
 | [NStefan002/speedtyper.nvim](https://github.com/NStefan002/speedtyper.nvim) | Practise typing in Neovim |  |
 | [OXY2DEV/helpview.nvim](https://github.com/OXY2DEV/helpview.nvim) | A hackable & fancy vimdoc/help file viewer for Neovim |  |
-| [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon) |  |  |
 | [ThePrimeagen/vim-be-good](https://github.com/ThePrimeagen/vim-be-good) | vim-be-good is a nvim plugin designed to make you better at Vim Movements.  |  |
 | [Wansmer/treesj](https://github.com/Wansmer/treesj) | Neovim plugin for splitting/joining blocks of code |  |
 | [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) | A neovim lua plugin to help easily manage multiple terminal windows |  |
