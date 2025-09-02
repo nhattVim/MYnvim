@@ -30,11 +30,6 @@ return {
         opts = {},
     },
     {
-        "sphamba/smear-cursor.nvim", -- Animate the cursor (Optional)
-        event = "VeryLazy",
-        opts = {},
-    },
-    {
         "windwp/nvim-ts-autotag", -- Auto tagging html tag
         ft = "html",
         opts = {},

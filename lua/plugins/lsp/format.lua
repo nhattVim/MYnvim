@@ -37,6 +37,7 @@ return {
                 lua = { "stylua" },
                 python = { "isort", "black" },
                 cpp = { "clang-format" },
+                xml = { "xmlformatter" },
                 zsh = { "beautysh" },
                 sh = { "shfmt" },
                 rs = { "ast-grep" },
