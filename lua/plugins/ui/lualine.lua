@@ -4,7 +4,7 @@ return {
     config = function()
         local lualine = require("lualine")
         local noice = require("noice")
-        local icons = require("core.icons")
+        local icons = require("others.icons")
         local module = {
             custom_icon = {
                 function()

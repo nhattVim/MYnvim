@@ -17,17 +17,16 @@
 vim.loader.enable()
 ---------------------------------------------------------------------------
 
+-- Import neovim configuration
+require("core.autocmds")
+require("core.options")
+require("core.keymaps")
+
 if vim.g.neovide then
-    -- Config for Neovide
+    -- Neovide must not transparent
+    vim.g.transparent = false
     require("others.neovide")
-elseif vim.g.vscode then
-    -- Config for VSCode Neovim extension
-    require("others.functions")
-    require("others.mappings")
-else
-    -- Config for neovim
-    require("core.autocmds")
-    require("core.options")
-    require("core.keymaps")
-    require("core.lazy_lib")
 end
+
+-- Import plugins manager
+require("core.lazy_lib")

@@ -22,7 +22,7 @@ return {
     },
     config = function()
         local cmp = require("cmp")
-        local icons = require("core.icons")
+        local icons = require("others.icons")
         local luasnip = require("luasnip")
         local lpath = vim.fn.stdpath("config") .. "/snippets"
 

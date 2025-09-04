@@ -25,6 +25,7 @@ return {
             "ts_ls",
             "clangd",
             "jdtls",
+            "kotlin_language_server",
         }
 
         for _, s in ipairs(def_servers) do
@@ -42,33 +43,28 @@ return {
         ------------------------- lspsaga -------------------------
 
         saga.setup({
-            use_saga_diagnostic_sign = false,
-            error_sign = false,
             scroll_preview = {
                 scroll_down = "<C-f>",
                 scroll_up = "<C-b>",
             },
-            definition = {
-                edit = "<CR>",
-            },
             ui = {
-                title = true,
                 border = "rounded",
-                winblend = 0,
-                expand = "",
+                title = true,
+                expand = "",
                 collapse = "",
                 code_action = "💡",
-                incoming = " ",
-                outgoing = " ",
-                hover = " ",
-                kind = {},
+            },
+            hover = {
+                open_link = "gx",
+                open_cmd = "!firefox",
+            },
+            rename = {
+                keys = {
+                    quit = "<C-q>",
+                },
             },
             lightbulb = {
                 enable = false,
-                enable_in_insert = true,
-                sign = true,
-                sign_priority = 40,
-                virtual_text = true,
             },
             symbol_in_winbar = {
                 enable = false,
@@ -79,9 +75,7 @@ return {
 
         mason_lspconfig.setup({
             ensure_installed = def_servers,
-            automatic_enable = {
-                exclude = { "jdtls" },
-            },
+            automatic_enable = { exclude = { "jdtls" } },
         })
 
         ------------------------ lspconfig ------------------------

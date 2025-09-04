@@ -1,14 +1,3 @@
--- Import neovim configuration
-require("core.autocmds")
-require("core.options")
-require("core.keymaps")
-
--- Neovide must not transparent
-vim.g.transparent = false
-
--- Lazy load
-require("core.lazy")
-
 -- Config for Neovide
 vim.o.guifont = "MesloLGS NF:h12"
 vim.g.neovide_floating_shadow = true
