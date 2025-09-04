@@ -5,6 +5,7 @@ return {
         local lualine = require("lualine")
         local noice = require("noice")
         local icons = require("others.icons")
+        local macro = require("NeoComposer.ui")
         local module = {
             custom_icon = {
                 function()
@@ -49,6 +50,12 @@ return {
                 noice.api.status.mode.get,
                 cond = noice.api.status.mode.has,
                 color = { fg = "#fc1a70" },
+            },
+
+            macro = {
+                function()
+                    return macro.status_recording()
+                end,
             },
 
             diagnostics = {
@@ -186,6 +193,7 @@ return {
                 },
                 lualine_x = {
                     module.noice,
+                    module.macro,
                     module.diagnostics,
                     module.lsp_clients,
                     -- module.lint_progress,
