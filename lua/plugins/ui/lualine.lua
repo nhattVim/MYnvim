@@ -17,7 +17,7 @@ return {
             mode = {
                 "mode",
                 separator = { left = "", right = "" },
-                padding = 0.5,
+                padding = 0,
             },
 
             branch_a = {
@@ -60,15 +60,8 @@ return {
 
             diagnostics = {
                 "diagnostics",
-                sources = {
-                    "nvim_diagnostic",
-                },
-                sections = {
-                    "error",
-                    "warn",
-                    "info",
-                    "hint",
-                },
+                sources = { "nvim_diagnostic" },
+                sections = { "error", "warn", "info", "hint" },
                 symbols = {
                     hint = icons.Diagnostics.Hint .. " ",
                     warn = icons.Diagnostics.Warning .. " ",
@@ -101,9 +94,15 @@ return {
                 function()
                     local linters = require("lint").get_running()
                     if #linters == 0 then
-                        return "󰦕"
+                        return ""
                     end
-                    return "󱉶 " .. table.concat(linters, ", ")
+                    return " " .. table.concat(linters, ", ")
+                end,
+                color = function()
+                    local linters = require("lint").get_running()
+                    if #linters ~= 0 then
+                        return { fg = "#EBCB8B" }
+                    end
                 end,
             },
 
@@ -113,7 +112,7 @@ return {
                 end,
                 separator = { left = "", right = "" },
                 color = { bg = "#8FBCBB", fg = "#000000" },
-                padding = { left = 0.5, right = 0.5 },
+                padding = 0,
             },
 
             spell = {
@@ -124,6 +123,13 @@ return {
                         return "Off"
                     end
                 end,
+                color = function()
+                    if vim.wo.spell then
+                        return { fg = "#7aa2f7" }
+                    else
+                        return { fg = "#888888" }
+                    end
+                end,
             },
 
             time_icon = {
@@ -132,7 +138,7 @@ return {
                 end,
                 separator = { left = "", right = "" },
                 color = { bg = "#8FBCBB", fg = "#000000" },
-                padding = { left = 0.5, right = 0.5 },
+                padding = 0,
             },
 
             time = {
@@ -146,7 +152,7 @@ return {
                 end,
                 separator = { left = "", right = "" },
                 color = { bg = "#ECD3A0", fg = "#000000" },
-                padding = 0.5,
+                padding = 0,
             },
 
             progress = {
@@ -158,8 +164,8 @@ return {
                     return icons.Misc.Location
                 end,
                 separator = { left = "", right = "" },
-                color = { bg = "#BD9CE6", fg = "#000000" },
-                padding = 0.5,
+                color = { bg = "#C9A0DC", fg = "#000000" },
+                padding = 0,
             },
 
             location = {
@@ -190,24 +196,24 @@ return {
                 lualine_c = {
                     module.branch_b,
                     module.diff,
+                    module.lint_progress,
                 },
                 lualine_x = {
                     module.noice,
                     module.macro,
                     module.diagnostics,
                     module.lsp_clients,
-                    -- module.lint_progress,
-                    -- module.spell_icon,
-                    -- module.spell,
                     module.time_icon,
                     module.time,
+                    module.spell_icon,
+                    module.spell,
                     module.progress_icon,
                     module.progress,
                     module.location_icon,
                     module.location,
                 },
-                lualine_z = {},
                 lualine_y = {},
+                lualine_z = {},
             },
         })
     end,
