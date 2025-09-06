@@ -25,7 +25,7 @@ M.lsp_keys = {
     { "n", "gD", vim.lsp.buf.declaration, "Go to declaration" },
     { "n", "gd", vim.lsp.buf.definition, "Go to definition" },
     { "n", "gi", vim.lsp.buf.implementation, "Go to implementation" },
-    { "n", "gl", vim.diagnostic.open_float, "Show diagnostics" },
+    { "n", "gh", vim.diagnostic.open_float, "Show diagnostics" },
     { "n", "gK", vim.lsp.buf.signature_help, "Signature help" },
     { "n", "K", "<cmd>Lspsaga hover_doc<cr>", "Hover" },
 }
