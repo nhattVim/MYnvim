@@ -1,7 +1,6 @@
 return {
     "mfussenegger/nvim-jdtls",
     ft = { "java" },
-    dependencies = { "nvim-neotest/nvim-nio" },
     config = function()
         -- workspace path
         local workspace_path = vim.fn.stdpath("data") .. "/site/java/jdtls-workspace/"
@@ -35,6 +34,31 @@ return {
         -- extended capabilities
         local extendedClientCapabilities = jdtls.extendedClientCapabilities
         extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
+
+        -- java debug bundle
+        local bundles = vim.split(
+            vim.fn.glob(
+                vim.fn.stdpath("data")
+                    .. "/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
+            ),
+            "\n",
+            { trimempty = true }
+        )
+
+        -- java test bundles (plugin + runner)
+        local java_test_jars = vim.split(
+            vim.fn.glob(vim.fn.stdpath("data") .. "/mason/packages/java-test/extension/server/*.jar"),
+            "\n",
+            { trimempty = true }
+        )
+
+        -- add java test to bundles
+        for _, jar in ipairs(java_test_jars) do
+            local fname = vim.fn.fnamemodify(jar, ":t")
+            if fname ~= "jacocoagent.jar" then
+                table.insert(bundles, jar)
+            end
+        end
 
         -- jdtls config
         local config = {
@@ -81,12 +105,7 @@ return {
             },
 
             init_options = {
-                bundles = {
-                    vim.fn.glob(
-                        vim.fn.stdpath("data")
-                            .. "/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
-                    ),
-                },
+                bundles = bundles,
             },
 
             on_attach = function(_, bufnr)

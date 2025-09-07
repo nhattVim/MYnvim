@@ -50,12 +50,9 @@ M.lsp_keys = {
 }
 
 M.jdtls_keys = {
-    { "n", "<leader>J", "", "Java" },
-    { "n", "<leader>Jo", "<cmd>lua require('jdtls').organize_imports", "Organize imports" },
-    { "n", "<leader>Jt", "<cmd>lua require('jdtls').test_class", "Test class" },
-    { "n", "<leader>JT", "<cmd>lua require('jdtls').test_nearest_method", "Test nearest method" },
-    { "n", "<leader>Jv", "<cmd>lua require('jdtls').extract_variable", "Extract variable" },
-    { "n", "<leader>Jc", "<cmd>lua require('jdtls').extract_constant", "Extract constant" },
+    { "n", "<leader>lO", "<cmd>lua require('jdtls').organize_imports()<cr>", "Organize imports" },
+    { "n", "<leader>lv", "<cmd>lua require('jdtls').extract_variable()<cr>", "Extract variable" },
+    { "n", "<leader>lV", "<cmd>lua require('jdtls').extract_constant()<cr>", "Extract constant" },
 }
 
 M.whichkey = {
@@ -302,6 +299,60 @@ M.whichkey = {
             group = "Typr",
             { "<leader>p9s", "<cmd>Typr<CR>", desc = "Start" },
             { "<leader>p9a", "<cmd>TyprStats<CR>", desc = "Achievements" },
+        },
+    },
+
+    {
+        "<leader>t",
+        group = "Test",
+        {
+            "<leader>tt",
+            function()
+                require("neotest").run.run(vim.fn.expand("%"))
+            end,
+            desc = "Test File",
+        },
+        {
+            "<leader>tr",
+            function()
+                require("neotest").run.run()
+            end,
+            desc = "Test Nearest",
+        },
+        {
+            "<leader>tl",
+            function()
+                require("neotest").run.run_last()
+            end,
+            desc = "Test Last",
+        },
+        {
+            "<Leader>ts",
+            function()
+                require("neotest").summary.toggle()
+            end,
+            desc = "Toggle Summary",
+        },
+        {
+            "<leader>to",
+            function()
+                require("neotest").output.open({ enter = true, auto_close = true })
+            end,
+            desc = "Show Output",
+        },
+        {
+            "<Leader>tp",
+            function()
+                require("neotest").output_panel.toggle()
+            end,
+            desc = "Toggle Output Panel",
+        },
+        {
+            "<Leader>tx",
+            function()
+                require("neotest").run.stop()
+            end,
+            desc = "Stop",
         },
     },
 }
