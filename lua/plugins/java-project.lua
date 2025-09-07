@@ -1,6 +1,6 @@
 return {
-    "nhattVim/java_project.nvim", -- Optional
-    opts = {},
+    "nhattVim/java-project.nvim", -- Optional
+    config = true,
     cmd = {
         "NewMavenProject",
         "NewGradleProject",
