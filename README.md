@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2025-09-07 23:08 UTC+7</em></p>
+<p align='right'><em>Last updated: 2025-09-08 16:48 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -215,6 +215,7 @@ sudo docker start -ai MYnvim
 | [aurum77/live-server.nvim](https://github.com/aurum77/live-server.nvim) | A plugin to integrate live-server from Neovim |  |
 | [booperlv/nvim-gomove](https://github.com/booperlv/nvim-gomove) | A complete plugin for moving and duplicating blocks and lines, with complete fold handling, reindenting, and undoing in one go. |  |
 | [chentoast/marks.nvim](https://github.com/chentoast/marks.nvim) | A better user experience for viewing and interacting with Vim marks. |  |
+| [eatgrass/maven.nvim](https://github.com/eatgrass/maven.nvim) | for java developer, interactively execute maven command without leaving your editor |  |
 | [ecthelionvi/NeoComposer.nvim](https://github.com/ecthelionvi/NeoComposer.nvim) | Neovim plugin that simplifies macros, enhancing productivity with harmony. |  |
 | [famiu/bufdelete.nvim](https://github.com/famiu/bufdelete.nvim) | Delete Neovim buffers without losing window layout |  |
 | [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim) | ✅  Highlight, list and search todo comments in your projects | _Optional_ |
