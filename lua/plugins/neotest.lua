@@ -11,7 +11,7 @@ return {
     config = function()
         require("neotest").setup({
             adapters = { require("neotest-java")() },
-            -- floating = { border = "rounded" },
+            floating = { border = "rounded" },
         })
     end,
 }
