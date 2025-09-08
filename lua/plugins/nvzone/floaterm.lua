@@ -9,5 +9,5 @@ return {
             { name = "Term 3" },
         },
     },
-    keys = { { mode = { "n", "t" }, "<A-t>", "<cmd>FloatermToggle<cr>", desc = "float terminal" } },
+    keys = { { mode = { "n", "t" }, "<A-T>", "<cmd>FloatermToggle<cr>", desc = "float terminal" } },
 }

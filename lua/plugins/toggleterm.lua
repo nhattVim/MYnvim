@@ -3,10 +3,10 @@ return {
     version = "*",
     cmd = { "ToggleTerm" },
     keys = {
-        { mode = { "n", "t" }, "<A-F>", "<cmd>ToggleTerm direction=float<cr>", desc = "float terminal" },
-        { mode = { "n", "t" }, "<A-V>", "<cmd>ToggleTerm direction=vertical<cr>", desc = "vertical terminal" },
-        { mode = { "n", "t" }, "<A-H>", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "horizontal terminal" },
-        { mode = { "n", "t" }, "<A-T>", desc = "Toggle term" },
+        { mode = { "n", "t" }, "<a-t>", "<cmd>ToggleTerm direction=float<cr>", desc = "float terminal" },
+        { mode = { "n", "t" }, "<a-v>", "<cmd>ToggleTerm direction=vertical<cr>", desc = "vertical terminal" },
+        { mode = { "n", "t" }, "<a-h>", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "horizontal terminal" },
+        { mode = { "n", "t" }, "<c-\\>", desc = "Toggle term" },
     },
     opts = {
         size = function(term)
@@ -16,7 +16,7 @@ return {
                 return vim.o.columns * 0.4
             end
         end,
-        open_mapping = [[<A-T>]],
+        open_mapping = [[<c-\>]],
         shade_filetypes = { "none" },
         shading_factor = 2,
         direction = "float",
