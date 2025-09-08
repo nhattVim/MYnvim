@@ -52,10 +52,7 @@ M.lsp_keys = {
 M.jdtls_keys = {
     { "n", "<leader>J", "", "Java" },
     { "n", "<leader>Jo", "<cmd>lua require('jdtls').organize_imports()<cr>", "Organize imports" },
-    { "n", "<leader>Jo", "<cmd>lua require('jdtls').organize_imports()<cr>", "Organize imports" },
-    { "n", "<leader>Jo", "<cmd>lua require('jdtls').extract_variable()<cr>", "Extract variable" },
     { "n", "<leader>Jt", "<cmd>lua require('jdtls').test_class()<cr>", "Test class" },
-    { "n", "<leader>JV", "<cmd>lua require('jdtls').extract_constant()<cr>", "Extract constant" },
     { "n", "<leader>JT", "<cmd>lua require('jdtls').test_nearest_method()<cr>", "Test nearest method" },
     { "n", "<leader>Jv", "<cmd>lua require('jdtls').extract_variable()<cr>", "Extract variable" },
     { "n", "<leader>Jc", "<cmd>lua require('jdtls').extract_constant()<cr>", "Extract constant" },
