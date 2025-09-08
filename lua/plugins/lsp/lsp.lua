@@ -26,6 +26,7 @@ return {
             "clangd",
             "jdtls",
             "kotlin_language_server",
+            "lemminx",
         }
 
         for _, s in ipairs(def_servers) do
