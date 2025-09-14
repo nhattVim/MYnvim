@@ -276,100 +276,23 @@ return {
                 },
             },
 
+            -- stylua: ignore
             {
                 "<leader>d",
                 group = "Debug",
-                {
-                    "<leader>dp",
-                    function()
-                        require("dap").pause()
-                    end,
-                    desc = "Pause",
-                },
-                {
-                    "<leader>dq",
-                    function()
-                        require("dap").close()
-                    end,
-                    desc = "Quit",
-                },
-                {
-                    "<leader>dg",
-                    function()
-                        require("dap").session()
-                    end,
-                    desc = "Get Session",
-                },
-                {
-                    "<leader>ds",
-                    function()
-                        require("dap").step_out()
-                    end,
-                    desc = "Step Out",
-                },
-                {
-                    "<leader>dc",
-                    function()
-                        require("dap").continue()
-                    end,
-                    desc = "Start + Continue",
-                },
-                {
-                    "<leader>di",
-                    function()
-                        require("dap").step_into()
-                    end,
-                    desc = "Step Into",
-                },
-                {
-                    "<leader>dt",
-                    function()
-                        require("dap").step_back()
-                    end,
-                    desc = "Step Back",
-                },
-                {
-                    "<leader>do",
-                    function()
-                        require("dap").step_over()
-                    end,
-                    desc = "Step Over",
-                },
-                {
-                    "<leader>dd",
-                    function()
-                        require("dap").disconnect()
-                    end,
-                    desc = "Disconnect",
-                },
-                {
-                    "<leader>dr",
-                    function()
-                        require("dap").repl.toggle()
-                    end,
-                    desc = "Toggle Repl",
-                },
-                {
-                    "<leader>db",
-                    function()
-                        require("dap").toggle_breakpoint()
-                    end,
-                    desc = "Toggle Breakpoint",
-                },
-                {
-                    "<leader>dx",
-                    function()
-                        require("dap").clear_breakpoints()
-                    end,
-                    desc = "Clear Breakpoint",
-                },
-                {
-                    "<leader>du",
-                    function()
-                        require("dapui").toggle({ reset = true })
-                    end,
-                    desc = "Toggle UI",
-                },
+                { "<leader>dp", function() require("dap").pause() end, desc = "Pause" },
+                { "<leader>dq", function() require("dap").close() end, desc = "Quit" },
+                { "<leader>dg", function() require("dap").session() end, desc = "Get Session" },
+                { "<leader>ds", function() require("dap").step_out() end, desc = "Step Out" },
+                { "<leader>dc", function() require("dap").continue() end, desc = "Start + Continue" },
+                { "<leader>di", function() require("dap").step_into() end, desc = "Step Into" },
+                { "<leader>dt", function() require("dap").step_back() end, desc = "Step Back" },
+                { "<leader>do", function() require("dap").step_over() end, desc = "Step Over" },
+                { "<leader>dd", function() require("dap").disconnect() end, desc = "Disconnect" },
+                { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle Repl" },
+                { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
+                { "<leader>dx", function() require("dap").clear_breakpoints() end, desc = "Clear Breakpoint" },
+                { "<leader>du", function() require("dapui").toggle({ reset = true }) end, desc = "Toggle UI" },
             },
 
             {
@@ -391,58 +314,17 @@ return {
                 },
             },
 
+            -- stylua: ignore
             {
                 "<leader>t",
                 group = "Test",
-                {
-                    "<leader>tt",
-                    function()
-                        require("neotest").run.run(vim.fn.expand("%"))
-                    end,
-                    desc = "Test File",
-                },
-                {
-                    "<leader>tr",
-                    function()
-                        require("neotest").run.run()
-                    end,
-                    desc = "Test Nearest",
-                },
-                {
-                    "<leader>tl",
-                    function()
-                        require("neotest").run.run_last()
-                    end,
-                    desc = "Test Last",
-                },
-                {
-                    "<Leader>ts",
-                    function()
-                        require("neotest").summary.toggle()
-                    end,
-                    desc = "Toggle Summary",
-                },
-                {
-                    "<leader>tp",
-                    function()
-                        require("neotest").output_panel.toggle()
-                    end,
-                    desc = "Toggle Output Panel",
-                },
-                {
-                    "<leader>tx",
-                    function()
-                        require("neotest").run.stop()
-                    end,
-                    desc = "Stop",
-                },
-                {
-                    "<leader>to",
-                    function()
-                        require("neotest").output.open({ enter = true, auto_close = true })
-                    end,
-                    desc = "Show Output",
-                },
+                { "<leader>tt", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Test File" },
+                { "<leader>tr", function() require("neotest").run.run() end, desc = "Test Nearest" },
+                { "<leader>tl", function() require("neotest").run.run_last() end, desc = "Test Last" },
+                { "<Leader>ts", function() require("neotest").summary.toggle() end, desc = "Toggle Summary" },
+                { "<leader>tp", function() require("neotest").output_panel.toggle() end, desc = "Toggle Output Panel" },
+                { "<leader>tx", function() require("neotest").run.stop() end, desc = "Stop" },
+                { "<leader>to", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show Output" },
             },
         },
     },
