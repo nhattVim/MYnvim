@@ -1,39 +1,15 @@
 local U = {}
 
-function _LAZYGIT_TOGGLE()
-    local Terminal = require("toggleterm.terminal").Terminal
-    local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
-    lazygit:toggle()
-end
-
-function _NODE_TOGGLE()
-    local Terminal = require("toggleterm.terminal").Terminal
-    local node = Terminal:new({ cmd = "node", hidden = true })
-    node:toggle()
-end
-
-function _HTOP_TOGGLE()
-    local Terminal = require("toggleterm.terminal").Terminal
-    local htop = Terminal:new({ cmd = "htop", hidden = true })
-    htop:toggle()
-end
-
-function _BTOP_TOGGLE()
-    local Terminal = require("toggleterm.terminal").Terminal
-    local htop = Terminal:new({ cmd = "btop", hidden = true })
-    htop:toggle()
-end
-
-function _PYTHON_TOGGLE()
-    local Terminal = require("toggleterm.terminal").Terminal
-    local py = Terminal:new({ cmd = "python3", hidden = true })
-    py:toggle()
-end
-
-function _RANGER_TOGGLE()
-    local Terminal = require("toggleterm.terminal").Terminal
-    local ranger = Terminal:new({ cmd = "ranger", hidden = true })
-    ranger:toggle()
+-- helper to create toggleterm by cmd
+function U.toggle_term(cmd)
+    local term
+    return function()
+        if not term or not term:is_open() then
+            local Terminal = require("toggleterm.terminal").Terminal
+            term = Terminal:new({ cmd = cmd, hidden = true })
+        end
+        term:toggle()
+    end
 end
 
 -- helper to set keymaps from table

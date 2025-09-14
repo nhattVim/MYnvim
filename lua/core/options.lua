@@ -7,6 +7,7 @@
 -- set ttyfast smarttab wildmenu wildoptions=pum,tagfile
 -- https://neovim.io/doc/user/vim_diff.html#nvim-defaults
 
+-- stylua: ignore
 local my_opts = {
 
     -- Global options
@@ -98,9 +99,7 @@ end
 -- sudo mv temp/win32yank.exe /usr/local/bin/ && \
 -- rm -rf temp
 
-local is_wsl = vim.fn.has("wsl") == 1
-local has_win32yank = vim.fn.executable("win32yank.exe") == 1
-if is_wsl and has_win32yank then
+if vim.fn.has("wsl") == 1 and vim.fn.executable("win32yank.exe") == 1 then
     vim.g.clipboard = {
         name = "win32yank-wsl",
         copy = {
