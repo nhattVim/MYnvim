@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2025-09-14 16:39 UTC+7</em></p>
+<p align='right'><em>Last updated: 2025-10-01 14:35 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -249,6 +249,7 @@ sudo docker start -ai MYnvim
 | [mrjones2014/smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim) | 🧠 Smart, seamless, directional navigation and resizing of Neovim + terminal multiplexer splits. Supports tmux, Wezterm, and Kitty. Think about splits in terms of "up/down/left/right". |  |
 | [nhattVim/java-project.nvim](https://github.com/nhattVim/java-project.nvim) | Plugin for automatically creating a Java project | _Optional_ |
 | [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim) | :brain: :muscle: // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more |  |
+| [nvim-flutter/flutter-tools.nvim](https://github.com/nvim-flutter/flutter-tools.nvim) | Tools to help create flutter apps in neovim using the native lsp |  |
 | [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim) | plenary: full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice. |  |
 | [nvim-pack/nvim-spectre](https://github.com/nvim-pack/nvim-spectre) | Find the enemy and replace them with dark power. |  |
 | [nvim-telescope/telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim) | FZF sorter for telescope written in c |  |
