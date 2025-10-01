@@ -1,9 +1,7 @@
 return {
     "kevinhwang91/nvim-ufo",
     event = "VeryLazy",
-    dependencies = {
-        "kevinhwang91/promise-async",
-    },
+    dependencies = { "kevinhwang91/promise-async" },
     config = function()
         require("ufo").setup({
             preview = {
@@ -22,10 +20,7 @@ return {
         })
 
         vim.keymap.set("n", "zp", function()
-            local winid = require("ufo").peekFoldedLinesUnderCursor()
-            if not winid then
-                vim.lsp.buf.hover()
-            end
+            require("ufo").peekFoldedLinesUnderCursor()
         end)
     end,
 }
