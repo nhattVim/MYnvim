@@ -1,8 +1,29 @@
 return {
     "mfussenegger/nvim-dap",
+    cmd = {
+        "DapPause",
+        "DapContinue",
+        "DapStepOut",
+        "DapStepInto",
+        "DapStepOver",
+        "DapDisconnect",
+        "DapToggleRepl",
+        "DapToggleBreakpoint",
+        "DapClearBreakpoints",
+    },
     dependencies = {
         "rcarriga/nvim-dap-ui",
         "nvim-neotest/nvim-nio", -- A library for asynchronous IO (Optional)
+        {
+            "jay-babu/mason-nvim-dap.nvim",
+            opts = {
+                ensure_installed = {
+                    "javadbg",
+                    "bash",
+                    "javatest",
+                },
+            },
+        },
     },
     config = function()
         local dap = require("dap")

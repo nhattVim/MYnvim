@@ -1,16 +1,6 @@
 return {
     "mason-org/mason.nvim",
     event = "VeryLazy",
-    dependencies = {
-        "jay-babu/mason-nvim-dap.nvim",
-        opts = {
-            ensure_installed = {
-                "javadbg",
-                "bash",
-                "javatest",
-            },
-        },
-    },
     opts = {
         ui = {
             border = "rounded",

@@ -95,33 +95,7 @@ return {
 
         -- Add keymaps
         local lsp_on_attach = function(_, bufnr)
-            require("core.utils").set_keys(bufnr, {
-                -- Navigation
-                { "n", "gi", vim.lsp.buf.implementation, "Go to implementation" },
-                { "n", "gt", vim.lsp.buf.type_definition, "Go to type definition" },
-                { "n", "gd", vim.lsp.buf.definition, "Go to definition" },
-                { "n", "gD", vim.lsp.buf.declaration, "Go to declaration" },
-                { "n", "gr", vim.lsp.buf.references, "Find references" },
-
-                -- Info
-                { "n", "K", "<cmd>Lspsaga hover_doc<cr>", "Hover" },
-                { "n", "gK", vim.lsp.buf.signature_help, "Signature help" },
-                { "n", "gh", vim.diagnostic.open_float, "Show diagnostics" },
-
-                -- Edit
-                { "n", "gR", vim.lsp.buf.rename, "Rename symbol" },
-                { "n", "ga", vim.lsp.buf.code_action, "Code action" },
-
-                -- Format
-                {
-                    "n",
-                    "gf",
-                    function()
-                        vim.lsp.buf.format({ async = true })
-                    end,
-                    "Format buffer",
-                },
-            })
+            require("core.utils").set_lsp_keymaps(bufnr)
         end
 
         -- Config servers
