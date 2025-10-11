@@ -25,7 +25,6 @@ return {
             "ts_ls",
             "clangd",
             "jdtls",
-            "kotlin_language_server",
             "lemminx",
         }
 
