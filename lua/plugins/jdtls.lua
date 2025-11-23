@@ -2,6 +2,23 @@ return {
     "mfussenegger/nvim-jdtls",
     ft = { "java" },
     config = function()
+        -- find root directory
+        local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
+        local root_dir = require("jdtls.setup").find_root(root_markers)
+
+        -- check if root directory is found, fallback to current directory
+        if root_dir == "" or root_dir == nil then
+            root_dir = vim.fn.getcwd()
+        end
+
+        -- local library path
+        local libraries = {}
+
+        -- add project lib to libraries
+        if root_dir and root_dir ~= "" then
+            table.insert(libraries, root_dir .. "/**/*.jar")
+        end
+
         -- workspace path
         local workspace_path = vim.fn.stdpath("data") .. "/site/java/jdtls-workspace/"
         local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
@@ -84,13 +101,7 @@ return {
                 workspace_dir,
             },
 
-            root_dir = require("jdtls.setup").find_root({
-                ".git",
-                "mvnw",
-                "gradlew",
-                "pom.xml",
-                "build.gradle",
-            }),
+            root_dir = root_dir,
 
             settings = {
                 java = {
@@ -101,6 +112,9 @@ return {
                     references = { includeDecompiledSources = true },
                     inlayHints = { parameterNames = { enabled = "all" } },
                     format = { enabled = true },
+                    project = {
+                        referencedLibraries = libraries,
+                    },
                 },
             },
 

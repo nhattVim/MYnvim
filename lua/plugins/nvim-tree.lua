@@ -57,6 +57,7 @@ return {
             enable = true,
         },
         renderer = {
+            -- group_empty = true,
             root_folder_label = false,
             root_folder_modifier = ":t",
             indent_markers = {
