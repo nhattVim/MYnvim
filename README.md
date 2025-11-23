@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2025-10-01 14:35 UTC+7</em></p>
+<p align='right'><em>Last updated: 2025-11-23 10:12 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -246,7 +246,7 @@ sudo docker start -ai MYnvim
 | [mfussenegger/nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls) | MIRROR of: https://codeberg.org/mfussenegger/nvim-jdtls |  |
 | [mg979/vim-visual-multi](https://github.com/mg979/vim-visual-multi) | Multiple cursors plugin for vim/neovim | _Optional_ |
 | [monkoose/neocodeium](https://github.com/monkoose/neocodeium) | free AI completion plugin for neovim | _Optional_ |
-| [mrjones2014/smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim) | 🧠 Smart, seamless, directional navigation and resizing of Neovim + terminal multiplexer splits. Supports tmux, Wezterm, and Kitty. Think about splits in terms of "up/down/left/right". |  |
+| [mrjones2014/smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim) | 🧠 Smart, seamless, directional navigation and resizing of Neovim + terminal multiplexer splits. Supports Zellij, Tmux, Wezterm, and Kitty. Think about splits in terms of "up/down/left/right". |  |
 | [nhattVim/java-project.nvim](https://github.com/nhattVim/java-project.nvim) | Plugin for automatically creating a Java project | _Optional_ |
 | [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim) | :brain: :muscle: // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more |  |
 | [nvim-flutter/flutter-tools.nvim](https://github.com/nvim-flutter/flutter-tools.nvim) | Tools to help create flutter apps in neovim using the native lsp |  |
