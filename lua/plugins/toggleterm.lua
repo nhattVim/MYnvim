@@ -4,7 +4,7 @@ return {
     cmd = { "ToggleTerm" },
     keys = function()
         local maps = {
-            { mode = { "n", "t" }, "<A-T>", "<cmd>TermSelect<cr>", desc = "select terminal" },
+            { mode = { "n", "t" }, "<A-`>", "<cmd>TermSelect<cr>", desc = "select terminal" },
             { mode = { "n", "t" }, "<C-t>", "<cmd>ToggleTermSetName<cr>", desc = "set terminal name" },
             { mode = { "n", "t" }, "<A-t>", "<cmd>ToggleTerm direction=float<cr>", desc = "float terminal" },
             { mode = { "n", "t" }, "<A-v>", "<cmd>ToggleTerm direction=vertical<cr>", desc = "vertical terminal" },

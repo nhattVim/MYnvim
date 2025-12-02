@@ -23,6 +23,7 @@ return {
                 mappings = {
                     i = {
                         ["<C-q>"] = actions.close,
+                        ["<A-`>"] = actions.close,
                         ["<C-f>"] = actions.send_to_qflist,
                         ["<C-j>"] = actions.cycle_history_next,
                         ["<C-k>"] = actions.cycle_history_prev,
@@ -34,6 +35,7 @@ return {
                     },
                     n = {
                         ["<C-q>"] = actions.close,
+                        ["<A-`>"] = actions.close,
                         ["<C-f>"] = actions.send_to_qflist,
                         ["<C-j>"] = actions.cycle_history_next,
                         ["<C-k>"] = actions.cycle_history_prev,
