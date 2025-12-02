@@ -13,7 +13,7 @@ return {
         }
 
         -- Generate keymaps for Alt + 1..3
-        for i = 0, 9 do
+        for i = 1, 9 do
             table.insert(maps, {
                 mode = { "n", "t" },
                 string.format("<A-%d>", i),
