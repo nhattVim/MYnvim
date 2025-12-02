@@ -164,7 +164,6 @@ sudo docker start -ai MYnvim
 
 | Name | Description | Optional? |
 | ---- | ----------- | --------- |
-| [nvzone/floaterm](https://github.com/nvzone/floaterm) | Beautiful floating terminal manager for Neovim |  |
 | [nvzone/menu](https://github.com/nvzone/menu) | Menu plugin for neovim ( supports nested menus ) made using volt |  |
 | [nvzone/minty](https://github.com/nvzone/minty) | Most Beautifully crafted color tools for Neovim  |  |
 | [nvzone/showkeys](https://github.com/nvzone/showkeys) | Minimal Eye-candy keys screencaster for Neovim  200 ~ LOC |  |
