@@ -2,12 +2,28 @@ return {
     "akinsho/toggleterm.nvim",
     version = "*",
     cmd = { "ToggleTerm" },
-    keys = {
-        { mode = { "n", "t" }, "<a-t>", "<cmd>ToggleTerm direction=float<cr>", desc = "float terminal" },
-        { mode = { "n", "t" }, "<a-v>", "<cmd>ToggleTerm direction=vertical<cr>", desc = "vertical terminal" },
-        { mode = { "n", "t" }, "<a-h>", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "horizontal terminal" },
-        { mode = { "n", "t" }, "<c-\\>", desc = "Toggle term" },
-    },
+    keys = function()
+        local maps = {
+            { mode = { "n", "t" }, "<A-T>", "<cmd>TermSelect<cr>", desc = "select terminal" },
+            { mode = { "n", "t" }, "<C-t>", "<cmd>ToggleTermSetName<cr>", desc = "set terminal name" },
+            { mode = { "n", "t" }, "<A-t>", "<cmd>ToggleTerm direction=float<cr>", desc = "float terminal" },
+            { mode = { "n", "t" }, "<A-v>", "<cmd>ToggleTerm direction=vertical<cr>", desc = "vertical terminal" },
+            { mode = { "n", "t" }, "<A-h>", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "horizontal terminal" },
+            { mode = { "n", "t" }, "<c-\\>", desc = "Toggle term" },
+        }
+
+        -- Generate keymaps for Alt + 1..3
+        for i = 0, 9 do
+            table.insert(maps, {
+                mode = { "n", "t" },
+                string.format("<A-%d>", i),
+                string.format("<cmd>%dToggleTerm<cr>", i),
+                desc = string.format("Terminal %d", i),
+            })
+        end
+
+        return maps
+    end,
     opts = {
         size = function(term)
             if term.direction == "horizontal" then
@@ -17,19 +33,14 @@ return {
             end
         end,
         open_mapping = [[<c-\>]],
-        shade_filetypes = { "none" },
-        shading_factor = 2,
         direction = "float",
-        close_on_exit = true,
         shell = vim.fn.has("win32") == 1 and "pwsh -NoLogo" or vim.o.shell,
         float_opts = {
-            border = "curved", -- include: single | double | shadow | curved
+            border = "curved",
             winblend = 0,
         },
         highlights = {
-            FloatBorder = {
-                guifg = "#9d7cd8",
-            },
+            FloatBorder = { guifg = "#9d7cd8" },
         },
     },
 }
