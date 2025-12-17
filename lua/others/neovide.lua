@@ -1,5 +1,5 @@
 -- Config for Neovide
-vim.o.guifont = "MesloLGS NF:h12"
+vim.o.guifont = "MesloLGS NF:h10"
 vim.g.neovide_floating_shadow = true
 vim.opt.linespace = 4
 
