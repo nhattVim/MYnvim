@@ -1,9 +1,10 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
+    branch = "master",
     build = ":TSUpdate",
     config = function()
-        require("nvim-treesitter").setup({
+        require("nvim-treesitter.configs").setup({
             highlight = {
                 enable = true,
                 disable = { "css" },
