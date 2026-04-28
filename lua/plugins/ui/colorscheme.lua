@@ -6,18 +6,19 @@ return {
     config = function()
         -- Function to update tokyonight config
         local function tokyonight_config()
+            local is_transparent = vim.g.transparent and not vim.g.neovide
             require("tokyonight").setup({
                 style = "night",
                 light_style = "day",
-                transparent = vim.g.transparent,
+                transparent = is_transparent,
                 terminal_colors = true,
                 styles = {
                     comments = { italic = true },
                     keywords = { italic = true },
                     functions = {},
                     variables = {},
-                    sidebars = vim.g.transparent and "transparent" or "dark",
-                    floats = vim.g.transparent and "transparent" or "dark",
+                    sidebars = is_transparent and "transparent" or "dark",
+                    floats = is_transparent and "transparent" or "dark",
                 },
                 sidebars = { "qf", "help" },
                 day_brightness = 0.3,
@@ -60,7 +61,7 @@ return {
                     }
 
                     -- Fix transparency on buffferline & lualine
-                    if vim.g.transparent then
+                    if is_transparent then
                         -- Tabs
                         hl.TabLineFill = { bg = "NONE" }
 
@@ -82,6 +83,10 @@ return {
         -- INFO: Create toggle transparency command
         vim.api.nvim_create_user_command("ToggleTrans", function()
             vim.g.transparent = not vim.g.transparent
+            if vim.g.neovide then
+                vim.g.neovide_opacity = vim.g.transparent and 0.9 or 1.0
+                vim.g.neovide_normal_opacity = vim.g.transparent and 0.9 or 1.0
+            end
             vim.notify("Transparent: " .. tostring(vim.g.transparent), vim.log.levels.INFO, { title = "Tokyonight" })
             tokyonight_config()
         end, {

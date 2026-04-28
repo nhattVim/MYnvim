@@ -3,6 +3,12 @@ vim.o.guifont = "MesloLGS NF:h10"
 vim.g.neovide_floating_shadow = true
 vim.opt.linespace = 4
 
+-- Set transparency
+if vim.g.transparent then
+    vim.g.neovide_opacity = 0.9
+    vim.g.neovide_normal_opacity = 0.9
+end
+
 -- Set title color
 vim.g.neovide_title_background_color =
     string.format("%x", vim.api.nvim_get_hl(0, { id = vim.api.nvim_get_hl_id_by_name("Normal") }).bg)

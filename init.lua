@@ -21,12 +21,7 @@ vim.loader.enable()
 require("core.autocmds")
 require("core.options")
 require("core.keymaps")
-
-if vim.g.neovide then
-    -- Neovide must not transparent
-    vim.g.transparent = false
-    require("others.neovide")
-end
+require("others.neovide")
 
 -- Import plugins manager
 require("core.lazy_lib")
