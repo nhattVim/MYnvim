@@ -204,7 +204,6 @@ sudo docker start -ai MYnvim
 | [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip) | Snippet Engine for Neovim written in Lua. |  |
 | [LunarVim/bigfile.nvim](https://github.com/LunarVim/bigfile.nvim) | Make editing big files faster 🚀 |  |
 | [MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Plugin to improve viewing Markdown files in Neovim |  |
-| [MoaidHathot/dotnet.nvim](https://github.com/MoaidHathot/dotnet.nvim) | .NET Neovim plugin for improving the .NET dev experience in Neovim,  written completely in Lua |  |
 | [NStefan002/speedtyper.nvim](https://github.com/NStefan002/speedtyper.nvim) | Practise typing in Neovim |  |
 | [OXY2DEV/helpview.nvim](https://github.com/OXY2DEV/helpview.nvim) | A hackable & fancy vimdoc/help file viewer for Neovim |  |
 | [ThePrimeagen/vim-be-good](https://github.com/ThePrimeagen/vim-be-good) | vim-be-good is a nvim plugin designed to make you better at Vim Movements.  |  |
@@ -215,7 +214,6 @@ sudo docker start -ai MYnvim
 | [aurum77/live-server.nvim](https://github.com/aurum77/live-server.nvim) | A plugin to integrate live-server from Neovim |  |
 | [booperlv/nvim-gomove](https://github.com/booperlv/nvim-gomove) | A complete plugin for moving and duplicating blocks and lines, with complete fold handling, reindenting, and undoing in one go. |  |
 | [chentoast/marks.nvim](https://github.com/chentoast/marks.nvim) | A better user experience for viewing and interacting with Vim marks. |  |
-| [eatgrass/maven.nvim](https://github.com/eatgrass/maven.nvim) | for java developer, interactively execute maven command without leaving your editor |  |
 | [famiu/bufdelete.nvim](https://github.com/famiu/bufdelete.nvim) | Delete Neovim buffers without losing window layout |  |
 | [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim) | ✅  Highlight, list and search todo comments in your projects | _Optional_ |
 | [folke/which-key.nvim](https://github.com/folke/which-key.nvim) | 💥   Create key bindings that stick. WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type. |  |
@@ -228,7 +226,6 @@ sudo docker start -ai MYnvim
 | [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) | markdown preview plugin for (neo)vim | _Optional_ |
 | [jim-fx/sudoku.nvim](https://github.com/jim-fx/sudoku.nvim) |  |  |
 | [karb94/neoscroll.nvim](https://github.com/karb94/neoscroll.nvim) | Smooth scrolling neovim plugin written in lua |  |
-| [kawre/leetcode.nvim](https://github.com/kawre/leetcode.nvim) | A Neovim plugin enabling you to solve LeetCode problems. |  |
 | [kevinhwang91/nvim-ufo](https://github.com/kevinhwang91/nvim-ufo) | Not UFO in the sky, but an ultra fold in Neovim. |  |
 | [kevinhwang91/promise-async](https://github.com/kevinhwang91/promise-async) | Promise & Async in Lua |  |
 | [kristijanhusak/vim-dadbod-completion](https://github.com/kristijanhusak/vim-dadbod-completion) | Database autocompletion powered by https://github.com/tpope/vim-dadbod |  |
