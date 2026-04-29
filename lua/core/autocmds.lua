@@ -137,6 +137,26 @@ vim.api.nvim_create_autocmd("TermOpen", {
     end,
 })
 
+-- default keymap for lsp
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = "nhattVim",
+    callback = function(event)
+        require("core.utils").set_keys(event.buf, {
+            { "n", "K", vim.lsp.buf.hover, "Hover" },
+            { "n", "gi", vim.lsp.buf.implementation, "Go to implementation" },
+            { "n", "gt", vim.lsp.buf.type_definition, "Go to type definition" },
+            { "n", "gd", vim.lsp.buf.definition, "Go to definition" },
+            { "n", "gD", vim.lsp.buf.declaration, "Go to declaration" },
+            { "n", "gr", vim.lsp.buf.references, "Find references" },
+            { "n", "gh", vim.diagnostic.open_float, "Show diagnostics" },
+            { "n", "gR", vim.lsp.buf.rename, "Rename symbol" },
+            { "n", "ga", vim.lsp.buf.code_action, "Code action" },
+            { "n", "gK", vim.lsp.buf.signature_help, "Signature help" },
+            { "n", "gf", vim.lsp.buf.format, "Format buffer" },
+        })
+    end,
+})
+
 --------------------------------------------------------- User CMD  ---------------------------------------------------------
 
 -- command to compile debug file for cpp

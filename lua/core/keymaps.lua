@@ -1,5 +1,5 @@
 -- General keymaps
-require("core.utils").set_keys(_, {
+require("core.utils").set_keys(nil, {
     { "v", "<leader><leader>", "<esc>", "Exit visual mode" },
     { "n", "u", "<cmd>silent! undo<cr>", "Undo" },
     { "n", "<C-r>", "<cmd>silent! redo<cr>", "Redo" },

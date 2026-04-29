@@ -123,9 +123,7 @@ return {
             },
 
             on_attach = function(_, bufnr)
-                -- Lsp common keymaps
-                require("core.utils").set_lsp_keymaps(bufnr)
-                -- Jdtls specific keymaps
+                -- jdtls specific keymaps
                 require("core.utils").set_keys(bufnr, {
                     { "n", "<leader>J", "", "Java" },
                     { "n", "<leader>Jo", jdtls.organize_imports, "Organize imports" },
@@ -135,17 +133,8 @@ return {
                     { "n", "<leader>Jc", jdtls.extract_constant, "Extract constant" },
                 })
 
-                -- refresh codelens when server ready
-                pcall(vim.lsp.codelens.refresh)
-
-                -- refresh codelens on save
-                vim.api.nvim_create_autocmd("BufWritePost", {
-                    group = "nhattVim",
-                    buffer = bufnr,
-                    callback = function()
-                        pcall(vim.lsp.codelens.refresh)
-                    end,
-                })
+                -- enable codelens
+                vim.lsp.codelens.enable(true, { bufnr = bufnr })
             end,
         }
 
