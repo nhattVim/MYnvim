@@ -14,7 +14,11 @@
 require("core.autocmds")
 require("core.options")
 require("core.keymaps")
-require("others.neovide")
+
+-- Import neovide configuration
+if vim.g.neovide then
+    require("others.neovide")
+end
 
 -- Import plugins manager
 require("core.lazy_lib")
