@@ -1,35 +1,45 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    lazy = false,
-    branch = "master",
+    branch = "main",
     build = ":TSUpdate",
     config = function()
-        require("nvim-treesitter.configs").setup({
-            highlight = {
-                enable = true,
-                disable = { "css" },
-            },
-            indent = {
-                enable = true,
-            },
-            ensure_installed = {
-                -- "json",
-                -- "javascript",
-                -- "typescript",
-                -- "tsx",
-                -- "yaml",
-                "java",
-                "html",
-                "bash",
-                "lua",
-                "cpp",
-                "c",
-                -- "vim",
-                -- "dockerfile",
-                -- "gitignore",
-                -- "query",
-            },
-            auto_install = true, -- make sure there languages will install
+        local ts = require("nvim-treesitter")
+        local config = require("nvim-treesitter.config")
+
+        local parsers = {
+            "vim",
+            "vimdoc",
+            "rust",
+            "c",
+            "cpp",
+            "go",
+            "html",
+            "css",
+            "javascript",
+            "json",
+            "lua",
+            "markdown",
+            "python",
+            "typescript",
+            "vue",
+            "svelte",
+            "bash",
+        }
+
+        ts.setup({})
+
+        ts.install(vim.tbl_filter(function(parser)
+            return not vim.tbl_contains(config.get_installed(), parser)
+        end, parsers))
+
+        vim.api.nvim_create_autocmd("FileType", {
+            callback = function(args)
+                local lang = vim.treesitter.language.get_lang(args.match)
+
+                if vim.tbl_contains(ts.get_installed(), lang) then
+                    vim.treesitter.start(args.buf)
+                end
+            end,
         })
     end,
 }
