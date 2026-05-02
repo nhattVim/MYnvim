@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2026-05-02 15:23 UTC+7</em></p>
+<p align='right'><em>Last updated: 2026-05-02 15:46 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -206,6 +206,7 @@ sudo docker start -ai MYnvim
 | [JoosepAlviste/nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) | Neovim treesitter plugin for setting the commentstring based on the cursor location in a file. |  |
 | [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip) | Snippet Engine for Neovim written in Lua. |  |
 | [LunarVim/bigfile.nvim](https://github.com/LunarVim/bigfile.nvim) | Make editing big files faster 🚀 |  |
+| [MagicDuck/grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim) | Find And Replace plugin for neovim |  |
 | [MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Plugin to improve viewing Markdown files in Neovim |  |
 | [NStefan002/speedtyper.nvim](https://github.com/NStefan002/speedtyper.nvim) | Practise typing in Neovim |  |
 | [OXY2DEV/helpview.nvim](https://github.com/OXY2DEV/helpview.nvim) | A hackable & fancy vimdoc/help file viewer for Neovim |  |
