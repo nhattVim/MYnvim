@@ -182,6 +182,7 @@ sudo docker start -ai MYnvim
 | [Owen-Dechow/videre.nvim](https://github.com/Owen-Dechow/videre.nvim) | JSON explorer using Neovim's terminal interface. | _Optional_ |
 | [a-usr/xml2lua.nvim](https://github.com/a-usr/xml2lua.nvim) | A packaging of the xml2lua library for use in a neovim configuration or plugin | _Optional_ |
 | [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim) | A snazzy bufferline for Neovim |  |
+| [b0o/incline.nvim](https://github.com/b0o/incline.nvim) | 🎈 Floating statuslines for Neovim |  |
 | [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors) | Highlight colors for neovim | _Optional_ |
 | [dstein64/nvim-scrollview](https://github.com/dstein64/nvim-scrollview) | A Neovim plugin that displays interactive vertical scrollbars and signs. | _Optional_ |
 | [folke/noice.nvim](https://github.com/folke/noice.nvim) | 💥 Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu. |  |
