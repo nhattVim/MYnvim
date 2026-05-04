@@ -47,7 +47,7 @@ return {
         opts = {},
     },
     {
-        "phaazon/hop.nvim", -- Neovim motions on speed!
+        "smoka7/hop.nvim", -- Neovim motions on speed!
         cmd = {
             "HopWord",
             "HopAnywhere",
