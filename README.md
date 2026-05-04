@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2026-05-04 14:03 UTC+7</em></p>
+<p align='right'><em>Last updated: 2026-05-04 14:31 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -220,6 +220,7 @@ sudo docker start -ai MYnvim
 | [chentoast/marks.nvim](https://github.com/chentoast/marks.nvim) | A better user experience for viewing and interacting with Vim marks. |  |
 | [famiu/bufdelete.nvim](https://github.com/famiu/bufdelete.nvim) | Delete Neovim buffers without losing window layout |  |
 | [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim) | ✅  Highlight, list and search todo comments in your projects | _Optional_ |
+| [folke/trouble.nvim](https://github.com/folke/trouble.nvim) | 🚦 A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing. |  |
 | [folke/which-key.nvim](https://github.com/folke/which-key.nvim) | 💥   Create key bindings that stick. WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type. |  |
 | [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer) | nvim-cmp source for buffer words |  |
 | [hrsh7th/cmp-calc](https://github.com/hrsh7th/cmp-calc) | nvim-cmp source for math calculation | _Optional_ |
