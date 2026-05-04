@@ -5,8 +5,8 @@ vim.opt.linespace = 4
 
 -- Set transparency
 if vim.g.transparent then
-    vim.g.neovide_opacity = 0.9
-    vim.g.neovide_normal_opacity = 0.9
+    vim.g.neovide_opacity = 0.8
+    vim.g.neovide_normal_opacity = 0.8
 end
 
 -- Set title color

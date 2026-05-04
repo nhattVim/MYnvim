@@ -84,8 +84,8 @@ return {
         vim.api.nvim_create_user_command("ToggleTrans", function()
             vim.g.transparent = not vim.g.transparent
             if vim.g.neovide then
-                vim.g.neovide_opacity = vim.g.transparent and 0.9 or 1.0
-                vim.g.neovide_normal_opacity = vim.g.transparent and 0.9 or 1.0
+                vim.g.neovide_opacity = vim.g.transparent and 0.8 or 1.0
+                vim.g.neovide_normal_opacity = vim.g.transparent and 0.8 or 1.0
             end
             vim.notify("Transparent: " .. tostring(vim.g.transparent), vim.log.levels.INFO, { title = "Tokyonight" })
             tokyonight_config()
