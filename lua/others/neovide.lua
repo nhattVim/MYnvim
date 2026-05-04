@@ -18,6 +18,11 @@ vim.g.neovide_title_text_color =
 -- Fix mouse
 vim.keymap.set({ "n", "v" }, "<LeftMouse><LeftMouse>", "")
 
+-- Toggle fullscreen via F11
+vim.keymap.set({ "n", "i", "t" }, "<F11>", function()
+    vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
+end)
+
 -- Open last directory
 local last = vim.fn.stdpath("data") .. "/last_dir.txt"
 local f = io.open(last, "r")
