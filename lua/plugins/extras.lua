@@ -30,6 +30,11 @@ return {
         opts = {},
     },
     {
+        "folke/trouble.nvim", -- A pretty diagnostics, references, telescope results, quickfix and location list
+        cmd = "Trouble",
+        opts = {},
+    },
+    {
         "windwp/nvim-ts-autotag", -- Auto tagging html tag
         ft = "html",
         opts = {},

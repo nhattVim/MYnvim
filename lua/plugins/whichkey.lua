@@ -49,7 +49,7 @@ return {
         end,
         spec = {
             -- Hidden keymaps
-            { "<leader>X", "<cmd>BufferLineCloseOthers<cr>", desc = "Close Others", hidden = true },
+            { "<leader>X", "<cmd>BufferLineCloseOthers<cr>", desc = "Close Others" },
 
             -- Keymaps
             { "<leader>q", "<cmd>qall<CR>", desc = "Exit" },
@@ -96,7 +96,7 @@ return {
                 {
                     "<leader>hd",
                     group = "Disabled",
-                    { "<leader>hdh", "<cmd>TSBufDisable highlight<CR>", desc = "Highlight" },
+                    { "<leader>hdh", "<cmd>vim.treesitter.stop()<CR>", desc = "Highlight" },
                     { "<leader>hdi", "<cmd>DisableHLIndent<CR>", desc = "Indent" },
                     { "<leader>hdc", "<cmd>DisableHLChunk<CR>", desc = "Chunk" },
                     { "<leader>hdb", "<cmd>DisableHLBlank<CR>", desc = "Blank" },
@@ -104,7 +104,7 @@ return {
                 {
                     "<leader>he",
                     group = "Enabled",
-                    { "<leader>heh", "<cmd>TSBufEnable highlight<CR>", desc = "Highlight" },
+                    { "<leader>heh", "<cmd>lua vim.treesitter.start()<CR>", desc = "Highlight" },
                     { "<leader>hei", "<cmd>EnableHLIndent<CR>", desc = "Indent" },
                     { "<leader>hec", "<cmd>EnableHLChunk<CR>", desc = "Chunk" },
                     { "<leader>heb", "<cmd>EnableHLBlank<CR>", desc = "Blank" },
@@ -168,7 +168,6 @@ return {
                 mode = { "n", "v" },
                 group = "LSP",
                 { "<leader>lm", "<cmd>Mason<CR>", desc = "Mason" },
-                { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
                 { "<leader>le", "<cmd>Lspsaga finder<cr>", desc = "Show finder" },
                 { "<leader>lo", "<cmd>Lspsaga outline<cr>", desc = "Show outine" },
                 { "<leader>lb", "<cmd>Lspsaga winbar_toggle<cr>", desc = "Breadcrumb" },
@@ -179,6 +178,7 @@ return {
                 { "<leader>ls", "<cmd>Lspsaga show_line_diagnostics<cr>", desc = "Show diagnostics" },
                 { "<leader>lw", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
                 { "<leader>ld", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document Diagnostics" },
+                { "<leader>lt", "<cmd>Trouble diagnostics<cr>", desc = "Show Trouble" },
                 { "<leader>lr", vim.lsp.buf.rename, desc = "Rename" },
                 { "<leader>lc", vim.lsp.codelens.run, desc = "CodeLens Action" },
                 { "<leader>la", vim.lsp.buf.code_action, desc = "Code Action" },
