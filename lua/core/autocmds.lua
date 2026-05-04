@@ -1,11 +1,11 @@
 --------------------------------------------------------- Auto CMD  ---------------------------------------------------------
 
 -- create augroup
-vim.api.nvim_create_augroup("nhattVim", { clear = true })
+local group = vim.api.nvim_create_augroup("nhattVim", { clear = true })
 
 -- reload file when it changes
 vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
-    group = "nhattVim",
+    group = group,
     callback = function()
         if vim.o.buftype ~= "nofile" then
             vim.cmd("checktime")
@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
 
 -- resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
-    group = "nhattVim",
+    group = group,
     callback = function()
         local current_tab = vim.fn.tabpagenr()
         vim.cmd("tabdo wincmd =")
@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 
 -- highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = "nhattVim",
+    group = group,
     callback = function()
         vim.hl.on_yank()
     end,
@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- go to last loc when opening a buffer
 vim.api.nvim_create_autocmd("BufReadPost", {
-    group = "nhattVim",
+    group = group,
     callback = function(event)
         local exclude = { "gitcommit" }
         local buf = event.buf
@@ -49,18 +49,9 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
 })
 
--- disable line numbers in terminal
-vim.api.nvim_create_autocmd("TermOpen", {
-    group = "nhattVim",
-    callback = function()
-        vim.opt_local.number = false
-        vim.opt_local.relativenumber = false
-    end,
-})
-
 -- auto sync diagnostics to qflist
 vim.api.nvim_create_autocmd("DiagnosticChanged", {
-    group = "nhattVim",
+    group = group,
     callback = function()
         vim.diagnostic.setqflist({ open = false })
     end,
@@ -68,7 +59,7 @@ vim.api.nvim_create_autocmd("DiagnosticChanged", {
 
 -- settings for quickfix
 vim.api.nvim_create_autocmd("FileType", {
-    group = "nhattVim",
+    group = group,
     pattern = "qf",
     callback = function()
         vim.opt_local.number = false
@@ -78,7 +69,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- fix conceallevel for json files
 vim.api.nvim_create_autocmd({ "FileType" }, {
-    group = "nhattVim",
+    group = group,
     pattern = { "json", "jsonc", "json5" },
     callback = function()
         vim.opt_local.conceallevel = 0
@@ -87,7 +78,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
-    group = "nhattVim",
+    group = group,
     pattern = {
         "PlenaryTestPopup",
         "checkhealth",
@@ -121,11 +112,16 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
--- exit terminal
+-- terminal configuration & keymaps
 vim.api.nvim_create_autocmd("TermOpen", {
-    group = "nhattVim",
+    group = group,
     pattern = "term://*",
     callback = function()
+        -- Disable line numbers
+        vim.opt_local.number = false
+        vim.opt_local.relativenumber = false
+
+        -- Default keymaps for terminal
         local opts = { buffer = 0 }
         vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
         vim.keymap.set("t", "<c-x>", [[<C-\><C-n>]], opts)
@@ -139,7 +135,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
 
 -- default keymap for lsp
 vim.api.nvim_create_autocmd("LspAttach", {
-    group = "nhattVim",
+    group = group,
     callback = function(event)
         require("core.utils").set_keys(event.buf, {
             { "n", "K", vim.lsp.buf.hover, "Hover" },

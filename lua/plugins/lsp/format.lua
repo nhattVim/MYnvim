@@ -7,6 +7,7 @@ return {
     },
     keys = {
         {
+            mode = "n",
             "<A-f>",
             function()
                 require("conform").format({

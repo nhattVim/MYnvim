@@ -104,5 +104,52 @@ return {
                 vim.lsp.enable(lsp)
             end
         end
+
+        -- Monkey-patch vim.lsp.codelens to use virt_text instead of virt_lines_above
+        ---@type any
+        local provider = require("vim.lsp._capability").all.codelens
+        if provider and provider.on_win then
+            local orig_on_win = provider.on_win
+            provider.on_win = function(self, toprow, botrow)
+                orig_on_win(self, toprow, botrow)
+                for _, state in pairs(self.client_state) do
+                    local namespace = state.namespace
+                    local extmarks = vim.api.nvim_buf_get_extmarks(
+                        self.bufnr,
+                        namespace,
+                        { toprow, 0 },
+                        { botrow, -1 },
+                        { details = true }
+                    )
+                    for _, mark in ipairs(extmarks) do
+                        local ext_id, row, _, details = mark[1], mark[2], mark[3], mark[4]
+                        ---@cast details any
+                        if details and details.virt_lines and details.virt_lines_above then
+                            local virt_text = details.virt_lines[1]
+                            -- Remove the leading padding spaces that were added for virt_lines_above
+                            if
+                                virt_text
+                                and #virt_text > 0
+                                and type(virt_text[1][1]) == "string"
+                                and virt_text[1][1]:match("^%s*$")
+                            then
+                                table.remove(virt_text, 1)
+                            end
+
+                            -- Add a small padding so it doesn't stick directly to the code
+                            table.insert(virt_text, 1, { " ", "LspCodeLensSeparator" })
+
+                            vim.api.nvim_buf_del_extmark(self.bufnr, namespace, ext_id)
+                            vim.api.nvim_buf_set_extmark(self.bufnr, namespace, row, 0, {
+                                id = ext_id,
+                                virt_text = virt_text,
+                                virt_text_pos = "eol",
+                                hl_mode = "combine",
+                            })
+                        end
+                    end
+                end
+            end
+        end
     end,
 }

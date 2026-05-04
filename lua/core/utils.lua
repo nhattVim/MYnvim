@@ -24,4 +24,29 @@ function U.set_keys(bufnr, keymaps)
     end
 end
 
+-- helper to yank file path with selected line range
+function U.yank_file_path_with_range()
+    local start_line = vim.fn.line("v")
+    local end_line = vim.fn.line(".")
+
+    if start_line > end_line then
+        start_line, end_line = end_line, start_line
+    end
+
+    local path = vim.fn.expand("%:p")
+    local text
+
+    if start_line == end_line then
+        text = string.format("%s:%d", path, start_line)
+    else
+        text = string.format("%s:%d-%d", path, start_line, end_line)
+    end
+
+    vim.fn.setreg("+", text)
+
+    vim.notify("Yanked: " .. text)
+
+    vim.api.nvim_input("<Esc>")
+end
+
 return U

@@ -17,4 +17,12 @@ require("core.utils").set_keys(nil, {
     { "c", "<C-S-v>", "<C-R>+", "Paste in command mode" },
     { "v", "<C-c>", '"+y', "Copy to clipboard" },
     { "n", "<C-a>", "ggVG", "Select all" },
+    {
+        "x",
+        "Y",
+        function()
+            require("core.utils").yank_file_path_with_range()
+        end,
+        "Yank file path with line range",
+    },
 })

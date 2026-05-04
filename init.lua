@@ -21,4 +21,4 @@ if vim.g.neovide then
 end
 
 -- Import plugins manager
-require("core.lazy_lib")
+require("core.lazy")
