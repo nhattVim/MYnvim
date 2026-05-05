@@ -24,7 +24,6 @@ return {
         local cmp = require("cmp")
         local icons = require("others.icons")
         local luasnip = require("luasnip")
-        local lpath = vim.fn.stdpath("config") .. "/snippets"
 
         -- Set up windsurf.nvim
         require("codeium").setup({
@@ -120,15 +119,7 @@ return {
 
         -- load custom snippets
         require("luasnip.loaders.from_vscode").lazy_load({
-            paths = {
-                lpath .. "/MYnvim",
-                lpath .. "/bootstrap",
-                lpath .. "/javascript",
-                -- lpath .. "/laravel",
-                -- lpath .. "/laravel-blade1",
-                -- lpath .. "/laravel-blade2",
-                -- lpath .. "/codeigniter",
-            },
+            paths = { vim.fn.stdpath("config") .. "/snippets" },
         })
     end,
 }

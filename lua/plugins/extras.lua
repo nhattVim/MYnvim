@@ -40,11 +40,9 @@ return {
         opts = {},
     },
     {
-        "windwp/nvim-autopairs", -- Auto pairs
-        event = "InsertEnter",
-        opts = {
-            fast_wrap = {},
-        },
+        "altermo/ultimate-autopair.nvim", -- Auto pairs
+        event = { "InsertEnter", "CmdlineEnter" },
+        opts = {},
     },
     {
         "karb94/neoscroll.nvim", -- Smooth scroll

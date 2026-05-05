@@ -1,0 +1,17 @@
+{
+  "CPP default": {
+    "body": [
+      "#include <bits/stdc++.h>",
+      "",
+      "using namespace std;",
+      "",
+      "int main (int argc, char *argv[]) {",
+      "    $1",
+      "    ${2:test} ",
+      "    return 0;",
+      "}"
+    ],
+    "description": "CPP default",
+    "prefix": "!"
+  }
+}

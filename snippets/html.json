@@ -1,0 +1,73 @@
+{
+  "HTML": {
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "\t<head>",
+      "\t\t<meta charset=\"UTF-8\" />",
+      "\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />",
+      "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+      "\t\t<title>$1</title>",
+      "\t</head>",
+      "",
+      "\t<body>",
+      "\t\t",
+      "\t</body>",
+      "</html>"
+    ],
+    "description": "HTML default",
+    "prefix": "!"
+  },
+  "Link to css": {
+    "body": [
+      "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />",
+      "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />",
+      "<link",
+      "  href=\"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap\"",
+      "  rel=\"stylesheet\"",
+      "/>",
+      "<link rel=\"stylesheet\" href=\"${1:reset.css}\" />",
+      "<link rel=\"stylesheet\" href=\"${2:style.css}\" />"
+    ],
+    "description": "Link default css",
+    "prefix": "link-css"
+  },
+  "author": {
+    "body": [
+      "<!-- ",
+      "Author  = nhattVim",
+      "Email   = nhattruong13112000@gmail.com",
+      "Github  = https://github.com/nhattVim",
+      "Date    = $CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}",
+      "File    = $TM_FILENAME",
+      "-->"
+    ],
+    "description": "@author = nhattVim",
+    "prefix": "@author"
+  },
+  "html5": {
+    "body": [
+      "<!DOCTYPE html>",
+      "<!-- ",
+      "Author  = nhattVim",
+      "Date    = $CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}",
+      "File    = $TM_FILENAME",
+      "-->",
+      "<html lang=\"$1en\">",
+      "\t<head>",
+      "\t\t<title>$2</title>",
+      "\t\t<link rel=\"shortcut icon\" href=\"#\"/>",
+      "\t\t<meta charset=\"UTF-8\">",
+      "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+      "\t\t<link href=\"$3css/style.css\" rel=\"stylesheet\">",
+      "\t\t<script src=\"$4js/script.js\"></script>",
+      "\t</head>",
+      "\t<body>",
+      "\t$0",
+      "\t</body>",
+      "</html>"
+    ],
+    "description": "HTML-All - Defines a template for a html5 document Full",
+    "prefix": "html5-All"
+  }
+}

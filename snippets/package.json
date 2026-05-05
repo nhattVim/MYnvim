@@ -1,5 +1,4 @@
 {
-    "name": "User custom snippets",
     "contributes": {
         "snippets": [
             {
@@ -9,6 +8,18 @@
             {
                 "language": "html",
                 "path": "./html.json"
+            },
+            {
+                "language": [
+                    "html",
+                    "php",
+                    "blade",
+                    "typescript",
+                    "typescriptreact",
+                    "javascript",
+                    "javascriptreact"
+                ],
+                "path": "./bootstrap.json"
             },
             {
                 "language": "cpp",
@@ -25,7 +36,17 @@
             {
                 "language": "xml",
                 "path": "./xml.json"
+            },
+            {
+                "language": [
+                    "javascript",
+                    "typescript",
+                    "javascriptreact",
+                    "typescriptreact"
+                ],
+                "path": "./javascript.json"
             }
         ]
-    }
+    },
+    "name": "User custom snippets"
 }
