@@ -10,7 +10,8 @@
 -------- ╚═╝     ╚═╝   ╚═╝       ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝ --------
 ---------------------------------------------------------------------------
 
--- Import neovim configuration
+-- Import env & neovim configuration
+require("core.utils").load_env()
 require("core.autocmds")
 require("core.options")
 require("core.keymaps")

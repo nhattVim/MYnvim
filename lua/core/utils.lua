@@ -43,10 +43,34 @@ function U.yank_file_path_with_range()
     end
 
     vim.fn.setreg("+", text)
-
     vim.notify("Yanked: " .. text)
-
     vim.api.nvim_input("<Esc>")
+end
+
+-- helper to load .env file
+function U.load_env(path)
+    path = path or (vim.fn.stdpath("config") .. "/.env")
+
+    local file = io.open(path, "r")
+    if not file then
+        return
+    end
+
+    for line in file:lines() do
+        -- ignore comments and empty lines
+        if line ~= "" and not line:match("^#") then
+            local key, value = line:match("^([%w_]+)%s*=%s*(.*)$")
+
+            if key and value then
+                -- remove quotes
+                value = value:gsub('^"', ""):gsub('"$', "")
+                value = value:gsub("^'", ""):gsub("'$", "")
+                vim.fn.setenv(key, value)
+            end
+        end
+    end
+
+    file:close()
 end
 
 return U

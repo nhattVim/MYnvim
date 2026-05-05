@@ -1,67 +1,55 @@
 return {
+    -- NOTE: These plugins are just UI/wrappers.
+    -- You still need to install database CLI tools.
+
+    -- MySQL       -> mysql
+    -- PostgreSQL  -> psql
+    -- SQLite      -> sqlite3
+    -- Redis       -> redis-cli
+
     "kristijanhusak/vim-dadbod-ui",
+    cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
     dependencies = {
         "tpope/vim-dadbod",
         {
             "kristijanhusak/vim-dadbod-completion",
-            ft = {
-                "sql",
-                "mysql",
-                "plsql",
-            },
+            ft = { "sql", "mysql", "plsql" },
         },
     },
-    cmd = {
-        "DBUI",
-        "DBUIToggle",
-        "DBUIAddConnection",
-        "DBUIFindBuffer",
-    },
     init = function()
-        -- Your DBUI configuration
         vim.g.db_ui_use_nerd_fonts = 1
         vim.g.db_ui_show_database_icon = 1
         vim.g.db_ui_show_help = 0
-    end,
-    config = function()
         vim.g.dbs = {
             -- sudo mysql -u root -p
             -- ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'root';
             -- FLUSH PRIVILEGES;
             -- EXIT;
-            { name = "root", url = "mysql://root:root@localhost" },
+            root = "mysql://root:root@localhost",
 
             -- sudo mysql -u root -p
             -- CREATE USER 'albedo'@'localhost' IDENTIFIED BY 'albedo';
             -- GRANT ALL PRIVILEGES ON *.* TO 'albedo'@'localhost' WITH GRANT OPTION;
             -- FLUSH PRIVILEGES;
             -- EXIT;
-            { name = "albedo", url = "mysql://albedo:albedo@localhost" },
+            albedo = "mysql://albedo:albedo@localhost",
+
+            -- db aiven, load from .env
+            aiven = os.getenv("DB_AIVEN_URL"),
         }
-
+    end,
+    config = function()
         vim.api.nvim_create_autocmd("FileType", {
-            pattern = {
-                "sql",
-            },
-            command = [[setlocal omnifunc=vim_dadbod_completion#omni]],
-        })
-
-        vim.api.nvim_create_autocmd("FileType", {
-            pattern = {
-                "sql",
-                "mysql",
-                "plsql",
-            },
+            pattern = { "sql", "mysql", "plsql" },
             callback = function()
+                vim.bo.omnifunc = "vim_dadbod_completion#omni"
                 local ok, cmp = pcall(require, "cmp")
                 if ok then
-                    vim.schedule(function()
-                        cmp.setup.buffer({
-                            sources = { { name = "vim-dadbod-completion" } },
-                        })
-                    end)
-                else
-                    vim.notify("Error loading cmp: " .. cmp, vim.log.levels.ERROR)
+                    cmp.setup.buffer({
+                        sources = {
+                            { name = "vim-dadbod-completion" },
+                        },
+                    })
                 end
             end,
         })
@@ -69,14 +57,9 @@ return {
         vim.api.nvim_create_autocmd("FileType", {
             pattern = "dbui",
             callback = function()
-                vim.api.nvim_buf_set_keymap(
-                    0,
-                    "n",
-                    "s",
-                    "<Plug>(DBUI_SelectLineVsplit)",
-                    { noremap = true, silent = true }
-                )
-                vim.api.nvim_buf_set_keymap(0, "n", "v", "<Plug>(DBUI_SaveQuery)", { noremap = true, silent = true })
+                local opts = { noremap = true, silent = true, buffer = true }
+                vim.keymap.set("n", "s", "<Plug>(DBUI_SelectLineVsplit)", opts)
+                vim.keymap.set("n", "v", "<Plug>(DBUI_SaveQuery)", opts)
             end,
         })
     end,
