@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2026-05-05 14:49 UTC+7</em></p>
+<p align='right'><em>Last updated: 2026-05-05 15:30 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -27,12 +27,8 @@
 ## Advice
 
 > [!Important]
-> You should only use this configuration on Linux or WSL (Windows Subsystem for Linux), not on Windows. If used on Windows, it may result in various errors, and I don't have the time to troubleshoot them.
-> You can use this script to set up your WSL (Ubuntu)
->
-> ```
-> bash <(curl -sSL https://is.gd/nhattVim_wsl)
-> ```
+> Neovim now runs much better on Windows. For Windows users, you can use WSL (Windows Subsystem for Linux) or the [Neovide](https://neovide.dev/) GUI.
+> For Linux users, it is recommended to use the [Kitty](https://github.com/kovidgoyal/kitty) terminal with `cursor_trail 1` configured.
 
 ## Dependencies
 
