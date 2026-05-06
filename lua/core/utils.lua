@@ -15,12 +15,14 @@ end
 -- helper to set keymaps from table
 function U.set_keys(bufnr, keymaps)
     for _, k in ipairs(keymaps) do
-        vim.keymap.set(k[1], k[2], k[3], {
+        local opts = vim.tbl_extend("force", {
             silent = true,
             noremap = true,
             buffer = bufnr or nil,
-            desc = k[4] or nil,
-        })
+            desc = k[4],
+        }, k[5] or {})
+
+        vim.keymap.set(k[1], k[2], k[3], opts)
     end
 end
 

@@ -12,9 +12,9 @@ require("core.utils").set_keys(nil, {
     { "v", "<", "<gv", "Indent left" },
     { "v", "<S-tab>", "<gv", "Indent left" },
     { { "n", "i", "v" }, "<C-s>", "<cmd>silent! w!<CR>", "Save" },
-    { { "n", "v" }, "<C-v>", '"+p', "Paste from clipboard" },
-    { "i", "<C-v>", '<Esc>"+pa', "Paste from clipboard" },
-    { "c", "<C-S-v>", "<C-R>+", "Paste in command mode" },
+    { { "n", "v" }, "<C-v>", '"+p', "Paste in normal and visual mode" },
+    { "i", "<C-v>", '<Esc>"+pa', "Paste in insert mode" },
+    { "c", "<C-v>", "<C-R>+", "Paste in command mode", { silent = false } },
     { "v", "<C-c>", '"+y', "Copy to clipboard" },
     { "n", "<C-a>", "ggVG", "Select all" },
     {

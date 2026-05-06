@@ -1,3 +1,8 @@
+-- Check if not Neovide
+if not vim.g.neovide then
+    return
+end
+
 -- Config for Neovide
 vim.o.guifont = "MesloLGS NF:h10"
 vim.g.neovide_floating_shadow = true
