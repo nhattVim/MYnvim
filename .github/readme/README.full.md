@@ -32,26 +32,21 @@
 
 - Prerequisites:
     - Make sure you have installed the latest version of [Neovim v0.11.0+](https://github.com/neovim/neovim/releases/tag/v0.11.3).
-    - Have [git](https://cli.github.com/), [make](https://www.gnu.org/software/make/), [python](https://www.python.org/), [nodejs](https://nodejs.org/), and [cargo](https://www.rust-lang.org/tools/install) installed on your system
-    - Install [lazygit](https://github.com/jesseduffield/lazygit#installation) to launch lazygit in neovim with `<leader>gg` _(optional)_
-    - Install [translate-shell](https://github.com/soimort/translate-shell) to translate text with `<leader>ut` _(optional)_
+    - Have [git](https://git-scm.com), [make](https://www.gnu.org/software/make/), [python](https://www.python.org/), and [nodejs](https://nodejs.org/) installed
+    - `tree-sitter-cli` and a C compiler for [tree-sitter-manager](https://github.com/romus204/tree-sitter-manager.nvim)
+    - [lazygit](https://github.com/jesseduffield/lazygit#installation) to launch lazygit in neovim with `<leader>gg` _(optional)_
+    - [translate-shell](https://github.com/soimort/translate-shell) to translate text with `<leader>ut` _(optional)_
     - For [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) _(optional)_
         - live grep: [ripgrep](https://github.com/BurntSushi/ripgrep)
-        - find files: [fzf](https://github.com/junegunn/fzf)
+        - find files: [fd](https://github.com/sharkdp/fd)
+        - fzf-native sorter: [fzf](https://github.com/junegunn/fzf)
     - A terminal that support true color and undercurl:
-        - [kitty](https://github.com/kovidgoyal/kitty) *(Linux & Macos)*
-        - [wezterm](https://github.com/wez/wezterm) *(Linux, Macos & Windows)*
-        - [alacritty](https://github.com/alacritty/alacritty) *(Linux, Macos & Windows)*
-        - [iterm2](https://iterm2.com/) *(Macos)*
-        - [PowerShell 7+](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.2) _(Windows)_
+        - [kitty](https://github.com/kovidgoyal/kitty) *(Linux & macOS)*
+        - [wezterm](https://github.com/wez/wezterm) *(Linux, macOS & Windows)*
+        - [alacritty](https://github.com/alacritty/alacritty) *(Linux, macOS & Windows)*
+        - [iterm2](https://iterm2.com/) *(macOS)*
 
-    ```bash
-    # Then run this command:
-    pip install pynvim
-    npm install neovim -g
-    ```
-
-- Necessary font:
+- [Nerd font](https://www.nerdfonts.com) _(optional, but needed to display some icons)_:
     - [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
     - [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
     - [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
@@ -202,7 +197,7 @@ sudo docker start -ai MYnvim
 | [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip) | Snippet Engine for Neovim written in Lua. |  |
 | [LunarVim/bigfile.nvim](https://github.com/LunarVim/bigfile.nvim) | Make editing big files faster 🚀 |  |
 | [MagicDuck/grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim) | Find And Replace plugin for neovim |  |
-| [MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Plugin to improve viewing Markdown files in Neovim |  |
+| [MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Improve viewing Markdown in Neovim |  |
 | [NStefan002/speedtyper.nvim](https://github.com/NStefan002/speedtyper.nvim) | Practise typing in Neovim |  |
 | [OXY2DEV/helpview.nvim](https://github.com/OXY2DEV/helpview.nvim) | A hackable & fancy vimdoc/help file viewer for Neovim |  |
 | [ThePrimeagen/vim-be-good](https://github.com/ThePrimeagen/vim-be-good) | vim-be-good is a nvim plugin designed to make you better at Vim Movements.  |  |
@@ -241,6 +236,7 @@ sudo docker start -ai MYnvim
 | [mg979/vim-visual-multi](https://github.com/mg979/vim-visual-multi) | Multiple cursors plugin for vim/neovim | _Optional_ |
 | [monkoose/neocodeium](https://github.com/monkoose/neocodeium) | free AI completion plugin for neovim | _Optional_ |
 | [mrjones2014/smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim) | 🧠 Smart, seamless, directional navigation and resizing of Neovim + terminal multiplexer splits. Supports Zellij, Tmux, Wezterm, and Kitty. Think about splits in terms of "up/down/left/right". |  |
+| [nhattVim/check-deps.nvim](https://github.com/nhattVim/check-deps.nvim) | A lightweight Neovim plugin to check for external dependencies and help install them. |  |
 | [nhattVim/java-project.nvim](https://github.com/nhattVim/java-project.nvim) | Plugin for automatically creating a Java project | _Optional_ |
 | [nhattVim/projects.nvim](https://github.com/nhattVim/projects.nvim) | A simple Neovim plugin for manual project registry |  |
 | [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim) | :brain: :muscle: // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more |  |
