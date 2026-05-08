@@ -4,7 +4,7 @@ return {
     dependencies = {
         "nvim-neotest/nvim-nio",
         "theHamsta/nvim-dap-virtual-text",
-        { "rcasia/neotest-java", build = ":NeotestJava setup" },
+        "rcasia/neotest-java",
     },
     config = function()
         require("neotest").setup({

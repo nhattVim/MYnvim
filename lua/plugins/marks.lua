@@ -1,6 +1,6 @@
 return {
     "chentoast/marks.nvim",
-    event = "BufRead",
+    event = "BufReadPost",
     config = function()
         require("marks").setup({
             default_mappings = false,

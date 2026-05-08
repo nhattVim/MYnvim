@@ -1,6 +1,12 @@
 return {
     "mason-org/mason.nvim",
-    event = "VeryLazy",
+    cmd = {
+        "Mason",
+        "MasonInstall",
+        "MasonUninstall",
+        "MasonUninstallAll",
+        "MasonUpdate",
+    },
     opts = {
         ui = {
             border = "rounded",

@@ -20,7 +20,7 @@ local Colors = {
 
 return {
     "shellRaining/hlchunk.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    event = "BufReadPost",
     dependencies = {
         "HiPhish/rainbow-delimiters.nvim", -- Rainbow pairs
         "Darazaki/indent-o-matic", -- Guess indent automatically (Optional)

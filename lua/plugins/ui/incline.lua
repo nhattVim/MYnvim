@@ -1,6 +1,6 @@
 return {
     "b0o/incline.nvim",
-    event = "VeryLazy",
+    event = "BufReadPost",
     config = function()
         local icons = require("others.icons")
         local devicons = require("nvim-web-devicons")

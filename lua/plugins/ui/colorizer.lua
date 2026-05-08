@@ -1,6 +1,6 @@
 return {
     "brenoprata10/nvim-highlight-colors", -- Colorizer (Optional)
-    event = "BufReadPre",
+    event = "BufReadPost",
     opts = {
         render = "virtual",
         -- virtual_symbol = "",

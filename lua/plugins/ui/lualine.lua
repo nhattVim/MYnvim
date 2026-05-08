@@ -1,10 +1,13 @@
 return {
     "nvim-lualine/lualine.nvim",
-    event = "BufWinEnter",
+    event = "VeryLazy",
     config = function()
         local lualine = require("lualine")
-        local noice = require("noice")
         local icons = require("others.icons")
+
+        local lint
+        local noice
+
         local module = {
             custom_icon = {
                 function()
@@ -46,8 +49,24 @@ return {
             },
 
             noice = {
-                noice.api.status.mode.get,
-                cond = noice.api.status.mode.has,
+                function()
+                    if not noice then
+                        if not package.loaded["noice"] then
+                            return ""
+                        end
+                        noice = require("noice")
+                    end
+                    return noice.api.status.mode.get()
+                end,
+                cond = function()
+                    if not noice then
+                        if not package.loaded["noice"] then
+                            return false
+                        end
+                        noice = require("noice")
+                    end
+                    return noice.api.status.mode.has()
+                end,
                 color = { fg = "#fc1a70" },
             },
 
@@ -68,11 +87,12 @@ return {
             lsp_clients = {
                 function()
                     local buf_clients = vim.lsp.get_clients({ bufnr = 0 })
-                    local lsp_names = {}
 
                     if next(buf_clients) == nil then
                         return "LSP Inactive"
                     end
+
+                    local lsp_names = {}
 
                     for _, client in pairs(buf_clients) do
                         table.insert(lsp_names, client.name)
@@ -85,14 +105,32 @@ return {
 
             lint_progress = {
                 function()
-                    local linters = require("lint").get_running()
+                    if not lint then
+                        if not package.loaded["lint"] then
+                            return ""
+                        end
+                        lint = require("lint")
+                    end
+
+                    local linters = lint.get_running()
+
                     if #linters == 0 then
                         return ""
                     end
+
                     return " " .. table.concat(linters, ", ")
                 end,
+
                 color = function()
-                    local linters = require("lint").get_running()
+                    if not lint then
+                        if not package.loaded["lint"] then
+                            return
+                        end
+                        lint = require("lint")
+                    end
+
+                    local linters = lint.get_running()
+
                     if #linters ~= 0 then
                         return { fg = "#EBCB8B" }
                     end
@@ -112,16 +150,15 @@ return {
                 function()
                     if vim.wo.spell then
                         return vim.bo.spelllang
-                    else
-                        return "Off"
                     end
+                    return "Off"
                 end,
+
                 color = function()
                     if vim.wo.spell then
                         return { fg = "#7aa2f7" }
-                    else
-                        return { fg = "#888888" }
                     end
+                    return { fg = "#888888" }
                 end,
             },
 
@@ -134,10 +171,7 @@ return {
                 padding = 0,
             },
 
-            time = {
-                "datetime",
-                style = "%H:%M",
-            },
+            time = { "datetime", style = "%H:%M" },
 
             progress_icon = {
                 function()
@@ -148,9 +182,7 @@ return {
                 padding = 0,
             },
 
-            progress = {
-                "progress",
-            },
+            progress = { "progress" },
 
             location_icon = {
                 function()
@@ -161,9 +193,7 @@ return {
                 padding = 0,
             },
 
-            location = {
-                "location",
-            },
+            location = { "location" },
         }
 
         lualine.setup({
@@ -174,9 +204,7 @@ return {
                 always_divide_middle = true,
                 section_separators = { left = "", right = "" },
                 component_separators = { left = "", right = "" },
-                disabled_filetypes = {
-                    statusline = { "alpha" },
-                },
+                disabled_filetypes = { statusline = { "alpha" } },
             },
             sections = {
                 lualine_a = {

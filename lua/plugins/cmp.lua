@@ -4,12 +4,15 @@ return {
     dependencies = {
         -- Source for cmp
         "hrsh7th/cmp-nvim-lsp", -- source for lsp
-        "hrsh7th/cmp-nvim-lua", -- source for cmp
         "hrsh7th/cmp-buffer", -- source for text in buffer
         "hrsh7th/cmp-path", -- source for file system paths
         "hrsh7th/cmp-calc", -- source for math calculation (Optional)
         "saadparwaiz1/cmp_luasnip", -- source for LuaSnip autocompletion
-        "Exafunction/windsurf.nvim", -- source from AI (Optional)
+
+        {
+            "Exafunction/windsurf.nvim", -- source from AI (Optional)
+            cmd = "Codeium",
+        },
 
         {
             "L3MON4D3/LuaSnip", -- snippet engine
@@ -67,7 +70,6 @@ return {
             }),
             sources = {
                 { name = "nvim_lsp" }, -- lsp
-                { name = "nvim_lua" }, -- lua
                 { name = "luasnip" }, -- snippets
                 { name = "codeium" }, -- AI completion from Windsurf
                 { name = "buffer" }, -- text within current buffer
@@ -106,6 +108,18 @@ return {
                 }),
             },
         })
+
+        cmp.event:on("menu_opened", function()
+            vim.api.nvim_exec_autocmds("User", {
+                pattern = "CmpMenuOpen",
+            })
+        end)
+
+        cmp.event:on("menu_closed", function()
+            vim.api.nvim_exec_autocmds("User", {
+                pattern = "CmpMenuClose",
+            })
+        end)
 
         -- Keymap for changing the active choice
         vim.keymap.set({ "i", "s" }, "<C-e>", function()

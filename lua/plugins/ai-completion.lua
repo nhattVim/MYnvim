@@ -1,7 +1,7 @@
 return {
     "monkoose/neocodeium", -- AI completion like GitHub Copilot (Optional)
-    event = "VeryLazy",
-    build = ":NeoCodeium auth",
+    event = "InsertEnter",
+    cmd = "NeoCodeium",
     config = function()
         -- Setup neocodeium
         local neocodeium = require("neocodeium")

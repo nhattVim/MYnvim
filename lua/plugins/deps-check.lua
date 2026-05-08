@@ -10,17 +10,8 @@ return {
                 cmd = "make",
                 install = {
                     linux = { "sudo apt install build-essential", "sudo pacman -S make" },
-                    darwin = { "brew install make" },
+                    mac = { "brew install make" },
                     windows = { "scoop install make", "choco install make" },
-                },
-            },
-            {
-                name = "node",
-                cmd = "node",
-                install = {
-                    linux = { "sudo apt install nodejs" },
-                    darwin = { "brew install node" },
-                    windows = { "choco install nodejs", "scoop install nodejs" },
                 },
             },
             {
@@ -28,7 +19,7 @@ return {
                 cmd = "unzip",
                 install = {
                     linux = { "sudo apt install unzip", "sudo pacman -S unzip" },
-                    darwin = { "brew install unzip" },
+                    mac = { "brew install unzip" },
                     windows = { "scoop install unzip", "choco install unzip" },
                 },
             },
@@ -37,25 +28,25 @@ return {
                 cmd = "curl",
                 install = {
                     linux = { "sudo apt install curl", "sudo pacman -S curl" },
-                    darwin = { "brew install curl" },
+                    mac = { "brew install curl" },
                     windows = { "scoop install curl", "winget install curl.curl" },
                 },
             },
             {
                 name = "python",
-                cmd = "python3", -- Có thể đổi thành "python" tùy hệ thống của bạn
+                cmd = { "python3", "python" },
                 install = {
                     linux = { "sudo apt install python3", "sudo pacman -S python" },
-                    darwin = { "brew install python" },
+                    mac = { "brew install python" },
                     windows = { "scoop install python", "winget install Python.Python.3" },
                 },
             },
             {
-                name = "node",
+                name = "nodejs",
                 cmd = "node",
                 install = {
                     linux = { "sudo apt install nodejs npm", "sudo pacman -S nodejs npm" },
-                    darwin = { "brew install node" },
+                    mac = { "brew install node" },
                     windows = { "scoop install nodejs", "winget install OpenJS.NodeJS" },
                 },
             },
@@ -64,17 +55,16 @@ return {
                 cmd = "gcc",
                 install = {
                     linux = { "sudo apt install gcc", "sudo pacman -S gcc" },
-                    darwin = { "brew install gcc" },
+                    mac = { "brew install gcc" },
                     windows = { "scoop install gcc", "choco install mingw" },
                 },
             },
-            -- Search Tools (Telescope dependencies)
             {
-                name = "rg (ripgrep)",
+                name = "ripgrep",
                 cmd = "rg",
                 install = {
                     linux = { "sudo apt install ripgrep", "sudo pacman -S ripgrep" },
-                    darwin = { "brew install ripgrep" },
+                    mac = { "brew install ripgrep" },
                     windows = {
                         "scoop install ripgrep",
                         "choco install ripgrep",
@@ -84,10 +74,10 @@ return {
             },
             {
                 name = "fd",
-                cmd = "fd", -- Lưu ý: Trên Ubuntu/Debian có thể là "fdfind"
+                cmd = { "fd", "fdfind" },
                 install = {
                     linux = { "sudo apt install fd-find", "sudo pacman -S fd" },
-                    darwin = { "brew install fd" },
+                    mac = { "brew install fd" },
                     windows = {
                         "scoop install fd",
                         "choco install fd",
@@ -100,7 +90,7 @@ return {
                 cmd = "fzf",
                 install = {
                     linux = { "sudo apt install fzf", "sudo pacman -S fzf" },
-                    darwin = { "brew install fzf" },
+                    mac = { "brew install fzf" },
                     windows = {
                         "scoop install fzf",
                         "choco install fzf",
@@ -108,7 +98,6 @@ return {
                     },
                 },
             },
-            -- Optional Tools
             {
                 name = "lazygit",
                 cmd = "lazygit",
@@ -117,7 +106,7 @@ return {
                         "sudo add-apt-repository ppa:lazygit-team/release && sudo apt install lazygit",
                         "sudo pacman -S lazygit",
                     },
-                    darwin = { "brew install lazygit" },
+                    mac = { "brew install lazygit" },
                     windows = {
                         "scoop install lazygit",
                         "choco install lazygit",
@@ -130,7 +119,7 @@ return {
                 cmd = "trans",
                 install = {
                     linux = { "sudo apt install translate-shell", "sudo pacman -S translate-shell" },
-                    darwin = { "brew install translate-shell" },
+                    mac = { "brew install translate-shell" },
                 },
             },
         },

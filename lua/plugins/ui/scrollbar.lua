@@ -1,6 +1,6 @@
 return {
     "dstein64/nvim-scrollview", -- Scrollbar (Optional)
-    event = "BufReadPre",
+    event = "BufReadPost",
     opts = {
         excluded_filetypes = { "NvimTree" },
         on_startup = false,
