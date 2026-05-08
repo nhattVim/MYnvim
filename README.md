@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2026-05-07 15:29 UTC+7</em></p>
+<p align='right'><em>Last updated: 2026-05-08 10:17 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -219,7 +219,6 @@ sudo docker start -ai MYnvim
 | [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer) | nvim-cmp source for buffer words |  |
 | [hrsh7th/cmp-calc](https://github.com/hrsh7th/cmp-calc) | nvim-cmp source for math calculation | _Optional_ |
 | [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) | nvim-cmp source for neovim builtin LSP client |  |
-| [hrsh7th/cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua) | nvim-cmp source for nvim lua |  |
 | [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path) | nvim-cmp source for path |  |
 | [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp) | A completion plugin for neovim coded in Lua. |  |
 | [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) | markdown preview plugin for (neo)vim | _Optional_ |
