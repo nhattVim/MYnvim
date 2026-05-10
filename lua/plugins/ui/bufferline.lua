@@ -1,5 +1,6 @@
 return {
     "akinsho/bufferline.nvim",
+    dependencies = { "tiagovla/scope.nvim", config = true },
     event = "VimEnter",
     version = "*",
     opts = {
@@ -34,13 +35,14 @@ return {
                 return "(" .. count .. ")"
             end,
         },
-
-        vim.keymap.set("n", "<tab>", function()
-            vim.cmd("BufferLineCycleNext")
-        end, { desc = "Next buffer" }),
-
-        vim.keymap.set("n", "<S-tab>", function()
-            vim.cmd("BufferLineCyclePrev")
-        end, { desc = "Previous buffer" }),
     },
+    config = function(_, opts)
+        require("bufferline").setup(opts)
+        require("core.utils").set_keys(nil, {
+            { "n", "<tab>", "<cmd>BufferLineCycleNext<cr>", "Next buffer" },
+            { "n", "<s-tab>", "<cmd>BufferLineCyclePrev<cr>", "Previous buffer" },
+            { "n", "<m-n>", "<cmd>tabnext<cr>", "Next tab" },
+            { "n", "<m-p>", "<cmd>tabprevious<cr>", "Previous tab" },
+        })
+    end,
 }
