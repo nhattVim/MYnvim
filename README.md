@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2026-05-08 10:17 UTC+7</em></p>
+<p align='right'><em>Last updated: 2026-05-10 23:00 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -186,6 +186,7 @@ sudo docker start -ai MYnvim
 | [nhattVim/alpha-ascii.nvim](https://github.com/nhattVim/alpha-ascii.nvim) | A simple plugin for alpha-nvim that provides custom ASCII headers for the dashboard screen. |  |
 | [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) | A blazing fast and easy to configure neovim statusline plugin written in pure lua. |  |
 | [shellRaining/hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim) | This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed |  |
+| [tiagovla/scope.nvim](https://github.com/tiagovla/scope.nvim) | Revolutionize Your Neovim Tab Workflow: Introducing Enhanced Tab Scoping! |  |
 
 ## Others Plugins
 
