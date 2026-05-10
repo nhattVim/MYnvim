@@ -13,14 +13,14 @@ return {
         local dashboard = require("alpha.themes.dashboard")
 
         dashboard.section.buttons.val = {
-            dashboard.button("f", "  Find File  ", ":Telescope find_files<CR>"),
-            dashboard.button("o", "  Recent File  ", ":Telescope oldfiles<CR>"),
-            dashboard.button("p", "  Recent Project", ":ProjectList<CR>"),
-            dashboard.button("w", "  Find Word  ", ":Telescope live_grep theme=ivy<CR>"),
-            dashboard.button("b", "  Bookmarks  ", ":Telescope marks theme=ivy<CR>"),
-            dashboard.button("t", "  Themes  ", ":Telescope colorscheme enable_preview=false<CR>"),
-            dashboard.button("s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
-            dashboard.button("i", "  Change header image", ":AlphaAsciiNext<CR>"),
+            dashboard.button("f", "  Find File  ", "<Cmd>Telescope find_files<CR>"),
+            dashboard.button("o", "  Recent File  ", "<Cmd>Telescope oldfiles<CR>"),
+            dashboard.button("p", "  Recent Project", "<Cmd>ProjectList<CR>"),
+            dashboard.button("w", "  Find Word  ", "<Cmd>Telescope live_grep theme=ivy<CR>"),
+            dashboard.button("b", "  Bookmarks  ", "<Cmd>Telescope marks theme=ivy<CR>"),
+            dashboard.button("t", "  Themes  ", "<Cmd>Telescope colorscheme enable_preview=false<CR>"),
+            dashboard.button("s", "  Settings", "<Cmd>e $MYVIMRC | :cd %:p:h <CR>"),
+            dashboard.button("i", "  Change header image", "<Cmd>AlphaAsciiNext<CR>"),
         }
 
         vim.api.nvim_create_autocmd("User", {

@@ -31,7 +31,7 @@ return {
             for _, c in ipairs(cfg) do
                 local n = get_count(c[1])
                 if n and n > 0 then
-                    table.insert(res, { c[3] .. n .. " ", group = prefix .. c[2] })
+                    table.insert(res, { c[3] .. " " .. n .. " ", group = prefix .. c[2] })
                 end
             end
             return #res > 0 and { unpack(res), { "┊ " } } or {}

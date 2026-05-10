@@ -48,15 +48,13 @@ return {
             return mapping.desc and mapping.desc ~= ""
         end,
         spec = {
-            -- Hidden keymaps
-            { "<leader>X", "<cmd>BufferLineCloseOthers<cr>", desc = "Close Others" },
-
             -- Keymaps
             { "<leader>q", "<cmd>qall<CR>", desc = "Exit" },
             { "<leader>a", "<cmd>Alpha<cr>", desc = "Alpha" },
             { "<leader>n", "<cmd>nohlsearch<CR>", desc = "Nohl" },
             { "<leader>w", "<cmd>silent! w!<CR>", desc = "Save" },
             { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Expl" },
+            { "<leader>X", "<cmd>BufferLineCloseOthers<cr>", desc = "Close Others" },
 
             {
                 "<leader>x",

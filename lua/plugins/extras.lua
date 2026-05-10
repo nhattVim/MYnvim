@@ -50,6 +50,15 @@ return {
         opts = {},
     },
     {
+        "nhattVim/projects.nvim", -- Manual project management
+        cmd = {
+            "ProjectList",
+            "ProjectAdd",
+            "ProjectRemove",
+        },
+        opt = {},
+    },
+    {
         "smoka7/hop.nvim", -- Neovim motions on speed!
         cmd = {
             "HopWord",
