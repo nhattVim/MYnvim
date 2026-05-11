@@ -1,4 +1,4 @@
-<p align='right'><em>Last updated: 2026-05-10 23:00 UTC+7</em></p>
+<p align='right'><em>Last updated: 2026-05-11 14:53 UTC+7</em></p>
 
 <div align="center">
     <h1>MYnvim 💫</h1>
@@ -250,7 +250,7 @@ sudo docker start -ai MYnvim
 | [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) | Provides Nerd Font icons (glyphs) for use by neovim plugins |  |
 | [nvimtools/hydra.nvim](https://github.com/nvimtools/hydra.nvim) | Create custom submodes and menus |  |
 | [okuuva/auto-save.nvim](https://github.com/okuuva/auto-save.nvim) | 🧶 Automatically save your changes in NeoVim |  |
-| [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets) | Set of preconfigured snippets for different languages.  | _Optional_ |
+| [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets) | Set of preconfigured snippets for different languages.  |  |
 | [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify) | A fancy, configurable, notification manager for NeoVim |  |
 | [romus204/tree-sitter-manager.nvim](https://github.com/romus204/tree-sitter-manager.nvim) | A lightweight Tree-sitter parser manager for Neovim. |  |
 | [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) | luasnip completion source for nvim-cmp |  |
