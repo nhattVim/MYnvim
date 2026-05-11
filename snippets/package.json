@@ -32,7 +32,7 @@
             {
                 "language": "xml",
                 "path": "./xml.json"
-            },
+            }
         ]
     },
     "name": "User custom snippets"
