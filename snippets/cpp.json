@@ -7,7 +7,6 @@
       "",
       "int main (int argc, char *argv[]) {",
       "    $1",
-      "    ${2:test} ",
       "    return 0;",
       "}"
     ],
