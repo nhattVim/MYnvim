@@ -2,10 +2,6 @@
     "contributes": {
         "snippets": [
             {
-                "language": "all",
-                "path": "./todo.json"
-            },
-            {
                 "language": "html",
                 "path": "./html.json"
             },
@@ -37,15 +33,6 @@
                 "language": "xml",
                 "path": "./xml.json"
             },
-            {
-                "language": [
-                    "javascript",
-                    "typescript",
-                    "javascriptreact",
-                    "typescriptreact"
-                ],
-                "path": "./javascript.json"
-            }
         ]
     },
     "name": "User custom snippets"

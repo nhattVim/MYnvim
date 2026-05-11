@@ -8,20 +8,7 @@ return {
         "hrsh7th/cmp-path", -- source for file system paths
         "hrsh7th/cmp-calc", -- source for math calculation (Optional)
         "saadparwaiz1/cmp_luasnip", -- source for LuaSnip autocompletion
-
-        {
-            "Exafunction/windsurf.nvim", -- source from AI (Optional)
-            cmd = "Codeium",
-        },
-
-        {
-            "L3MON4D3/LuaSnip", -- snippet engine
-            version = "v2.*",
-            build = vim.fn.has("win32") == 1 and "" or "make install_jsregexp",
-            dependencies = {
-                "rafamadriz/friendly-snippets", -- Optional
-            },
-        },
+        { "Exafunction/windsurf.nvim", cmd = "Codeium" }, -- source from AI (Optional)
     },
     config = function()
         local cmp = require("cmp")
@@ -120,20 +107,5 @@ return {
                 pattern = "CmpMenuClose",
             })
         end)
-
-        -- Keymap for changing the active choice
-        vim.keymap.set({ "i", "s" }, "<C-e>", function()
-            if luasnip.choice_active() then
-                luasnip.change_choice(1)
-            end
-        end, { silent = true })
-
-        -- load friendly snippets
-        require("luasnip.loaders.from_vscode").lazy_load()
-
-        -- load custom snippets
-        require("luasnip.loaders.from_vscode").lazy_load({
-            paths = { vim.fn.stdpath("config") .. "/snippets" },
-        })
     end,
 }
