@@ -71,6 +71,7 @@
 | [OXY2DEV/helpview.nvim](https://github.com/OXY2DEV/helpview.nvim) | A hackable & fancy vimdoc/help file viewer for Neovim |  |
 | [ThePrimeagen/vim-be-good](https://github.com/ThePrimeagen/vim-be-good) | vim-be-good is a nvim plugin designed to make you better at Vim Movements.  |  |
 | [Wansmer/treesj](https://github.com/Wansmer/treesj) | Neovim plugin for splitting/joining blocks of code |  |
+| [akinsho/git-conflict.nvim](https://github.com/akinsho/git-conflict.nvim) | A plugin to visualise and resolve merge conflicts in neovim |  |
 | [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) | A neovim lua plugin to help easily manage multiple terminal windows |  |
 | [alec-gibson/nvim-tetris](https://github.com/alec-gibson/nvim-tetris) | Bringing emacs' greatest feature to neovim - Tetris! |  |
 | [altermo/ultimate-autopair.nvim](https://github.com/altermo/ultimate-autopair.nvim) | A treesitter supported autopairing plugin with extensions, and much more |  |
@@ -104,6 +105,7 @@
 | [mg979/vim-visual-multi](https://github.com/mg979/vim-visual-multi) | Multiple cursors plugin for vim/neovim | _Optional_ |
 | [monkoose/neocodeium](https://github.com/monkoose/neocodeium) | free AI completion plugin for neovim | _Optional_ |
 | [mrjones2014/smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim) | 🧠 Smart, seamless, directional navigation and resizing of Neovim + terminal multiplexer splits. Supports Zellij, Tmux, Wezterm, and Kitty. Think about splits in terms of "up/down/left/right". |  |
+| [nhattVim/cheatsheet.nvim](https://github.com/nhattVim/cheatsheet.nvim) | Cheatsheet plugin for neovim |  |
 | [nhattVim/check-deps.nvim](https://github.com/nhattVim/check-deps.nvim) | A lightweight Neovim plugin to check for external dependencies and help install them. |  |
 | [nhattVim/java-project.nvim](https://github.com/nhattVim/java-project.nvim) | Plugin for automatically creating a Java project | _Optional_ |
 | [nhattVim/projects.nvim](https://github.com/nhattVim/projects.nvim) | A simple Neovim plugin for manual project registry |  |
@@ -122,7 +124,6 @@
 | [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) | luasnip completion source for nvim-cmp |  |
 | [seandewar/killersheep.nvim](https://github.com/seandewar/killersheep.nvim) | Neovim port of killersheep (with blood!) |  |
 | [seandewar/nvimesweeper](https://github.com/seandewar/nvimesweeper) | Play Minesweeper in your favourite text editor (Neovim 0.7+) |  |
-| [sindrets/diffview.nvim](https://github.com/sindrets/diffview.nvim) | Single tabpage interface for easily cycling through diffs for all modified files for any git rev. |  |
 | [sindrets/winshift.nvim](https://github.com/sindrets/winshift.nvim) | Rearrange your windows with ease. |  |
 | [smoka7/hop.nvim](https://github.com/smoka7/hop.nvim) | Neovim motions on speed! |  |
 | [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim) | Neovim plugin to improve the default vim.ui interfaces | _Optional_ |
