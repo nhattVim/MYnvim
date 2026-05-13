@@ -1,6 +1,10 @@
 return {
     { "nvim-lua/plenary.nvim" }, -- Library used by other plugins ( Very Important! )
     {
+        "OXY2DEV/helpview.nvim", -- Decorations for vimdoc/help files in Neovim
+        lazy = false,
+    },
+    {
         "stevearc/dressing.nvim", -- Improve the default vim.ui interfaces (Optional)
         event = "VeryLazy",
     },
@@ -19,10 +23,6 @@ return {
     {
         "famiu/bufdelete.nvim", -- Delete Neovim buffers without losing window layout
         cmd = "Bdelete",
-    },
-    {
-        "OXY2DEV/helpview.nvim", -- Decorations for vimdoc/help files in Neovim
-        ft = "help",
     },
     {
         "uga-rosa/ccc.nvim", -- Color picker

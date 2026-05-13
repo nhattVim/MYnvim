@@ -184,6 +184,18 @@ return {
                 {
                     "<leader>lf",
                     function()
+                        local ok, conform = pcall(require, "conform")
+
+                        if ok then
+                            conform.format({
+                                async = true,
+                                timeout_ms = 500,
+                                lsp_format = "fallback",
+                            })
+
+                            return
+                        end
+
                         vim.lsp.buf.format({ async = true })
                     end,
                     desc = "Format",
@@ -191,9 +203,14 @@ return {
                 {
                     "<leader>ll",
                     function()
-                        pcall(function()
-                            require("lint").try_lint()
-                        end)
+                        local ok, lint = pcall(require, "lint")
+
+                        if not ok then
+                            vim.notify("nvim-lint not available", vim.log.levels.WARN)
+                            return
+                        end
+
+                        lint.try_lint()
                     end,
                     desc = "Linting",
                 },

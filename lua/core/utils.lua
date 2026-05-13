@@ -1,7 +1,7 @@
-local U = {}
+local M = {}
 
 -- helper to create toggleterm by cmd
-function U.toggle_term(cmd)
+function M.toggle_term(cmd)
     local term
     return function()
         if not term or not term:is_open() then
@@ -13,7 +13,7 @@ function U.toggle_term(cmd)
 end
 
 -- helper to set keymaps from table
-function U.set_keys(bufnr, keymaps)
+function M.set_keys(bufnr, keymaps)
     for _, k in ipairs(keymaps) do
         local opts = vim.tbl_extend("force", {
             silent = true,
@@ -27,7 +27,7 @@ function U.set_keys(bufnr, keymaps)
 end
 
 -- helper to yank file path with selected line range
-function U.yank_file_path_with_range()
+function M.yank_file_path_with_range()
     local start_line = vim.fn.line("v")
     local end_line = vim.fn.line(".")
 
@@ -50,7 +50,7 @@ function U.yank_file_path_with_range()
 end
 
 -- helper to load .env file
-function U.load_env(path)
+function M.load_env(path)
     path = path or (vim.fn.stdpath("config") .. "/.env")
 
     local file = io.open(path, "r")
@@ -75,4 +75,4 @@ function U.load_env(path)
     file:close()
 end
 
-return U
+return M

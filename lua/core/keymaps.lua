@@ -1,8 +1,6 @@
 -- General keymaps
 require("core.utils").set_keys(nil, {
     { "v", "<leader><leader>", "<esc>", "Exit visual mode" },
-    { "n", "u", "<cmd>silent! undo<cr>", "Undo" },
-    { "n", "<C-r>", "<cmd>silent! redo<cr>", "Redo" },
     { "i", "<C-k>", "<up>", "Move up" },
     { "i", "<C-j>", "<down>", "Move down" },
     { "i", "<C-h>", "<left>", "Move left" },
@@ -12,7 +10,7 @@ require("core.utils").set_keys(nil, {
     { "v", "<", "<gv", "Indent left" },
     { "v", "<S-tab>", "<gv", "Indent left" },
     { { "n", "i", "v" }, "<C-s>", "<cmd>silent! w!<CR>", "Save" },
-    { { "n", "v" }, "<C-v>", '"+p', "Paste in normal and visual mode" },
+    { "n", "<C-v>", '"+p', "Paste clipboard" },
     { "i", "<C-v>", '<Esc>"+pa', "Paste in insert mode" },
     { "c", "<C-v>", "<C-R>+", "Paste in command mode", { silent = false } },
     { "v", "<C-c>", '"+y', "Copy to clipboard" },
