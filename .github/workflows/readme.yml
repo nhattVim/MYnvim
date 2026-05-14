@@ -32,7 +32,7 @@ jobs:
       FOOTER_FILE: .github/readme/README.footer.md
       README_FULL: .github/readme/README.full.md
       PLUGIN_FILE_TMP: .README.plugins.md
-      README_FULL_TEMP: .README.full.md      
+      README_FULL_TEMP: .README.full.md
 
     steps:
       - name: Checkout repository
@@ -68,10 +68,21 @@ jobs:
                 | grep -vE '^\$'
             )
 
-            if [[ "$plugin" =~ lua/plugins/([^/]+)/ ]]; then
-              group="${BASH_REMATCH[1]}"
+            filename=$(basename "$plugin")
+            if [[ "$filename" =~ ^([a-z])\.(.+)\.lua$ ]]; then
+              prefix="${BASH_REMATCH[1]}"
+              case "$prefix" in
+                l) group="LSP & Language Support" ;;
+                u) group="UI & Appearance" ;;
+                t) group="Tools & Utilities" ;;
+                e) group="Editor & Core" ;;
+                c) group="Coding & Snippets" ;;
+                d) group="Dependencies & Core Libs" ;;
+                g) group="Games & Fun" ;;
+                *) continue ;;
+              esac
             else
-              group="Others"
+              continue
             fi
 
             for name in "${repos[@]}"; do
@@ -88,8 +99,7 @@ jobs:
             done <<< "${grouped_plugins_temp[$group]}"
           done
 
-          mapfile -t sorted_groups < <(printf "%s\n" "${plugin_to_group[@]}" | grep -v '^Others$' | sort -u)
-          sorted_groups+=("Others")
+          mapfile -t sorted_groups < <(printf "%s\n" "${plugin_to_group[@]}" | sort -u)
 
           for group in "${sorted_groups[@]}"; do
             plugins_in_group=()
@@ -98,7 +108,7 @@ jobs:
             done
             [ ${#plugins_in_group[@]} -eq 0 ] && continue
 
-            echo "## $(tr '[:lower:]' '[:upper:]' <<< ${group:0:1})${group:1} Plugins" >> "$PLUGIN_FILE_TMP"
+            echo "## $group Plugins" >> "$PLUGIN_FILE_TMP"
             echo "" >> "$PLUGIN_FILE_TMP"
             echo "| Name | Description | Optional? |" >> "$PLUGIN_FILE_TMP"
             echo "| ---- | ----------- | --------- |" >> "$PLUGIN_FILE_TMP"
