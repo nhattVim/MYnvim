@@ -99,7 +99,7 @@ return {
                 },
             },
             {
-                name = "lazygit",
+                name = "Lazygit",
                 cmd = "lazygit",
                 install = {
                     linux = {
@@ -115,11 +115,18 @@ return {
                 },
             },
             {
-                name = "translate-shell",
+                name = "Translate shell",
                 cmd = "trans",
                 install = {
                     linux = { "sudo apt install translate-shell", "sudo pacman -S translate-shell" },
                     mac = { "brew install translate-shell" },
+                },
+            },
+            {
+                name = "Treesitter CLI",
+                cmd = "tree-sitter",
+                install = {
+                    windows = { "scoop install tree-sitter" },
                 },
             },
         },
