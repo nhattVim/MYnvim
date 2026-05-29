@@ -21,7 +21,6 @@
 | [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim) | UI Component Library for Neovim. |  |
 | [nhattVim/check-deps.nvim](https://github.com/nhattVim/check-deps.nvim) | A lightweight Neovim plugin to check for external dependencies and help install them. |  |
 | [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim) | plenary: full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice. |  |
-| [nvzone/volt](https://github.com/nvzone/volt) | Create blazing fast & beautiful reactive UI in Neovim |  |
 
 ## Editor & Core Plugins
 
@@ -138,6 +137,7 @@
 | [nhattVim/alpha-ascii.nvim](https://github.com/nhattVim/alpha-ascii.nvim) | A simple plugin for alpha-nvim that provides custom ASCII headers for the dashboard screen. |  |
 | [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) | A blazing fast and easy to configure neovim statusline plugin written in pure lua. |  |
 | [nvzone/showkeys](https://github.com/nvzone/showkeys) | Minimal Eye-candy keys screencaster for Neovim  200 ~ LOC |  |
+| [nvzone/volt](https://github.com/nvzone/volt) | Create blazing fast & beautiful reactive UI in Neovim |  |
 | [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify) | A fancy, configurable, notification manager for NeoVim |  |
 | [shellRaining/hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim) | This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed |  |
 | [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim) | Neovim plugin to improve the default vim.ui interfaces |  |
