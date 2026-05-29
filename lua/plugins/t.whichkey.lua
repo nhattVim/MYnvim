@@ -54,7 +54,6 @@ return {
             { "<leader>n", "<cmd>nohlsearch<CR>", desc = "Nohl" },
             { "<leader>w", "<cmd>silent! w!<CR>", desc = "Save" },
             { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Expl" },
-            { "<leader>X", "<cmd>BufferLineCloseOthers<cr>", desc = "Close Others" },
 
             {
                 "<leader>x",
